@@ -24,13 +24,13 @@ else:
     print(f"Running on an unsupported system: {current_system}")
 
 # Create cursor
-cursor = connection.cursor()
+# cursor = connection.cursor()
 
 
 # Query database
-cursor.execute("SELECT ASGSCode FROM AreasAsgs where parent = 401 and ASGS = 2021")
-for row in cursor.fetchall():
-    print(row.ASGSCode)
+# cursor.execute("SELECT ASGSCode FROM AreasAsgs where parent = 401 and ASGS = 2021")
+# for row in cursor.fetchall():
+#     print(row.ASGSCode)
 
 
 
