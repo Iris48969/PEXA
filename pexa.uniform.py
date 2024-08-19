@@ -247,6 +247,9 @@ def analyze_sa2_population(connection):
     plt.grid(True)
     plt.show()
 
+
+
+#calculates household population percentages and identifies outliers.
 def household_ERP_ratio(connection):
     population_data = fetch_data(queries["ERP"], connection)
     household_data = fetch_data(queries["Household_number"], connection)
