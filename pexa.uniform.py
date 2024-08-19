@@ -328,10 +328,14 @@ def growth_rate_per_5_years(connection):
     print(f"Number of regions with growth rate greater than 25%: {count_number}")
 
 
-# Main execution
-connection = connect_to_database()
-perform_data_quality_checks(connection)
-analyze_sa2_population(connection)
-household_ERP_ratio(connection)
-growth_rate_per_5_years(connection)
-connection.close()
+def main():
+    connection = connect_to_database()
+    perform_data_quality_checks(connection)
+    analyze_sa2_population(connection)
+    household_ERP_ratio(connection)
+    growth_rate_per_5_years(connection)
+    connection.close()
+
+# Execute the main function
+if __name__ == "__main__":
+    main()
