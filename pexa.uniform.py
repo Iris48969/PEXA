@@ -289,6 +289,9 @@ def household_ERP_ratio(connection):
     print(f"Number of outliers: {number_of_rows}")
     print(outliers_table[:5])
 
+
+
+#calculates 5-year population growth rates and identifies regions with a growth rate exceeding 25%.
 def growth_rate_per_5_years(connection):
     number = fetch_data(queries["ERP"], connection)
     number = np.array(number)
