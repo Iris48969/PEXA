@@ -234,7 +234,7 @@ def analyze_sa2_population(connection):
 
     print("\nOutliers Detected in Percent_Change in SA2 over 25 years :")
     print(df_population[df_population['Anomaly'] == 'Anomaly'])
-    print("\n In 2023 and 2024, the percentage change in the population of SA2 exceeded the expected value, considering the mean change of", mean_change, "\n")
+    print("\nIn 2023 and 2024, the percentage change in the population of SA2 exceeded the expected value, considering the mean change of", mean_change, "\n")
     
     # Plotting yearly population change
     plt.figure(figsize=(14, 7))
@@ -247,9 +247,7 @@ def analyze_sa2_population(connection):
     plt.grid(True)
     plt.show()
 
-
-
-#calculates household population percentages and identifies outliers.
+# Calculates household population percentages and identifies outliers
 def household_ERP_ratio(connection):
     population_data = fetch_data(queries["ERP"], connection)
     household_data = fetch_data(queries["Household_number"], connection)
@@ -292,12 +290,9 @@ def household_ERP_ratio(connection):
     print(f"Number of outliers: {number_of_rows}")
     print(outliers_table[:5])
 
-
-
-#calculates 5-year population growth rates and identifies regions with a growth rate exceeding 25%.
+# Calculates 5-year population growth rates and identifies regions with a growth rate exceeding 25%
 def growth_rate_per_5_years(connection):
     number = fetch_data(queries["ERP"], connection)
-    number = np.array(number)
     number_pd = pd.DataFrame(number, columns=['ASGSCode','ERPYear','Population'])
     periods = [(2022, 2026), (2027, 2031), (2032, 2036), (2037, 2041), (2042, 2046)]
 
@@ -330,7 +325,7 @@ def growth_rate_per_5_years(connection):
     count_number = len(result_df)
     print(f"Number of regions with growth rate greater than 25%: {count_number}")
 
-
+# Main function
 def main():
     connection = None
     try:
