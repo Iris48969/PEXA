@@ -332,12 +332,19 @@ def growth_rate_per_5_years(connection):
 
 
 def main():
-    connection = connect_to_database()
-    perform_data_quality_checks(connection)
-    analyze_sa2_population(connection)
-    household_ERP_ratio(connection)
-    growth_rate_per_5_years(connection)
-    connection.close()
+    connection = None
+    try:
+        connection = connect_to_database()
+        perform_data_quality_checks(connection)
+        analyze_sa2_population(connection)
+        household_ERP_ratio(connection)
+        growth_rate_per_5_years(connection)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    finally:
+        if connection is not None:
+            connection.close()
+            print("Database connection closed.")
 
 # Execute the main function
 if __name__ == "__main__":
