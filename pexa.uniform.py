@@ -249,6 +249,16 @@ def analyze_sa2_population(connection):
 
 # Calculates household population percentages and identifies outliers
 def household_ERP_ratio(connection):
+    """
+    This function calculates the percentage of the population living in households for each region and year, 
+    identifies outliers, and displays the results.
+
+    Steps:
+    1. Fetch population and household data.
+    2. Merge the data on region and year.
+    3. Calculate household population percentages.
+    4. Identify outliers.
+    """
     population_data = fetch_data(queries["ERP"], connection)
     household_data = fetch_data(queries["Household_number"], connection)
     
@@ -266,13 +276,6 @@ def household_ERP_ratio(connection):
     print(merged_df["Percentage"])
     summary = merged_df["Percentage"].describe()
     print(summary)
-
-    # Draw box plot, and every outlier should have a table 
-    plt.figure(figsize=(10, 6))
-    sns.boxplot(x=merged_df["Percentage"], showfliers=True)
-    plt.title("Box Plot of Percentage with Outliers")
-    plt.xlabel("Percentage")
-    plt.show()
 
     # Extract outliers
     Q1 = merged_df["Percentage"].quantile(0.25)
@@ -292,6 +295,15 @@ def household_ERP_ratio(connection):
 
 # Calculates 5-year population growth rates and identifies regions with a growth rate exceeding 25%
 def growth_rate_per_5_years(connection):
+    """
+    Calculates 5-year population growth rates for each region and identifies regions with growth rates exceeding 25%.
+
+    Steps:
+    1. Fetch population data.
+    2. Calculate growth rates for defined 5-year periods.
+    3. Identify and store regions with growth rates over 25%.
+    4. Display the results and count of regions exceeding the threshold.
+    """
     number = fetch_data(queries["ERP"], connection)
     number_pd = pd.DataFrame(number, columns=['ASGSCode','ERPYear','Population'])
     periods = [(2022, 2026), (2027, 2031), (2032, 2036), (2037, 2041), (2042, 2046)]
