@@ -62,10 +62,13 @@ def pattern_check(conn):
     """
     cursor = conn.cursor()
     cursor.execute(SQL_QUERY)
-    data = cursor.fetchall()
-    df = pd.DataFrame(data)
+    data = cursor.fetchall() 
+    if current_system == "Windows":
+        data = np.array(data)
+        df = pd.DataFrame(data, columns=['ASGS_2016', 'ERP', 'ERPYear'])
+    else:
+        df = pd.DataFrame(data)
     wide_df = df.pivot_table(index='ASGS_2016', columns='ERPYear', values='ERP')
-
     # check 1
     abnormal_list1 = []
     for idx, value in wide_df.iterrows():
