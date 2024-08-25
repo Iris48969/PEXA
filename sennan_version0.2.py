@@ -56,6 +56,8 @@ df_household = pd.DataFrame(data_household)
 
 wide_df_household = df_household.pivot_table(index='ERPYear', columns='ASGSCode', values='Number')
 
+###############################################   abnormal drop ##########################################################
+
 def find_upper_lower_bound(data):
     Q1 = np.percentile(data, 25)
     Q3 = np.percentile(data, 75)
@@ -106,3 +108,57 @@ for region, pop_growth, year in filtered_list_pop_decreas:
     total_correlation_list.append(cor)
     if cor <= -0.5: stro_mode_negative_corr.append([region, cor])
     elif cor > -0.5 and cor <= 0.5: weak_correlation.append([region, cor])
+
+###############################################   abnormal change(ERP) ####################################################
+
+def check_outliers(data_list):
+    Q1 = np.percentile(data_list, 25)
+    Q3 = np.percentile(data_list, 75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 3 * IQR
+    upper_bound = Q3 + 3 * IQR
+    for data in data_list:
+        if data > upper_bound or data < lower_bound: return True
+
+def calculate_r_squared(y, y_pred):
+    
+    # Calculate the total sum of squares (SST)
+    ss_total = np.sum((y - np.mean(y))**2)
+    
+    # Calculate the residual sum of squares (SSR)
+    ss_residual = np.sum((y_pred - np.mean(y))**2)
+    
+    # Calculate R^2
+    r_squared = 1 - (ss_residual / ss_total)
+    
+    return r_squared
+total_number = 0
+flagged_number = 0
+change_popul_df = wide_df.diff().dropna()
+correlation_list = []
+for region in wide_df.columns:
+    cor = float(np.corrcoef(wide_df[region].values, wide_df_household[region].values)[0,1])
+    # print(f"there are outliers: {check_outliers(change_popul_df[region])}")
+    if check_outliers(change_popul_df[region]) and cor < 0.5:
+        print(f'for region {region}')
+        correlation_list.append(cor)
+        print(f'the correlation with household is: {cor}')
+        # print(f"the r squared value is: {calculate_r_squared(wide_df[region], wide_df_household[region])}") 
+        # print(np.array(wide_df[region])/np.array(wide_df_household[region]))
+        flagged_number += 1
+        # plt.plot(wide_df.index[0:len(wide_df.index)], wide_df[region])
+        # plt.show()
+
+        # plt.plot(wide_df.index[0:len(wide_df.index)], wide_df_household[region])
+        # plt.show()
+
+        # plt.plot(wide_df.index[0:len(wide_df.index)-1], change_popul_df[region])
+        # plt.show()
+    total_number += 1
+
+
+print(f"total number of fa regions are: {total_number}")
+print(f"total number of flagged fa regions are: {flagged_number}")
+
+# plt.hist(correlation_list)
+# plt.show()
