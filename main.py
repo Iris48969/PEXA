@@ -1,10 +1,9 @@
 """
 file call the functions
 """
-
-import pymssql
 import logging
 import platform
+import re
 
 # set up basic configuration for logging
 logging.basicConfig(
@@ -18,7 +17,7 @@ logging.info("log set up done, start running the file")
 
 # import check functions into main
 try:
-    from checks import first_check, second_check
+    from checks import first_check, trend_shape_check
 except Exception as e:
     logging.error(e)
 
@@ -48,11 +47,14 @@ try:
 except:
     logging.error("Connection to database was failed")
 
+
 # execute the checks 
 try:
-    logging.info("Try to execute first check")
-    first_check(conn, parameter2=...)
-    logging.info("first check done")
-except Exception as e:
-    logging.error(f"First check was failed: {e}")
+    logging.info("Try to execute shape check")
+    result = trend_shape_check(conn)
     
+    logging.info("shape check done")
+except Exception as e:
+    logging.error(e)
+
+print(result)
