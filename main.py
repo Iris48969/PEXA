@@ -4,6 +4,7 @@ file call the functions
 
 import pymssql
 import logging
+import platform
 
 # set up basic configuration for logging
 logging.basicConfig(
@@ -23,13 +24,26 @@ except Exception as e:
 
 # connect to the database
 try:
-    conn = pymssql.connect(
+    current_system = platform.system()
+    if current_system == "Darwin":
+        import pymssql
+        conn = pymssql.connect(
         server='localhost',
         user='sa',
         password='MBS_project_2024',
         database='forecasts',
-        as_dict=True
-    )
+        as_dict=True)
+
+    elif current_system == "Windows":
+        import pyodbc
+        conn = pyodbc.connect('Driver={SQL Server};'
+                                    'Server=localhost;'
+                                    'Database=forecasts;'
+                                    'UID=sa;'
+                                    'PWD=MBS_project_2024')
+
+    else:
+        logging.error(f"Running on an unsupported system: {current_system}")
     logging.info("Connection to database was done")
 except:
     logging.error("Connection to database was failed")
