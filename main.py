@@ -1,5 +1,5 @@
 import os
-import csv
+import ruptures as rpt
 import logging
 import psycopg2  # type: ignore
 import datetime
@@ -8,6 +8,13 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.ensemble import IsolationForest # type: ignore
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import pairwise_distances
+from statsmodels.tsa.arima_model import ARIMA
+from statsmodels.stats.outliers_influence import summary_table
+from scipy.stats import zscore
+
 
 # Set up logging
 my_date = datetime.datetime.now().strftime('%Y%m%d')
@@ -92,6 +99,7 @@ def perform_sanity_checks(df):
     '''
     try:
         logging.info("Performing sanity checks...")
+        # Check for zero values in Births, Deaths, and Population
         zero_births = df[(df['DataType'] == 'Births') & (df['Total'] == 0)]
         zero_deaths = df[(df['DataType'] == 'Deaths') & (df['Total'] == 0)]
         zero_population = df[(df['DataType'] == 'ERP') & (df['Total'] == 0)]
@@ -100,6 +108,7 @@ def perform_sanity_checks(df):
         print(f"Count of rows with Zero Deaths: {zero_deaths.shape[0]}")
         print(f"Count of rows with Zero Population: {zero_population.shape[0]}")
 
+        # Print unique ASGS Codes 
         if not zero_births.empty:
             print("\nUnique ASGS Codes with Zero Births:")
             print(zero_births['ASGSCode'].unique())
@@ -136,21 +145,32 @@ def perform_outlier_checks(df):
     '''
     try:
         logging.info("Performing outlier checks...")
+
         # Filter for ERP data at both SA2 and FA levels
         df = df[(df['DataType'] == 'ERP') & (df['RegionType'].isin(['SA2', 'FA']))]
+
         # Separate the data by RegionType
         results = {}
         for region_type in df['RegionType'].unique():
+            # Filter data for the current RegionType
             region_df = df[df['RegionType'] == region_type]
+
             # Pivot the DataFrame to get wide format
             wide_df = region_df.pivot_table(index='ASGSCode', columns='Year', values='Total')
+
+            # Drop rows with NA values
             wide_df = wide_df.dropna()
+
             # Calculate the population growth rate in percentage
             growth_rates = wide_df.pct_change(axis=1) * 100
+            
+            # Drop NA values in growth rates
             growth_rates = growth_rates.dropna()
+
             # Flatten the growth rates for outlier detection
             flat_growth_rates = growth_rates.stack().reset_index(name='GrowthRate')
 
+            # Identify outliers using IQR method
             Q1 = flat_growth_rates['GrowthRate'].quantile(0.25)
             Q3 = flat_growth_rates['GrowthRate'].quantile(0.75)
             IQR = Q3 - Q1
@@ -163,6 +183,8 @@ def perform_outlier_checks(df):
                 'num_outliers': len(outliers),
                 'outliers': outliers[['ASGSCode', 'Year', 'GrowthRate']] if not outliers.empty else 'No outliers found.'
             }
+
+        # Print the results
         print("\n****************** CHECK 7: OUTLIER CHECK******************")
         for region_type, result in results.items():
             print(f"\nRegionType: {region_type}")
@@ -178,13 +200,207 @@ def perform_outlier_checks(df):
         logging.error(f"Error performing outlier checks: {e}")
         raise
 
+def perform_ml_anomaly_detection(df):
+    '''
+    This function performs anomaly detection using Isolation Forest ML in ERP table at SA2 and FA levels.
+    '''
+    try:
+        logging.info("Performing machine learning anomaly detection...")
+
+        # Filter for ERP data at both SA2 and FA levels
+        df = df[(df['DataType'] == 'ERP') & (df['RegionType'].isin(['SA2', 'FA']))]
+
+        # Separate the data by RegionType
+        results = {}
+        for region_type in df['RegionType'].unique():
+            # Filter data for the current RegionType
+            region_df = df[df['RegionType'] == region_type]
+            # Pivot the DataFrame to get wide format
+            wide_df = region_df.pivot_table(index='ASGSCode', columns='Year', values='Total')
+            wide_df = wide_df.dropna()
+            flattened_df = wide_df.reset_index()
+            flattened_df.set_index('ASGSCode', inplace=True)
+
+            # Apply Isolation Forest for anomaly detection
+            model = IsolationForest(contamination=0.05)  # Adjust contamination as needed
+            anomalies = model.fit_predict(flattened_df)
+
+            # Add anomaly detection results to the DataFrame
+            flattened_df['Anomaly'] = anomalies
+            anomalies_df = flattened_df[flattened_df['Anomaly'] == -1]
+
+            # Collect unique ASGSCode for anomalies
+            unique_asgs_codes = anomalies_df.index.unique().tolist()
+
+            results[region_type] = {
+                'num_rows': len(region_df),
+                'num_anomalies': len(anomalies_df),
+                'anomalies': anomalies_df if not anomalies_df.empty else 'No anomalies found.',
+                'unique_asgs_codes': unique_asgs_codes
+            }
+
+        # Print the results
+        print("\n****************** CHECK 8: MACHINE LEARNING ANOMALY DETECTION ******************")
+        for region_type, result in results.items():
+            print(f"\nRegionType: {region_type}")
+            print(f"Number of rows: {result['num_rows']}")
+            print(f"Number of anomalies found: {result['num_anomalies']}")
+            if result['num_anomalies'] != 'No anomalies found.':
+                print("Anomalies Details:")
+                print(f"Unique ASGSCode with anomalies: {result['unique_asgs_codes']}")
+            else:
+                print(f"No Anomalies Found in {region_type}")
+    except Exception as e:
+        logging.error(f"Error performing machine learning anomaly detection: {e}")
+        raise
+
+def perform_bayesian_change_point_detection(df, penalty=10, similarity_threshold=6):
+    '''
+    Perform Bayesian Change Point Detection on ERP data for SA2 and FA regions.
+    '''
+    # Filter for ERP data at SA2 and FA levels
+    df = df[(df['DataType'] == 'ERP') & (df['RegionType'].isin(['SA2', 'FA']))]
+
+    results = {}
+    for region_type in df['RegionType'].unique():
+        region_df = df[df['RegionType'] == region_type]
+        wide_df = region_df.pivot_table(index='ASGSCode', columns='Year', values='Total')
+        wide_df = wide_df.dropna()
+
+        # Store change points for each ASGSCode
+        all_change_points = []
+
+        for asgs_code in wide_df.index:
+            time_series = wide_df.loc[asgs_code].values
+
+            # Bayesian Change Point Detection
+            time_series = time_series.reshape(-1, 1)  # Required shape for ruptures
+            model = "l2"  # Model "l2" for mean shift
+            algo = rpt.Pelt(model=model).fit(time_series)
+            change_points_bayesian = algo.predict(pen=penalty)  # Penalty term to control sensitivity
+
+            # Append detected change points
+            all_change_points.append(change_points_bayesian)
+
+        # Flatten list of change points and determine similarity
+        flat_change_points = [item for sublist in all_change_points for item in sublist]
+        change_points_counts = pd.Series(flat_change_points).value_counts()
+
+        # Check for significant deviations
+        significant_asgs_codes = [code for code, points in zip(wide_df.index, all_change_points) if len(points) >= similarity_threshold]
+
+        if significant_asgs_codes:
+            results[region_type] = {
+                'num_series': len(wide_df),
+                'significant_asgs_codes': significant_asgs_codes
+            }
+        else:
+            results[region_type] = {
+                'num_series': len(wide_df),
+                'message': 'No significant anomalies detected in this region.'
+            }
+
+    # Print the results
+    print("\n****************** CHECK: CHANGE POINT DETECTION ******************")
+    for region_type, result in results.items():
+        print(f"\nRegionType: {region_type}")
+        print(f"Number of series: {result['num_series']}")
+        if 'significant_asgs_codes' not in result:
+            print(result['message'])
+        else:
+            print(f'Found {len(significant_asgs_codes)} ASGSCodes')
+
+def detect_outliers_on_residuals(df):
+    '''
+    Perform outlier detection on time series residuals using ARIMA models.
+    '''
+    try:
+        logging.info("Performing outlier detection on residuals...")
+        
+        # Filter for ERP data at SA2 and FA levels
+        df = df[(df['DataType'] == 'ERP') & (df['RegionType'].isin(['SA2', 'FA']))]
+
+        results = {}
+        for region_type in df['RegionType'].unique():
+            region_df = df[df['RegionType'] == region_type]
+            wide_df = region_df.pivot_table(index='ASGSCode', columns='Year', values='Total')
+            wide_df = wide_df.dropna()
+            anomalies_found = False
+            region_results = []
+
+            for asgs_code in wide_df.index:
+                time_series = wide_df.loc[asgs_code].values
+                years = wide_df.columns
+                time_series = pd.Series(time_series, index=years)    #create time series for each ASGSCode
+
+                # Fit ARIMA model
+                try:
+                    model = ARIMA(time_series, order=(5, 1, 0))
+                    fitted_model = model.fit()
+                    residuals = fitted_model.resid
+                    
+                    # Calculate z-scores for residuals
+                    residuals_z = zscore(residuals)
+                    
+                    # Detect outliers
+                    outlier_indices = np.where(np.abs(residuals_z) > 3)[0]  # Outliers with z-score > 3
+                    if len(outlier_indices) > 0:
+                        anomalies_found = True
+                        anomaly_years = years[outlier_indices]
+                        region_results.append({
+                            'ASGSCode': asgs_code,
+                            'AnomalyYears': anomaly_years.tolist(),
+                            'Residuals': residuals.tolist(),
+                            'ResidualsZ': residuals_z.tolist()
+                        })
+
+                except Exception as e:
+                    logging.error(f"Error fitting ARIMA model for ASGSCode {asgs_code}: {e}")
+
+            if not anomalies_found:
+                results[region_type] = {
+                    'num_series': len(wide_df),
+                    'message': 'No anomalies detected in this region.'
+                }
+            else:
+                results[region_type] = {
+                    'num_series': len(wide_df),
+                    'anomalies': region_results
+                }
+        
+        # Print the results
+        print("\n****************** CHECK: OUTLIERS ON RESIDUALS ******************")
+        for region_type, result in results.items():
+            print(f"\nRegionType: {region_type}")
+            print(f"Number of series: {result['num_series']}")
+            if 'message' in result:
+                print(result['message'])
+            else:
+                print(f"Anomalies Detected:")
+                for anomaly in result['anomalies']:
+                    print(f"ASGSCode: {anomaly['ASGSCode']}")
+                    print(f"Anomaly Years: {anomaly['AnomalyYears']}")
+                    
+    except Exception as e:
+        logging.error(f"Error performing outlier detection on residuals: {e}")
+        raise
+
 def main():
     try:
+        # SQL Server connection
         sql_server_conn = connect_to_database()
+        
+        # Fetch data from SQL Server
         df = fetch_data_with_checks(sql_server_conn)
+        # Perform checks
         perform_negative_checks(df)
         perform_sanity_checks(df)
         perform_outlier_checks(df)
+        perform_ml_anomaly_detection(df)
+        perform_bayesian_change_point_detection(df)
+        detect_outliers_on_residuals(df)
+
+        # Clean up connections
         sql_server_conn.close()
         logging.info("Database connections closed.")
     
