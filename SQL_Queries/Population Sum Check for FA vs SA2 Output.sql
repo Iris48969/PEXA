@@ -7,33 +7,9 @@ WITH SA2List AS (
 
 -- Sum the population for each SA2 and the corresponding FAs
 SELECT 
-    SA2List.ASGSCode AS SA2,
-    -- Sum of Population at the SA2 Level
-    SUM(ERP.Number) AS "Sum of Population by SA2",
-    -- Sum of Population by FA under each SA2
-    (
-        SELECT SUM(E2.Number)
-        FROM forecasts.dbo.ERP AS E2
-        WHERE E2.ASGS_2016 IN (
-            SELECT AreasAsgs.ASGSCode
-            FROM forecasts.dbo.AreasAsgs
-            WHERE AreasAsgs.Parent = SA2List.ASGSCode
-        )
-    ) AS "Sum of Population by FA",
-
-    -- Show a difference if difference is > 1, otherwise show NULL
-    SUM(ERP.Number) - (
-        SELECT SUM(E2.Number)
-        FROM forecasts.dbo.ERP AS E2
-        WHERE E2.ASGS_2016 IN (
-            SELECT AreasAsgs.ASGSCode
-            FROM forecasts.dbo.AreasAsgs
-            WHERE AreasAsgs.Parent = SA2List.ASGSCode
-        )
-    ) AS Difference,
-
-    -- Reason for the difference
-    'Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2' AS Reason
+    SA2List.ASGSCode AS Code,
+    'SA2' AS "Region Type",
+    'Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2' AS Description
 
 FROM 
     forecasts.dbo.ERP AS ERP
@@ -52,4 +28,4 @@ HAVING
         )
     )) > 1
 ORDER BY 
-    SA2
+    SA2List.ASGSCode;

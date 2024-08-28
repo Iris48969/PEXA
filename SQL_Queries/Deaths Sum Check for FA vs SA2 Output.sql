@@ -7,33 +7,9 @@ WITH SA2List AS (
 
 -- Sum the deaths for each SA2 and the corresponding FAs
 SELECT 
-    SA2List.ASGSCode AS SA2,
-    -- Sum of Deaths at the SA2 Level
-    SUM(Deaths.Number) AS "Sum of Deaths by SA2",
-    -- Sum of Deaths by FA under each SA2
-    (
-        SELECT SUM(D2.Number)
-        FROM forecasts.dbo.Deaths AS D2
-        WHERE D2.ASGSCode IN (
-            SELECT AreasAsgs.ASGSCode
-            FROM forecasts.dbo.AreasAsgs
-            WHERE AreasAsgs.Parent = SA2List.ASGSCode
-        )
-    ) AS "Sum of Deaths by FA",
-
-    -- Show a difference if difference is > 1, otherwise show NULL
-    SUM(Deaths.Number) - (
-        SELECT SUM(D2.Number)
-        FROM forecasts.dbo.Deaths AS D2
-        WHERE D2.ASGSCode IN (
-            SELECT AreasAsgs.ASGSCode
-            FROM forecasts.dbo.AreasAsgs
-            WHERE AreasAsgs.Parent = SA2List.ASGSCode
-        )
-    ) AS Difference,
-
-    -- Reason for the difference
-    'Mismatch between sum of Deaths at SA2 level vs. sum of FAs within this SA2' AS Reason
+    SA2List.ASGSCode AS Code,
+    'SA2' AS "Region Type",
+    'Mismatch between sum of Deaths at SA2 level vs. sum of FAs within this SA2' AS Description
 
 FROM 
     forecasts.dbo.Deaths AS Deaths
@@ -52,4 +28,4 @@ HAVING
         )
     )) > 1
 ORDER BY 
-    SA2;
+    SA2List.ASGSCode;
