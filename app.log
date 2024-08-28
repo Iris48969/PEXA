@@ -1,13 +1,13 @@
-2024-08-28 14:43:25 - INFO - log set up done, start running the file
-2024-08-28 14:43:26 - INFO - Note: NumExpr detected 10 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
-2024-08-28 14:43:26 - INFO - NumExpr defaulting to 8 threads.
-2024-08-28 14:43:26 - INFO - Connection to database was done
-2024-08-28 14:43:26 - INFO - Try to execute spike check
-2024-08-28 14:43:26 - INFO - Query file opened
-2024-08-28 14:43:27 - INFO - Query data returned
-2024-08-28 14:43:27 - INFO - spike check done
-2024-08-28 14:43:27 - INFO - Try to execute shape check
-2024-08-28 14:43:27 - INFO - Query file opened
-2024-08-28 14:43:28 - INFO - Query data returned
-2024-08-28 14:43:28 - INFO - shape check done
-2024-08-28 14:43:28 - INFO - reformat the output as dictionary
+2024-08-28 15:22:08 - INFO - log set up done, start running the file
+2024-08-28 15:22:09 - INFO - Note: NumExpr detected 10 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-08-28 15:22:09 - INFO - NumExpr defaulting to 8 threads.
+2024-08-28 15:22:09 - INFO - Connection to database was done
+2024-08-28 15:22:09 - INFO - Try to execute spike check
+2024-08-28 15:22:09 - INFO - Query file opened
+2024-08-28 15:22:10 - INFO - Query data returned
+2024-08-28 15:22:11 - INFO - spike check done
+2024-08-28 15:22:11 - INFO - Try to execute shape check
+2024-08-28 15:22:11 - INFO - Query file opened
+2024-08-28 15:22:12 - INFO - Query data returned
+2024-08-28 15:22:13 - INFO - shape check done
+2024-08-28 15:22:13 - INFO - reformat the output as dictionary

@@ -37,7 +37,10 @@ def spike_check(conn):
 
         def check_outliers(data_list):
             """
-            This function determine if there are outliers from the input data list
+            This function determine if there are outliers from the input data list.
+            the rule of outlier is if the growth of population is more 5*IQR away from
+            Q1 and Q3 + if the growth rate is more than 0.005 or less than 0.005 (ignoring
+            small changes)
 
             input: list of digit
             output: True if there are outliers and False if there are not outliers 
@@ -48,7 +51,8 @@ def spike_check(conn):
             lower_bound = Q1 - 5 * IQR
             upper_bound = Q3 + 5 * IQR
             for data in data_list:
-                if data > upper_bound or data < lower_bound: return True
+                if abs(data) > 0.005:
+                    if data > upper_bound or data < lower_bound: return True
             return False
         # creating a percentage change df for ERP
         rate_of_change = wide_df.pct_change()
@@ -99,7 +103,7 @@ def trend_shape_check(conn):
             This function is used to convert the timeseries data into a string containing
             "+", "-" and "0". 
             for example, if the data_list is [1,0,-1], it will be convered to "+0-"
-            if data is > 0.001, it will be convert to "+", if data is < -0.001, it will
+            if data is > 0.005, it will be convert to "+", if data is < -0.005, it will
             be convert to "-", if it is inbetween it will be convered to "0"
             """
             output_string = ""

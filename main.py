@@ -51,10 +51,10 @@ except:
 # execute the checks 
 try:
     logging.info("Try to execute spike check")
-    result = spike_check(conn) # so far filter out 375 region
+    result = spike_check(conn) # so far filter out 327 region
     logging.info("spike check done")
     logging.info("Try to execute shape check")
-    result += trend_shape_check(conn) # so far filter out 408 region
+    result += trend_shape_check(conn) # so far filter out 360 region
     logging.info("shape check done")
 except Exception as e:
     logging.error(e)
@@ -72,4 +72,4 @@ except Exception as e:
     logging.error(e)
 
 # print(output_dict[41032290])
-# print(len(output_dict.keys()))
+print(len(output_dict.keys()))
