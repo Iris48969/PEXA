@@ -1,0 +1,5 @@
+2024-08-28 10:29:07 - INFO - log set up done, start running the file
+2024-08-28 10:29:07 - ERROR - cannot import name 'second_check' from 'checks' (/Users/shauncai/Desktop/id_project/PEXA/checks.py)
+2024-08-28 10:29:07 - INFO - Connection to database was done
+2024-08-28 10:29:07 - INFO - Try to execute first check
+2024-08-28 10:29:07 - INFO - first check done
