@@ -5,8 +5,64 @@ import pandas as pd
 import os
 import logging
 import re
+import numpy as np
 def first_check(conn, parameter2):
     pass
+
+def spike_check(conn):
+    """
+    The purpose of this function is to identify abnormal spike/drop of population forecast
+    in a timeseries format.
+
+    input: connection
+    output: list of list which contains [region code, region type, description]
+    """
+    try:
+        # getting queries
+        ERP_query= open(os.path.abspath("SQL_Queries/ERP_table(FA&SA2).sql"),'r').read()
+        area_type_query = open(os.path.abspath("SQL_Queries/Area_type.sql"),'r').read()
+        logging.info("Query file opened")
+
+        # execute queries
+        cursor = conn.cursor()
+        cursor.execute(ERP_query)
+        data = cursor.fetchall()
+        df = pd.DataFrame(data)
+        wide_df = df.pivot_table(index='ERPYear', columns='ASGS_2016', values='ERP')
+        cursor.execute(area_type_query)
+        area_type = cursor.fetchall()
+        area_type = pd.DataFrame(area_type)
+        area_dict = area_type.set_index('ASGSCode').to_dict()['RegionType']
+        logging.info("Query data returned")
+
+        def check_outliers(data_list):
+            """
+            This function determine if there are outliers from the input data list
+
+            input: list of digit
+            output: True if there are outliers and False if there are not outliers 
+            """
+            Q1 = np.percentile(data_list, 25)
+            Q3 = np.percentile(data_list, 75)
+            IQR = Q3 - Q1
+            lower_bound = Q1 - 5 * IQR
+            upper_bound = Q3 + 5 * IQR
+            for data in data_list:
+                if data > upper_bound or data < lower_bound: return True
+            return False
+        # creating a percentage change df for ERP
+        rate_of_change = wide_df.pct_change()
+        rate_of_change = rate_of_change.drop(rate_of_change.index[0])
+
+        output_list = []
+
+        # perform checks and output result
+        for region in wide_df.columns:
+            if check_outliers(rate_of_change[region][1:]):
+                output_list.append([region, area_dict[region], "Suddent spike or drop detected"])
+        return output_list
+    except Exception as e:
+        logging.error(e)
 
 def trend_shape_check(conn):
     """
