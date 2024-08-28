@@ -75,6 +75,3 @@ try:
     logging.info("Population check done")
 except Exception as e:
     logging.error(f"Population check failed: {e}")
-    
-
-print(population_check_output)
