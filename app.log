@@ -1,5 +1,18 @@
-2024-08-28 10:51:38 - INFO - log set up done, start running the file
-2024-08-28 10:51:38 - ERROR - cannot import name 'second_check' from 'checks' (/Users/shauncai/Desktop/id_project/PEXA/checks.py)
-2024-08-28 10:51:38 - INFO - Connection to database was done
-2024-08-28 10:51:38 - INFO - Try to execute first check
-2024-08-28 10:51:38 - INFO - first check done
+2024-08-28 11:48:08 - INFO - log set up done, start running the file
+2024-08-28 11:48:08 - INFO - Connection to database was done
+2024-08-28 11:48:08 - INFO - Try to execute births check
+2024-08-28 11:48:08 - INFO - Births region level sum check query opened
+2024-08-28 11:48:08 - INFO - Births region level sum check query executed
+2024-08-28 11:48:08 - INFO - Births check done
+2024-08-28 11:48:08 - INFO - Try to execute deaths check
+2024-08-28 11:48:08 - INFO - Deaths region level sum check query opened
+2024-08-28 11:48:09 - INFO - Deaths region level sum check query executed
+2024-08-28 11:48:09 - INFO - Deaths check done
+2024-08-28 11:48:09 - INFO - Try to execute household check
+2024-08-28 11:48:09 - INFO - Household region level sum check query opened
+2024-08-28 11:48:09 - INFO - Household region level sum check query executed
+2024-08-28 11:48:09 - INFO - Household check done
+2024-08-28 11:48:09 - INFO - Try to execute population check
+2024-08-28 11:48:09 - INFO - Population region level sum check query opened
+2024-08-28 11:48:10 - INFO - Population region level sum check query executed
+2024-08-28 11:48:10 - INFO - Population check done

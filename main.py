@@ -1,10 +1,9 @@
 """
-file call the functions
+This file calls the functions for the checks
 """
-
-import pymssql
 import logging
 import platform
+import pandas as pd
 
 # set up basic configuration for logging
 logging.basicConfig(
@@ -18,7 +17,7 @@ logging.info("log set up done, start running the file")
 
 # import check functions into main
 try:
-    from checks import first_check, second_check
+    from checks import births_region_level_sum_check, deaths_region_level_sum_check, household_region_level_sum_check, population_region_level_sum_check
 except Exception as e:
     logging.error(e)
 
@@ -50,9 +49,32 @@ except:
 
 # execute the checks 
 try:
-    logging.info("Try to execute first check")
-    first_check(conn, parameter2=...)
-    logging.info("first check done")
+    logging.info("Try to execute births check")
+    births_check_output = births_region_level_sum_check(conn)
+    logging.info("Births check done")
 except Exception as e:
-    logging.error(f"First check was failed: {e}")
+    logging.error(f"Births check failed: {e}")
+
+try:
+    logging.info("Try to execute deaths check")
+    deaths_check_output = deaths_region_level_sum_check(conn)
+    logging.info("Deaths check done")
+except Exception as e:
+    logging.error(f"Deaths check failed: {e}")
+
+try:
+    logging.info("Try to execute household check")
+    household_check_output = household_region_level_sum_check(conn)
+    logging.info("Household check done")
+except Exception as e:
+    logging.error(f"Household check failed: {e}")
+
+try:
+    logging.info("Try to execute population check")
+    population_check_output = population_region_level_sum_check(conn)
+    logging.info("Population check done")
+except Exception as e:
+    logging.error(f"Population check failed: {e}")
     
+
+print(population_check_output)
