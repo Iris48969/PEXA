@@ -1,192 +1,195 @@
+import os
+import csv
+import logging
+import psycopg2  # type: ignore
+import datetime
 import pyodbc
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def connect_to_database():
-    """
-    Establish a connection to the SQL Server database.
+# Set up logging
+my_date = datetime.datetime.now().strftime('%Y%m%d')
+logFile = os.path.join(os.path.abspath("" + my_date + ".log"))  
+logging.basicConfig(
+    filename=logFile,
+    filemode='a',
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s %(message)s',
+)
 
-    Returns:
-    - connection (pyodbc.Connection): A connection object to interact with the database.
-    """
+def connect_to_database():
+    '''
+    This function creates a connection to the database  
+    '''
     try:
-        conn = pyodbc.connect('Driver={SQL Server};'
-                              'Server=localhost;'
-                              'Database=forecasts;'
-                              'UID=sa;'
-                              'PWD=MBS_project_2024')
+        logging.info("Connecting to SQL Server database...")
+        conn = pyodbc.connect(
+            'Driver={SQL Server};'
+            'Server=localhost;'
+            'Database=forecasts;'
+            'UID=sa;'
+            'PWD=MBS_project_2024'
+        )
+        logging.info("Successfully connected to SQL Server database.")
         return conn
     except Exception as e:
-        print(f"Error connecting to database: {e}")
+        logging.error(f"Error connecting to SQL Server database: {e}")
         raise
 
-def fetch_data(query, connection):
-    """
-    Execute a SQL query and fetch the results into a Pandas DataFrame.
-
-    Parameters:
-    - query (str): The SQL query to execute.
-    - connection (pyodbc.Connection): The database connection object.
-
-    Returns:
-    - pd.DataFrame: DataFrame containing the query results.
-    """
+def fetch_data_with_checks(conn):
+    '''
+    This function loads the SQL file and reads it and stores it in dataframe
+    '''
+    with open(os.path.abspath('C:/Users/Shrvan/Downloads/A-lab/pyforecasts/pyforecasts/SQL_file.sql'), 'r') as file:
+            query = file.read()
     try:
-        with connection.cursor() as cursor:
-            cursor.execute(query)
-            rows = cursor.fetchall()
-            columns = [column[0] for column in cursor.description] if cursor.description else []
-            if not columns:
-                return pd.DataFrame()
-            return pd.DataFrame.from_records(rows, columns=columns)
+        logging.info("Fetching data from SQL Server...")
+        df = pd.read_sql(query, conn)
+        logging.info("Data fetched successfully.")
+        return df
     except Exception as e:
-        print(f"An error occurred: {e}")
+        logging.error(f"Error fetching data: {e}")
         raise
 
-def check_missing_lat_long(df_areas_asgs):
-    """
-    Check for missing latitude and longitude values in the AreasAsgs DataFrame.
+def perform_negative_checks(df):
+    '''
+    This function checks for Negative values in tables Births, Deaths, ERP
+    '''
+    try:
+        logging.info("Performing negative checks...")
+        negative_births = df[(df['DataType'] == 'Births') & (df['Total'] < -10) & (df['RegionType'] == 'FA')]
+        if negative_births.empty:
+            print("\n****************** CHECK 1: No Negative Births Values Found.")
+        else:
+            print(f"\n****************** CHECK 1: Checking for Negative values in Births Table")
+            print(f"\nFound {negative_births.shape[0]} rows with Negative Births")
+            print(negative_births['ASGSCode'].unique())
+    
+        negative_deaths = df[(df['DataType'] == 'Deaths') & (df['Total'] < -10) & (df['RegionType'] == 'FA')]
+        if negative_deaths.empty:
+            print("\n****************** CHECK 2: No Negative Deaths Values Found.")
+        else:
+            print(f"\n****************** CHECK 2: Checking for Negative values in Deaths Table")
+            print(f"\nFound {negative_deaths.shape[0]} rows with Negative Deaths")
+            print(negative_deaths['ASGSCode'].unique())
+    
+        negative_erp = df[(df['DataType'] == 'ERP') & (df['Total'] < -10)]
+        if negative_erp.empty:
+            print("\n****************** CHECK 3: No Negative ERP Values Found.")
+        else:
+            print(f"\n****************** CHECK 3:  Checking for Negative values in ERP Table ")
+            print(f"\nFound {negative_erp.shape[0]} rows with Negative ERP")
+            print(negative_erp['ASGSCode'].unique())
+    except Exception as e:
+        logging.error(f"Error performing negative checks: {e}")
+        raise
 
-    Parameters:
-    - df_areas_asgs (pd.DataFrame): DataFrame containing AreasAsgs data.
+def perform_sanity_checks(df):
+    '''
+    This function performs checks zero values, missing values, duplicate values in Births, Deaths, ERP
+    '''
+    try:
+        logging.info("Performing sanity checks...")
+        zero_births = df[(df['DataType'] == 'Births') & (df['Total'] == 0)]
+        zero_deaths = df[(df['DataType'] == 'Deaths') & (df['Total'] == 0)]
+        zero_population = df[(df['DataType'] == 'ERP') & (df['Total'] == 0)]
+        print("\n****************** CHECK 4: Checking for Zero Values")
+        print(f"Count of rows with Zero Births: {zero_births.shape[0]}")
+        print(f"Count of rows with Zero Deaths: {zero_deaths.shape[0]}")
+        print(f"Count of rows with Zero Population: {zero_population.shape[0]}")
 
-    This function groups the data by 'ASGS' and 'RegionType', checks if latitude 
-    or longitude values are missing, and prints the Year, RegionType, and count of missing values.
-    """
-    df_filtered = df_areas_asgs[df_areas_asgs['RegionType'].isin(['SA2', 'FA'])].copy()
-    df_filtered.loc[:, 'Missing_Latitude'] = df_filtered['Latitude'].isnull().astype(int)
-    df_filtered.loc[:, 'Missing_Longitude'] = df_filtered['Longitude'].isnull().astype(int)
-
-    df_missing = df_filtered.groupby(['ASGS', 'RegionType']).agg(
-        Total_Missing=('Missing_Latitude', 'sum')
-    ).reset_index()
-
-    print("\nMissing Latitude/Longitude Check (SA2 and FA regions):")
-    print(df_missing)
-
-
-def check_negative_values(df_erp, df_areas_asgs):
-    """
-    Check for records with negative population values in the SA2 and FA region types.
-
-    Parameters:
-    - df_erp (pd.DataFrame): DataFrame containing ERP data.
-    - df_areas_asgs (pd.DataFrame): DataFrame containing AreasAsgs data.
-
-    This function calculates the total number of negative population values in the 
-    SA2 and FA region types and prints these counts along with the corresponding ASGSCodes.
-    """
-    df_merged = df_erp.merge(df_areas_asgs, left_on='ASGS_2016', right_on='ASGSCode')
-    df_negative = df_merged[df_merged['Number'] < 0]
-    df_filtered = df_negative[df_negative['RegionType'].isin(['SA2', 'FA'])]
-
-    for region in ['SA2', 'FA']:
-        df_region = df_filtered[df_filtered['RegionType'] == region]
-        total_negatives = df_region.shape[0]
-        asgs_codes = df_region['ASGSCode'].unique()
-
-        print(f"\nTotal Negative Values in {region}: {total_negatives}")
-        print(f"ASGSCodes with Negative Values in {region}:")
-        print(asgs_codes)
-
-def check_sa2_consistency_households(df_erp, df_areas_asgs):
-    """
-    Check for consistency of ASGS codes between the erp DataFrame and AreasAsgs DataFrame.
-
-    Parameters:
-    - df_erp (pd.DataFrame): DataFrame containing population data.
-    - df_areas_asgs (pd.DataFrame): DataFrame containing AreasAsgs data.
-
-    This function identifies records in the erp data that do not have a matching
-    entry in the AreasAsgs data, indicating potential inconsistencies in the SA2 codes.
-    """
-
-    df_erp_missing = df_erp.merge(df_areas_asgs, left_on='ASGSCode', right_on='ASGSCode', how='left', indicator=True)
-    df_erp_missing = df_erp_missing[df_erp_missing['_merge'] == 'left_only']
-    if df_erp_missing.empty:
-        print("\nSA2 in ERP Code Consistency Check: Passed")
-    else:
-        print("\nSA2 in ERP Code Consistency Check:")
-        print(df_erp_missing)
-
-def check_sa2outliers(df_erp, df_areas_asgs):
-    """
-    Checks for outliers in the growth rate for each SA2 region 
-    for each ERPYear using IQR. Only outliers in growth rate are reported.
-
-    Parameters:
-    - df_erp (DataFrame): The ERP data.
-    - df_areas_asgs (DataFrame): The AreasAsgs data.
-
-    This function merges ERP and AreasAsgs to get relevant population data, calculates the growth rates 
-    of each SA2 region, and detects outliers in growth rate using IQR.
-    """
-    df_population = df_erp.merge(df_areas_asgs, left_on='ASGS_2016', right_on='ASGSCode')
-    df_population = df_population[df_population['RegionType'] == 'SA2']
-    df_population = df_population.groupby(['ASGSCode', 'ERPYear'])['Number'].sum().reset_index()
-    df_population.rename(columns={'Number': 'Population'}, inplace=True)
-    df_population['Population'] = df_population['Population'].fillna(0)
-    df_population.replace([float('inf'), -float('inf')], 0, inplace=True)
-    df_population.sort_values(by=['ASGSCode', 'ERPYear'], inplace=True)
-    df_population['GrowthRate'] = df_population.groupby('ASGSCode')['Population'].pct_change() * 100
-    df_population['GrowthRate'] = df_population['GrowthRate'].fillna(0)
-    df_population.replace([float('inf'), -float('inf')], 0, inplace=True)
-
-    # Function to detect outliers using IQR for GrowthRate
-    def detect_growth_rate_outliers(group):
-        if group['GrowthRate'].dropna().empty:
-            return pd.DataFrame()  
+        if not zero_births.empty:
+            print("\nUnique ASGS Codes with Zero Births:")
+            print(zero_births['ASGSCode'].unique())
         
-        Q1_growth = group['GrowthRate'].quantile(0.25)
-        Q3_growth = group['GrowthRate'].quantile(0.75)
-        IQR_growth = Q3_growth - Q1_growth
-        lower_bound_growth = Q1_growth - 1.5 * IQR_growth
-        upper_bound_growth = Q3_growth + 1.5 * IQR_growth
-
-        outliers_growth = group[(group['GrowthRate'] < lower_bound_growth) | (group['GrowthRate'] > upper_bound_growth)]
-
-        if not outliers_growth.empty:
-            print(f"Outliers detected in GrowthRate for ASGSCode {group.name[0]} (ERPYear {group.name[1]}):")
-            print(outliers_growth[['ASGSCode', 'ERPYear', 'GrowthRate']])
+        if not zero_deaths.empty:
+            print("\nUnique ASGS Codes with Zero Deaths:")
+            print(zero_deaths['ASGSCode'].unique())
         
-        return outliers_growth[['ASGSCode', 'ERPYear', 'GrowthRate']]
+        if not zero_population.empty:
+            print("\nUnique ASGS Codes with Zero Population:")
+            print(zero_population['ASGSCode'].unique())
 
-    # Apply the function to each group
-    #outliers = df_population.groupby(['ASGSCode', 'ERPYear'], group_keys=False).apply(detect_growth_rate_outliers).reset_index(drop=True)
-    grouped = df_population.groupby(['ASGSCode', 'ERPYear'])
-    outliers = grouped.apply(lambda x: detect_growth_rate_outliers(x)).reset_index(drop=True)
+        # Check for missing values
+        missing_values = df.isnull().sum()
+        if missing_values.any():
+            print("\n****************** CHECK 5: Missing Values detected in the following columns:")
+            print(missing_values[missing_values > 0])
+        else:
+            print("\n****************** CHECK 5: No missing values detected in the dataset.")
 
-    # Check if outliers DataFrame is empty
-    if outliers.empty:
-        print("\nSA2 Growth Rate Outlier Check: Passed")
-    else:
-        print("\nSA2 Growth Rate Outlier Check:")
-        print(outliers)
+        # Check for duplicate records
+        duplicates = df[df.duplicated()]
+        if not duplicates.empty:
+            print(f"\n****************** CHECK 6: Count of Duplicate Records: {duplicates.shape[0]}")
+        else:
+            print("\n****************** CHECK 6: No duplicate entries found.")
+    except Exception as e:
+        logging.error(f"Error performing sanity checks: {e}")
+        raise
+
+def perform_outlier_checks(df):
+    '''
+    This function performs outlier detection in ERP table at SA2 and FA levels.
+    '''
+    try:
+        logging.info("Performing outlier checks...")
+        # Filter for ERP data at both SA2 and FA levels
+        df = df[(df['DataType'] == 'ERP') & (df['RegionType'].isin(['SA2', 'FA']))]
+        # Separate the data by RegionType
+        results = {}
+        for region_type in df['RegionType'].unique():
+            region_df = df[df['RegionType'] == region_type]
+            # Pivot the DataFrame to get wide format
+            wide_df = region_df.pivot_table(index='ASGSCode', columns='Year', values='Total')
+            wide_df = wide_df.dropna()
+            # Calculate the population growth rate in percentage
+            growth_rates = wide_df.pct_change(axis=1) * 100
+            growth_rates = growth_rates.dropna()
+            # Flatten the growth rates for outlier detection
+            flat_growth_rates = growth_rates.stack().reset_index(name='GrowthRate')
+
+            Q1 = flat_growth_rates['GrowthRate'].quantile(0.25)
+            Q3 = flat_growth_rates['GrowthRate'].quantile(0.75)
+            IQR = Q3 - Q1
+
+            outliers = flat_growth_rates[(flat_growth_rates['GrowthRate'] < (Q1 - 1.5 * IQR)) |
+                                         (flat_growth_rates['GrowthRate'] > (Q3 + 1.5 * IQR))]
+
+            results[region_type] = {
+                'num_rows': len(region_df),
+                'num_outliers': len(outliers),
+                'outliers': outliers[['ASGSCode', 'Year', 'GrowthRate']] if not outliers.empty else 'No outliers found.'
+            }
+        print("\n****************** CHECK 7: OUTLIER CHECK******************")
+        for region_type, result in results.items():
+            print(f"\nRegionType: {region_type}")
+            print(f"Number of rows: {result['num_rows']}")
+            print(f"Number of outliers found: {result['num_outliers']}")
+            if result['num_outliers'] != 'No outliers found.':
+                print("Outliers Details:")
+                print(result['outliers'])
+            else:
+                print(result['outliers'])
+
+    except Exception as e:
+        logging.error(f"Error performing outlier checks: {e}")
+        raise
 
 def main():
-    """
-    Main function to execute the data quality checks and analysis.
+    try:
+        sql_server_conn = connect_to_database()
+        df = fetch_data_with_checks(sql_server_conn)
+        perform_negative_checks(df)
+        perform_sanity_checks(df)
+        perform_outlier_checks(df)
+        sql_server_conn.close()
+        logging.info("Database connections closed.")
+    
+    except Exception as e:
+        logging.error(f"An error occurred in the main function: {e}")
 
-    This function establishes a connection to the database, fetches necessary data,
-    performs data quality checks, analyzes the SA2 population, and then closes the
-    database connection.
-    """
-    connection = connect_to_database()
-
-    # Fetch tables
-    df_areas_asgs = fetch_data("SELECT * FROM AreasAsgs", connection)
-    df_erp = fetch_data("SELECT * FROM ERP", connection)
-    df_households = fetch_data("SELECT * FROM Households", connection)
-
-    # Perform checks
-    check_missing_lat_long(df_areas_asgs)
-    check_negative_values(df_erp, df_areas_asgs)
-    check_sa2_consistency_households(df_households, df_areas_asgs)
-    check_sa2outliers(df_erp, df_areas_asgs)
-
-    connection.close()
-
-# Run the main function
 if __name__ == "__main__":
     main()
