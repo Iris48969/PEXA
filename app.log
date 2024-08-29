@@ -1,9 +1,9 @@
-2024-08-29 12:44:20 - INFO - Log set up done, start running the file
-2024-08-29 12:44:21 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
-2024-08-29 12:44:21 - INFO - NumExpr defaulting to 8 threads.
-2024-08-29 12:44:22 - INFO - Connection to database was successful
-2024-08-29 12:44:22 - INFO - Trying to execute household check
-2024-08-29 12:44:22 - INFO - Query file opened
-2024-08-29 12:44:23 - INFO - Query data returned
-2024-08-29 12:44:23 - INFO - Household check completed successfully
-2024-08-29 12:44:23 - INFO - Found 65 unique outlier ASGS codes.
+2024-08-29 13:06:01 - INFO - Log set up done, start running the file
+2024-08-29 13:06:02 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-08-29 13:06:02 - INFO - NumExpr defaulting to 8 threads.
+2024-08-29 13:06:03 - INFO - Connection to database was successful
+2024-08-29 13:06:03 - INFO - Trying to execute household check
+2024-08-29 13:06:03 - INFO - Query file opened
+2024-08-29 13:06:04 - INFO - Query data returned
+2024-08-29 13:06:04 - INFO - Household check completed successfully
+2024-08-29 13:06:04 - INFO - Found 69 unique outlier ASGS codes.

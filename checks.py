@@ -48,13 +48,9 @@ def household_check(conn):
 
             # Calculate the ratio of Population to HouseholdCount
             merged_df['Ratio'] = merged_df['Pop_Number'] / merged_df['Household_Number']
-            low_population_threshold = 100
-
+            
             # Apply the filtering conditions
-            outliers_df = merged_df[
-                ((merged_df['Pop_Number'] < low_population_threshold) & (merged_df['Ratio'] > 2)) |
-                ((merged_df['Pop_Number'] >= low_population_threshold) & ((merged_df['Ratio'] > 5) | (merged_df['Ratio'] < 1)))
-            ]
+            outliers_df = merged_df[(merged_df['Ratio'] >= 5) | (merged_df['Ratio'] <= 1)]
 
             # Get unique ASGSCode values that need to be checked
             unique_outlier_asgs_codes = outliers_df['ASGSCode'].unique()
