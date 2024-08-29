@@ -205,14 +205,16 @@ def trend_shape_check(conn):
         logging.info("Query file opened")
 
         # execute queries
-        cursor = conn.cursor()
-        cursor.execute(ERP_query)
-        data = cursor.fetchall()
-        df = pd.DataFrame(data)
+        # cursor = conn.cursor()
+        # cursor.execute(ERP_query)
+        # data = cursor.fetchall()
+        # df = pd.DataFrame(data)
+        df = execute_sql_query(conn=conn, sql_query=ERP_query)
         wide_df = df.pivot_table(index='ERPYear', columns='ASGS_2016', values='ERP')
-        cursor.execute(area_type_query)
-        area_type = cursor.fetchall()
-        area_type = pd.DataFrame(area_type)
+        # cursor.execute(area_type_query)
+        # area_type = cursor.fetchall()
+        # area_type = pd.DataFrame(area_type)
+        area_type = execute_sql_query(conn=conn, sql_query=area_type_query)
         area_dict = area_type.set_index('ASGSCode').to_dict()['RegionType']
         logging.info("Query data returned")
 

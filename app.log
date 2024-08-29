@@ -1,38 +1,40 @@
-2024-08-29 16:41:00 - INFO - Log set up done, start running the file
-2024-08-29 16:41:01 - INFO - Connection to database was successful
-2024-08-29 16:41:01 - INFO - Trying to execute household check
-2024-08-29 16:41:03 - INFO - sql execute done
-2024-08-29 16:41:03 - INFO - data returned
-2024-08-29 16:41:03 - INFO - Outlier dataframe found
-2024-08-29 16:41:03 - INFO - Household check completed successfully
-2024-08-29 16:41:03 - INFO - Found 671 unique outlier ASGS codes.
-2024-08-29 16:41:03 - INFO - Try to execute births check
-2024-08-29 16:41:03 - INFO - Births region level sum check query opened
-2024-08-29 16:41:03 - INFO - sql execute done
-2024-08-29 16:41:03 - INFO - Births region level sum check query executed
-2024-08-29 16:41:03 - INFO - Births check done
-2024-08-29 16:41:03 - INFO - Try to execute deaths check
-2024-08-29 16:41:03 - INFO - Deaths region level sum check query opened
-2024-08-29 16:41:04 - INFO - sql execute done
-2024-08-29 16:41:04 - INFO - Deaths region level sum check query executed
-2024-08-29 16:41:04 - INFO - Deaths check done
-2024-08-29 16:41:04 - INFO - Try to execute household check
-2024-08-29 16:41:04 - INFO - Household region level sum check query opened
-2024-08-29 16:41:04 - INFO - sql execute done
-2024-08-29 16:41:04 - INFO - Household region level sum check query executed
-2024-08-29 16:41:04 - INFO - Household check done
-2024-08-29 16:41:04 - INFO - Try to execute population check
-2024-08-29 16:41:04 - INFO - Population region level sum check query opened
-2024-08-29 16:41:05 - INFO - sql execute done
-2024-08-29 16:41:05 - INFO - Population region level sum check query executed
-2024-08-29 16:41:05 - INFO - Population check done
-2024-08-29 16:41:05 - INFO - Try to execute spike check
-2024-08-29 16:41:05 - INFO - Query file opened
-2024-08-29 16:41:05 - INFO - sql execute done
-2024-08-29 16:41:05 - INFO - sql execute done
-2024-08-29 16:41:05 - INFO - Query data returned
-2024-08-29 16:41:06 - INFO - spike check done
-2024-08-29 16:41:06 - INFO - Try to execute shape check
-2024-08-29 16:41:06 - INFO - Query file opened
-2024-08-29 16:41:06 - INFO - Query data returned
-2024-08-29 16:41:07 - INFO - shape check done
+2024-08-29 16:51:08 - INFO - Log set up done, start running the file
+2024-08-29 16:51:08 - INFO - Connection to database was successful
+2024-08-29 16:51:08 - INFO - Trying to execute household check
+2024-08-29 16:51:11 - INFO - sql execute done
+2024-08-29 16:51:11 - INFO - data returned
+2024-08-29 16:51:11 - INFO - Outlier dataframe found
+2024-08-29 16:51:11 - INFO - Household check completed successfully
+2024-08-29 16:51:11 - INFO - Found 671 unique outlier ASGS codes.
+2024-08-29 16:51:11 - INFO - Try to execute births check
+2024-08-29 16:51:11 - INFO - Births region level sum check query opened
+2024-08-29 16:51:11 - INFO - sql execute done
+2024-08-29 16:51:11 - INFO - Births region level sum check query executed
+2024-08-29 16:51:11 - INFO - Births check done
+2024-08-29 16:51:11 - INFO - Try to execute deaths check
+2024-08-29 16:51:11 - INFO - Deaths region level sum check query opened
+2024-08-29 16:51:12 - INFO - sql execute done
+2024-08-29 16:51:12 - INFO - Deaths region level sum check query executed
+2024-08-29 16:51:12 - INFO - Deaths check done
+2024-08-29 16:51:12 - INFO - Try to execute household check
+2024-08-29 16:51:12 - INFO - Household region level sum check query opened
+2024-08-29 16:51:12 - INFO - sql execute done
+2024-08-29 16:51:12 - INFO - Household region level sum check query executed
+2024-08-29 16:51:12 - INFO - Household check done
+2024-08-29 16:51:12 - INFO - Try to execute population check
+2024-08-29 16:51:12 - INFO - Population region level sum check query opened
+2024-08-29 16:51:12 - INFO - sql execute done
+2024-08-29 16:51:12 - INFO - Population region level sum check query executed
+2024-08-29 16:51:12 - INFO - Population check done
+2024-08-29 16:51:12 - INFO - Try to execute spike check
+2024-08-29 16:51:12 - INFO - Query file opened
+2024-08-29 16:51:13 - INFO - sql execute done
+2024-08-29 16:51:13 - INFO - sql execute done
+2024-08-29 16:51:13 - INFO - Query data returned
+2024-08-29 16:51:13 - INFO - spike check done
+2024-08-29 16:51:13 - INFO - Try to execute shape check
+2024-08-29 16:51:13 - INFO - Query file opened
+2024-08-29 16:51:14 - INFO - sql execute done
+2024-08-29 16:51:14 - INFO - sql execute done
+2024-08-29 16:51:14 - INFO - Query data returned
+2024-08-29 16:51:14 - INFO - shape check done

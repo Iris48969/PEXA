@@ -101,3 +101,6 @@ try:
 except Exception as e:
     logging.error(e)
 
+print(spike_output)
+
+print(shape_output)
