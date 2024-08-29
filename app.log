@@ -1,5 +1,14 @@
-2024-08-28 10:51:38 - INFO - log set up done, start running the file
-2024-08-28 10:51:38 - ERROR - cannot import name 'second_check' from 'checks' (/Users/shauncai/Desktop/id_project/PEXA/checks.py)
-2024-08-28 10:51:38 - INFO - Connection to database was done
-2024-08-28 10:51:38 - INFO - Try to execute first check
-2024-08-28 10:51:38 - INFO - first check done
+2024-08-29 11:49:20 - INFO - log set up done, start running the file
+2024-08-29 11:49:20 - ERROR - cannot import name 'first_check' from 'checks' (D:\Bingjie Jiang\OneDrive\OneDrive - The University of Melbourne\PEXA\PEXA\checks.py)
+2024-08-29 11:49:20 - INFO - Connection to database was successful
+2024-08-29 11:49:20 - INFO - Try to execute first check
+2024-08-29 11:49:20 - ERROR - First check failed: name 'first_check' is not defined
+2024-08-29 11:49:20 - INFO - Try to execute household check
+2024-08-29 11:49:20 - ERROR - Household check failed: name 'household_check' is not defined
+2024-08-29 11:51:45 - INFO - log set up done, start running the file
+2024-08-29 11:51:46 - INFO - Connection to database was successful
+2024-08-29 11:51:46 - INFO - Try to execute first check
+2024-08-29 11:51:46 - ERROR - First check failed: name 'first_check' is not defined
+2024-08-29 11:51:46 - INFO - Try to execute household check
+2024-08-29 11:51:46 - ERROR - Error occurred: [Errno 2] No such file or directory: 'D:\\Bingjie Jiang\\OneDrive\\OneDrive - The University of Melbourne\\PEXA\\PEXA\\SQL_Queries\\Household_type.sql'
+2024-08-29 11:51:46 - ERROR - Household check failed: not enough values to unpack (expected 2, got 0)
