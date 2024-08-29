@@ -17,31 +17,33 @@ def household_check(conn):
     """
 
     try:
-        # Getting queries
-        population_query = open(os.path.abspath("SQL_Queries/Population_number.sql"), 'r').read()
-        household_query = open(os.path.abspath("SQL_Queries/Household_number.sql"), 'r').read()
-        logging.info("Query file opened")
+        ratio_sql = open(os.path.abspath("SQL_Queries/household_size.sql"), 'r').read()
+        # # Getting queries
+        # population_query = open(os.path.abspath("SQL_Queries/Population_number.sql"), 'r').read()
+        # household_query = open(os.path.abspath("SQL_Queries/Household_number.sql"), 'r').read()
+        # logging.info("Query file opened")
 
-        # Execute queries
-        cursor = conn.cursor()
-        cursor.execute(population_query)
-        pop_data = cursor.fetchall()
-        pop_df = pd.DataFrame([tuple(row) for row in pop_data], columns=['ASGSCode', 'Year', 'Pop_Number'])
-        logging.info("population data returned")
+        # # Execute queries
+        # cursor = conn.cursor()
+        # cursor.execute(ratio_sql)
+        # merged_df = cursor.fetchall()
+        # merged_df = pd.DataFrame([tuple(row) for row in merged_df], columns=['ASGSCode', 'Year', 'Pop_Number', 'ratio', 'region type'])
+        # logging.info("population data returned")
 
-        cursor.execute(household_query)
-        household_data = cursor.fetchall()
-        household_df = pd.DataFrame([tuple(row) for row in household_data], columns=['ASGSCode', 'Year', 'Household_Number'])
-        logging.info("household data returned")
+        # cursor.execute(household_query)
+        # household_data = cursor.fetchall()
+        # household_df = pd.DataFrame([tuple(row) for row in household_data], columns=['ASGSCode', 'Year', 'Household_Number'])
+        # logging.info("household data returned")
 
-        merged_df = pd.merge(pop_df, household_df, on=['ASGSCode', 'Year'], how='inner')
-        logging.info("Merge of datafram done")
-
+        # merged_df = pd.merge(pop_df, household_df, on=['ASGSCode', 'Year'], how='inner')
+        # logging.info("Merge of datafram done")
+        merged_df = pd.read_sql_query(con=conn, sql= ratio_sql)
+        logging.info("data returned")
         # Calculate the ratio of Population to HouseholdCount
-        merged_df['Ratio'] = merged_df['Pop_Number'] / merged_df['Household_Number']
-        
+        # merged_df['Ratio'] = merged_df['Pop_Number'] / merged_df['Household_Number']
+        print(merged_df)
         # Apply the filtering conditions
-        outliers_df = merged_df[(merged_df['Ratio'] >= 5) | (merged_df['Ratio'] <= 1)]
+        outliers_df = merged_df[(merged_df['ratio'] >= 5) | (merged_df['ratio'] <= 1)]
         logging.info("Outlier dataframe found")
 
         # Get unique ASGSCode values that need to be checked
@@ -62,6 +64,7 @@ def births_region_level_sum_check(conn):
         sql = open(os.path.abspath("SQL_Queries/Births Sum Check for FA vs SA2 Output.sql"), 'r').read()
         logging.info("Births region level sum check query opened")
         df = pd.read_sql_query(sql, conn)
+        print(df)
         logging.info("Births region level sum check query executed")
         return df
     except Exception as e:

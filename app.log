@@ -1,6 +1,31 @@
-2024-08-29 15:16:44 - INFO - Log set up done, start running the file
-2024-08-29 15:16:44 - INFO - Connection to database was successful
-2024-08-29 15:16:44 - INFO - Trying to execute household check
-2024-08-29 15:16:44 - INFO - Query file opened
-2024-08-29 15:16:45 - INFO - population data returned
-2024-08-29 15:16:45 - INFO - household data returned
+2024-08-29 16:01:12 - INFO - Log set up done, start running the file
+2024-08-29 16:01:12 - INFO - Connection to database was successful
+2024-08-29 16:01:12 - INFO - Trying to execute household check
+2024-08-29 16:01:15 - INFO - data returned
+2024-08-29 16:01:15 - ERROR - Error occurred: '>=' not supported between instances of 'str' and 'int'
+2024-08-29 16:01:15 - ERROR - Household check failed: cannot unpack non-iterable NoneType object
+2024-08-29 16:01:15 - INFO - Try to execute births check
+2024-08-29 16:01:15 - INFO - Births region level sum check query opened
+2024-08-29 16:01:15 - INFO - Births region level sum check query executed
+2024-08-29 16:01:15 - INFO - Births check done
+2024-08-29 16:01:15 - INFO - Try to execute deaths check
+2024-08-29 16:01:15 - INFO - Deaths region level sum check query opened
+2024-08-29 16:01:15 - INFO - Deaths region level sum check query executed
+2024-08-29 16:01:15 - INFO - Deaths check done
+2024-08-29 16:01:15 - INFO - Try to execute household check
+2024-08-29 16:01:15 - INFO - Household region level sum check query opened
+2024-08-29 16:01:16 - INFO - Household region level sum check query executed
+2024-08-29 16:01:16 - INFO - Household check done
+2024-08-29 16:01:16 - INFO - Try to execute population check
+2024-08-29 16:01:16 - INFO - Population region level sum check query opened
+2024-08-29 16:01:17 - INFO - Population region level sum check query executed
+2024-08-29 16:01:17 - INFO - Population check done
+2024-08-29 16:01:17 - INFO - Try to execute spike check
+2024-08-29 16:01:17 - INFO - Query file opened
+2024-08-29 16:01:17 - INFO - Query data returned
+2024-08-29 16:01:18 - INFO - spike check done
+2024-08-29 16:01:18 - INFO - Try to execute shape check
+2024-08-29 16:01:18 - INFO - Query file opened
+2024-08-29 16:01:18 - INFO - Query data returned
+2024-08-29 16:01:19 - INFO - shape check done
+2024-08-29 16:01:19 - INFO - reformat the output as dictionary
