@@ -1,14 +1,8 @@
-2024-08-29 11:49:20 - INFO - log set up done, start running the file
-2024-08-29 11:49:20 - ERROR - cannot import name 'first_check' from 'checks' (D:\Bingjie Jiang\OneDrive\OneDrive - The University of Melbourne\PEXA\PEXA\checks.py)
-2024-08-29 11:49:20 - INFO - Connection to database was successful
-2024-08-29 11:49:20 - INFO - Try to execute first check
-2024-08-29 11:49:20 - ERROR - First check failed: name 'first_check' is not defined
-2024-08-29 11:49:20 - INFO - Try to execute household check
-2024-08-29 11:49:20 - ERROR - Household check failed: name 'household_check' is not defined
-2024-08-29 11:51:45 - INFO - log set up done, start running the file
-2024-08-29 11:51:46 - INFO - Connection to database was successful
-2024-08-29 11:51:46 - INFO - Try to execute first check
-2024-08-29 11:51:46 - ERROR - First check failed: name 'first_check' is not defined
-2024-08-29 11:51:46 - INFO - Try to execute household check
-2024-08-29 11:51:46 - ERROR - Error occurred: [Errno 2] No such file or directory: 'D:\\Bingjie Jiang\\OneDrive\\OneDrive - The University of Melbourne\\PEXA\\PEXA\\SQL_Queries\\Household_type.sql'
-2024-08-29 11:51:46 - ERROR - Household check failed: not enough values to unpack (expected 2, got 0)
+2024-08-29 12:35:19 - INFO - Log set up done, start running the file
+2024-08-29 12:35:20 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-08-29 12:35:20 - INFO - NumExpr defaulting to 8 threads.
+2024-08-29 12:35:22 - INFO - Connection to database was successful
+2024-08-29 12:35:22 - INFO - Trying to execute household check
+2024-08-29 12:35:22 - INFO - Query file opened
+2024-08-29 12:35:22 - ERROR - Error occurred: ('42S22', "[42S22] [Microsoft][ODBC SQL Server Driver][SQL Server]Invalid column name 'ASGSCode'. (207) (SQLExecDirectW)")
+2024-08-29 12:35:22 - ERROR - Household check failed: not enough values to unpack (expected 2, got 0)
