@@ -1,13 +1,9 @@
-"""
-This file calls the functions for the checks
-"""
 import logging
 import platform
 import pandas as pd
 import re
 
-
-# set up basic configuration for logging
+# Set up basic configuration for logging
 logging.basicConfig(
     filename='app.log',  # Log file name
     filemode='w',
@@ -15,42 +11,56 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
-logging.info("log set up done, start running the file")
+logging.info("Log set up done, start running the file")
 
-# import check functions into main
+# Import the household_check function
 try:
-    from checks import births_region_level_sum_check, deaths_region_level_sum_check, household_region_level_sum_check, population_region_level_sum_check, trend_shape_check, spike_check
+    from checks import household_check, births_region_level_sum_check, deaths_region_level_sum_check, household_region_level_sum_check, population_region_level_sum_check, trend_shape_check, spike_check
 except Exception as e:
-    logging.error(e)
+    logging.error(f"Import failed: {e}")
 
-# connect to the database
+# Connect to the database
 try:
     current_system = platform.system()
     if current_system == "Darwin":
         import pymssql
         conn = pymssql.connect(
-        server='localhost',
-        user='sa',
-        password='MBS_project_2024',
-        database='forecasts',
-        as_dict=True)
+            server='localhost',
+            user='sa',
+            password='MBS_project_2024',
+            database='forecasts',
+            as_dict=True)
 
     elif current_system == "Windows":
         import pyodbc
         conn = pyodbc.connect('Driver={SQL Server};'
-                                    'Server=localhost;'
-                                    'Database=forecasts;'
-                                    'UID=sa;'
-                                    'PWD=MBS_project_2024')
+                              'Server=localhost;'
+                              'Database=forecasts;'
+                              'UID=sa;'
+                              'PWD=MBS_project_2024')
 
     else:
         logging.error(f"Running on an unsupported system: {current_system}")
-    logging.info("Connection to database was done")
-except:
-    logging.error("Connection to database was failed")
+    logging.info("Connection to database was successful")
+except Exception as e:
+    logging.error(f"Connection to database failed: {e}")
+    conn = None
 
+# household ratio check 
+if conn:
+    try:
+        logging.info("Trying to execute household check")
+        outliers_df, unique_outlier_asgs_codes = household_check(conn)
+        logging.info("Household check completed successfully")
+        # Optionally, you can log or save the results:
+        logging.info(f"Found {len(unique_outlier_asgs_codes)} unique outlier ASGS codes.")
+    except Exception as e:
+        logging.error(f"Household check failed: {e}")
+else:
+    logging.error("Skipped checks because the connection was not established.")
 
-# execute the checks 
+    
+# region level consistency check
 try:
     logging.info("Try to execute births check")
     births_check_output = births_region_level_sum_check(conn)
@@ -79,6 +89,8 @@ try:
 except Exception as e:
     logging.error(f"Population check failed: {e}")
 
+# pattern check 
+
 try:
     logging.info("Try to execute spike check")
     result = spike_check(conn) # so far filter out 327 region
@@ -100,4 +112,3 @@ try:
     logging.info("reformat the output as dictionary")
 except Exception as e:
     logging.error(e)
-
