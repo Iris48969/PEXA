@@ -1,5 +1,7 @@
 import logging
 import platform
+import pandas as pd
+import re
 
 # Set up basic configuration for logging
 logging.basicConfig(
@@ -13,7 +15,7 @@ logging.info("Log set up done, start running the file")
 
 # Import the household_check function
 try:
-    from checks import household_check
+    from checks import household_check, births_region_level_sum_check, deaths_region_level_sum_check, household_region_level_sum_check, population_region_level_sum_check, trend_shape_check, spike_check
 except Exception as e:
     logging.error(f"Import failed: {e}")
 
@@ -44,7 +46,7 @@ except Exception as e:
     logging.error(f"Connection to database failed: {e}")
     conn = None
 
-# Execute the checks 
+# household ratio check 
 if conn:
     try:
         logging.info("Trying to execute household check")
@@ -54,8 +56,59 @@ if conn:
         logging.info(f"Found {len(unique_outlier_asgs_codes)} unique outlier ASGS codes.")
     except Exception as e:
         logging.error(f"Household check failed: {e}")
-
-    # Close the connection
-    conn.close()
 else:
     logging.error("Skipped checks because the connection was not established.")
+
+    
+# region level consistency check
+try:
+    logging.info("Try to execute births check")
+    births_check_output = births_region_level_sum_check(conn)
+    logging.info("Births check done")
+except Exception as e:
+    logging.error(f"Births check failed: {e}")
+
+try:
+    logging.info("Try to execute deaths check")
+    deaths_check_output = deaths_region_level_sum_check(conn)
+    logging.info("Deaths check done")
+except Exception as e:
+    logging.error(f"Deaths check failed: {e}")
+
+try:
+    logging.info("Try to execute household check")
+    household_check_output = household_region_level_sum_check(conn)
+    logging.info("Household check done")
+except Exception as e:
+    logging.error(f"Household check failed: {e}")
+
+try:
+    logging.info("Try to execute population check")
+    population_check_output = population_region_level_sum_check(conn)
+    logging.info("Population check done")
+except Exception as e:
+    logging.error(f"Population check failed: {e}")
+
+# pattern check 
+
+try:
+    logging.info("Try to execute spike check")
+    result = spike_check(conn) # so far filter out 327 region
+    logging.info("spike check done")
+    logging.info("Try to execute shape check")
+    result += trend_shape_check(conn) # so far filter out 360 region
+    logging.info("shape check done")
+except Exception as e:
+    logging.error(e)
+
+# reformat output (put overlapping region together)
+try:
+    output_dict = {}
+    for c, t, d in result:
+        if c not in output_dict.keys():
+            output_dict[c] = [t, [d]]
+        else:
+            output_dict[c] = [t, output_dict[c][1]+[d]]
+    logging.info("reformat the output as dictionary")
+except Exception as e:
+    logging.error(e)
