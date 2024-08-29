@@ -56,9 +56,6 @@ def household_check(conn):
             unique_outlier_asgs_codes = outliers_df['ASGSCode'].unique()
 
             # Print the result for debugging purposes
-            print("ASGSCode and Year that need to be checked (Ratio > 5 or Ratio < 1 for low population):")
-            print(outliers_df[['ASGSCode', 'Year', 'Ratio']])
-            print("Unique ASGSCode values that need to be checked:")
             print(unique_outlier_asgs_codes)
             print(f"Total unique ASGSCode values: {len(unique_outlier_asgs_codes)}")
 
