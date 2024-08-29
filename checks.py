@@ -6,6 +6,23 @@ import os
 import logging
 import re
 import numpy as np
+import platform
+
+def execute_sql_query(conn, sql_query):
+    try:
+        current_system = platform.system()
+        if current_system == "Darwin":
+            # execute queries
+            cursor = conn.cursor()
+            cursor.execute(sql_query)
+            data = cursor.fetchall()
+            df = pd.DataFrame(data)
+        elif current_system == "Windows":
+            df = pd.read_sql_query(con=conn, sql= sql_query)
+        logging.info("sql execute done")
+        return df
+    except Exception as e:
+        logging.error(e)
 
 def household_check(conn):
     """
@@ -37,17 +54,17 @@ def household_check(conn):
 
         # merged_df = pd.merge(pop_df, household_df, on=['ASGSCode', 'Year'], how='inner')
         # logging.info("Merge of datafram done")
-        merged_df = pd.read_sql_query(con=conn, sql= ratio_sql)
+        merged_df = execute_sql_query(conn=conn, sql_query= ratio_sql)
         logging.info("data returned")
         # Calculate the ratio of Population to HouseholdCount
         # merged_df['Ratio'] = merged_df['Pop_Number'] / merged_df['Household_Number']
-        print(merged_df)
         # Apply the filtering conditions
         outliers_df = merged_df[(merged_df['ratio'] >= 5) | (merged_df['ratio'] <= 1)]
         logging.info("Outlier dataframe found")
 
         # Get unique ASGSCode values that need to be checked
         unique_outlier_asgs_codes = outliers_df['ASGSCode'].unique()
+        print(len(unique_outlier_asgs_codes))
         return outliers_df, unique_outlier_asgs_codes
     except Exception as e:
         logging.error(f"Error occurred: {e}")
@@ -63,8 +80,7 @@ def births_region_level_sum_check(conn):
     try:
         sql = open(os.path.abspath("SQL_Queries/Births Sum Check for FA vs SA2 Output.sql"), 'r').read()
         logging.info("Births region level sum check query opened")
-        df = pd.read_sql_query(sql, conn)
-        print(df)
+        df = execute_sql_query(sql_query=sql, conn=conn)
         logging.info("Births region level sum check query executed")
         return df
     except Exception as e:
@@ -81,7 +97,7 @@ def deaths_region_level_sum_check(conn):
     try:
         sql = open(os.path.abspath("SQL_Queries/Deaths Sum Check for FA vs SA2 Output.sql"), 'r').read()
         logging.info("Deaths region level sum check query opened")
-        df = pd.read_sql_query(sql, conn)
+        df = execute_sql_query(sql_query=sql, conn=conn)
         logging.info("Deaths region level sum check query executed")
         return df
     except Exception as e:
@@ -98,7 +114,7 @@ def household_region_level_sum_check(conn):
     try:
         sql = open(os.path.abspath("SQL_Queries/Household Sum Check for FA vs SA2 Output.sql"), 'r').read()
         logging.info("Household region level sum check query opened")
-        df = pd.read_sql_query(sql, conn)
+        df = execute_sql_query(sql_query=sql, conn=conn)
         logging.info("Household region level sum check query executed")
         return df
     except Exception as e:
@@ -115,7 +131,7 @@ def population_region_level_sum_check(conn):
     try:
         sql = open(os.path.abspath("SQL_Queries/Population Sum Check for FA vs SA2 Output.sql"), 'r').read()
         logging.info("Population region level sum check query opened")
-        df = pd.read_sql_query(sql, conn)
+        df = execute_sql_query(sql_query=sql, conn=conn)
         logging.info("Population region level sum check query executed")
         return df
     except Exception as e:
@@ -134,16 +150,9 @@ def spike_check(conn):
         ERP_query= open(os.path.abspath("SQL_Queries/ERP_table(FA&SA2).sql"),'r').read()
         area_type_query = open(os.path.abspath("SQL_Queries/Area_type.sql"),'r').read()
         logging.info("Query file opened")
-
-        # execute queries
-        cursor = conn.cursor()
-        cursor.execute(ERP_query)
-        data = cursor.fetchall()
-        df = pd.DataFrame(data)
+        df = execute_sql_query(conn=conn, sql_query=ERP_query)
         wide_df = df.pivot_table(index='ERPYear', columns='ASGS_2016', values='ERP')
-        cursor.execute(area_type_query)
-        area_type = cursor.fetchall()
-        area_type = pd.DataFrame(area_type)
+        area_type = execute_sql_query(conn=conn, sql_query=area_type_query)
         area_dict = area_type.set_index('ASGSCode').to_dict()['RegionType']
         logging.info("Query data returned")
 
@@ -176,7 +185,8 @@ def spike_check(conn):
         for region in wide_df.columns:
             if check_outliers(rate_of_change[region][1:]):
                 output_list.append([region, area_dict[region], "Suddent spike or drop detected"])
-        return output_list
+        output_df = pd.DataFrame(output_list, columns=['Code', 'Region Type', 'Description'])
+        return output_df
     except Exception as e:
         logging.error(e)
 
@@ -260,7 +270,8 @@ def trend_shape_check(conn):
                 # elif message == "wave detect": des = message 
                 # else: des = message
                 output_list.append([region, area_dict[region], message])
-        return output_list
+        output_pd = pd.DataFrame(output_list, columns=['Code', 'Region Type', 'Description'])
+        return output_pd
     except Exception as e:
         logging.error(e)
 
