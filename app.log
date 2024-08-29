@@ -1,5 +1,13 @@
-2024-08-28 10:51:38 - INFO - log set up done, start running the file
-2024-08-28 10:51:38 - ERROR - cannot import name 'second_check' from 'checks' (/Users/shauncai/Desktop/id_project/PEXA/checks.py)
-2024-08-28 10:51:38 - INFO - Connection to database was done
-2024-08-28 10:51:38 - INFO - Try to execute first check
-2024-08-28 10:51:38 - INFO - first check done
+2024-08-29 10:18:29 - INFO - log set up done, start running the file
+2024-08-29 10:18:30 - INFO - Note: NumExpr detected 10 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-08-29 10:18:30 - INFO - NumExpr defaulting to 8 threads.
+2024-08-29 10:18:30 - INFO - Connection to database was done
+2024-08-29 10:18:30 - INFO - Try to execute spike check
+2024-08-29 10:18:30 - INFO - Query file opened
+2024-08-29 10:18:32 - INFO - Query data returned
+2024-08-29 10:18:32 - INFO - spike check done
+2024-08-29 10:18:32 - INFO - Try to execute shape check
+2024-08-29 10:18:32 - INFO - Query file opened
+2024-08-29 10:18:33 - INFO - Query data returned
+2024-08-29 10:18:33 - INFO - shape check done
+2024-08-29 10:18:33 - INFO - reformat the output as dictionary

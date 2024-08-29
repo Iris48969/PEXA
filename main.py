@@ -1,10 +1,9 @@
 """
 file call the functions
 """
-
-import pymssql
 import logging
 import platform
+import re
 
 # set up basic configuration for logging
 logging.basicConfig(
@@ -18,7 +17,7 @@ logging.info("log set up done, start running the file")
 
 # import check functions into main
 try:
-    from checks import first_check, second_check
+    from checks import first_check, trend_shape_check, spike_check
 except Exception as e:
     logging.error(e)
 
@@ -48,11 +47,29 @@ try:
 except:
     logging.error("Connection to database was failed")
 
+
 # execute the checks 
 try:
-    logging.info("Try to execute first check")
-    first_check(conn, parameter2=...)
-    logging.info("first check done")
+    logging.info("Try to execute spike check")
+    result = spike_check(conn) # so far filter out 327 region
+    logging.info("spike check done")
+    logging.info("Try to execute shape check")
+    result += trend_shape_check(conn) # so far filter out 360 region
+    logging.info("shape check done")
 except Exception as e:
-    logging.error(f"First check was failed: {e}")
-    
+    logging.error(e)
+
+# reformat output (put overlapping region together)
+try:
+    output_dict = {}
+    for c, t, d in result:
+        if c not in output_dict.keys():
+            output_dict[c] = [t, [d]]
+        else:
+            output_dict[c] = [t, output_dict[c][1]+[d]]
+    logging.info("reformat the output as dictionary")
+except Exception as e:
+    logging.error(e)
+
+# print(output_dict[41032290])
+print(len(output_dict.keys()))
