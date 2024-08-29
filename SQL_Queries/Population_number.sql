@@ -5,6 +5,6 @@ SELECT
     FROM 
         [forecasts].[dbo].[ERP] 
     GROUP BY 
-        ASGSCode, ERPYear 
+        ASGS_2016, ERPYear 
     ORDER BY 
-        ASGSCode
+        ASGS_2016

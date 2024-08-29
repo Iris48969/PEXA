@@ -21,11 +21,11 @@ def household_check(conn):
         cursor = conn.cursor()
         cursor.execute(population_query)
         pop_data = cursor.fetchall()
-        pop_df = pd.DataFrame(pop_data, columns=['ASGSCode', 'Year', 'Pop_Number'])
+        pop_df = pd.DataFrame([tuple(row) for row in pop_data], columns=['ASGSCode', 'Year', 'Pop_Number'])
 
         cursor.execute(household_query)
         household_data = cursor.fetchall()
-        household_df = pd.DataFrame(household_data, columns=['ASGSCode', 'Year', 'Household_Number'])
+        household_df = pd.DataFrame([tuple(row) for row in household_data], columns=['ASGSCode', 'Year', 'Household_Number'])
         logging.info("Query data returned")
 
         def check_population_household_ratio(pop_df, household_df):
