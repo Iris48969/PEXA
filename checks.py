@@ -7,6 +7,7 @@ import logging
 import re
 import numpy as np
 import platform
+from sklearn.ensemble import IsolationForest
 
 def execute_sql_query(conn, sql_query):
     try:
@@ -277,4 +278,128 @@ def trend_shape_check(conn):
     except Exception as e:
         logging.error(e)
 
+
+# Negative Check Function
+def perform_negative_check(conn):
+    '''
+    This function checks for negative values in the Births, Deaths, and ERP tables.
+    Returns a DataFrame with columns: Code, Region Type, Description.
+    '''
+    try:
+        logging.info("Performing negative checks...")
+        
+        # Fetch query from the SQL file
+        with open('SQL_Queries/Negative_Sanity_ML_Check.sql', 'r') as file:
+            query = file.read()
+        
+        # Fetch data from the database
+        df = pd.read_sql(query, conn)
+
+        result_list = []
+
+        for region_type in ['FA', 'SA2']:
+            # Filter the dataframe for the current region type
+            region_df = df[df['RegionType'] == region_type]
+            
+            # Check for negative values
+            negative_births = region_df[(region_df['DataType'] == 'Births') & (region_df['Total'] < -10)]
+            if not negative_births.empty:
+                for code in negative_births['ASGSCode'].unique():
+                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Negative Births Values Found'})
+
+            negative_deaths = region_df[(region_df['DataType'] == 'Deaths') & (region_df['Total'] < -10)]
+            if not negative_deaths.empty:
+                for code in negative_deaths['ASGSCode'].unique():
+                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Negative Deaths Values Found'})
+
+            negative_erp = region_df[(region_df['DataType'] == 'ERP') & (region_df['Total'] < -10)]
+            if not negative_erp.empty:
+                for code in negative_erp['ASGSCode'].unique():
+                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Negative ERP Values Found'})
+
+        return pd.DataFrame(result_list, columns=['Code', 'Region Type', 'Description'])
+    except Exception as e:
+        logging.error(f"Error performing negative checks: {e}")
+        return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])  # Return DataFrame with correct columns on error
+
+
+def perform_sanity_check(conn):
+    '''
+    This function performs checks for zero values, missing values, and duplicate values in Births, Deaths, ERP.
+    Returns a DataFrame with columns: Code, Region Type, Description.
+    '''
+    try:
+        logging.info("Performing sanity checks...")
+
+        # Fetch query from the SQL file
+        with open('SQL_Queries/Negative_Sanity_ML_Check.sql', 'r') as file:
+            query = file.read()
+
+        # Fetch data from the database
+        df = pd.read_sql(query, conn)
+
+        result_list = []
+
+        for region_type in ['FA', 'SA2']:
+            region_df = df[df['RegionType'] == region_type]
+            
+            # Check for zero values
+            zero_births = region_df[(region_df['DataType'] == 'Births') & (region_df['Total'] == 0)]
+            if not zero_births.empty:
+                for code in zero_births['ASGSCode'].unique():
+                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Zero Births Values Found'})
+
+            zero_deaths = region_df[(region_df['DataType'] == 'Deaths') & (region_df['Total'] == 0)]
+            if not zero_deaths.empty:
+                for code in zero_deaths['ASGSCode'].unique():
+                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Zero Deaths Values Found'})
+
+            zero_population = region_df[(region_df['DataType'] == 'ERP') & (region_df['Total'] == 0)]
+            if not zero_population.empty:
+                for code in zero_population['ASGSCode'].unique():
+                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Zero Population Values Found'})
+
+            # Check for missing values
+            missing_values = region_df.isnull().sum()
+            if missing_values.any():
+                result_list.append({'Code': 'All', 'Region Type': region_type, 'Description': 'Missing Values Detected'})
+
+            # Check for duplicate records
+            duplicates = region_df[region_df.duplicated()]
+            if not duplicates.empty:
+                for code in duplicates['ASGSCode'].unique():
+                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Duplicate Records Found'})
+
+        return pd.DataFrame(result_list, columns=['Code', 'Region Type', 'Description'])
+    except Exception as e:
+        logging.error(f"Error performing sanity checks: {e}")
+        return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])  # Return DataFrame with correct columns on error
+
+
+
+# Machine Learning Anomaly Detection Function
+def perform_ml_anomaly_detection(conn):
+    try:
+        logging.info("Performing machine learning anomaly detection...")
+        query = open(os.path.abspath('SQL_Queries/Negative_Sanity_ML_Check.sql'), 'r').read()
+        df = execute_sql_query(conn, query)
+
+        result_list = []
+
+        for region_type in ['FA', 'SA2']:
+            region_df = df[df['RegionType'] == region_type]
+            wide_df = region_df.pivot_table(index='ASGSCode', columns='Year', values='Total').dropna()
+
+            model = IsolationForest(contamination=0.05)
+            anomalies = model.fit_predict(wide_df)
+            anomalies_df = wide_df[anomalies == -1]
+
+            if not anomalies_df.empty:
+                for code in anomalies_df.index.unique():
+                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Machine Learning Anomaly Detected'})
+
+        return pd.DataFrame(result_list, columns=['Code', 'Region Type', 'Description'])
+    except Exception as e:
+        logging.error(f"Error performing machine learning anomaly detection: {e}")
+        return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])
     
