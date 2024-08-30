@@ -2,6 +2,9 @@ import logging
 import platform
 import pandas as pd
 import re
+import warnings
+
+warnings.simplefilter(action='ignore', category=UserWarning)
 
 # Set up basic configuration for logging
 logging.basicConfig(
@@ -15,7 +18,7 @@ logging.info("Log set up done, start running the file")
 
 # Import the household_check function
 try:
-    from checks import household_check, births_region_level_sum_check, deaths_region_level_sum_check, household_region_level_sum_check, population_region_level_sum_check, trend_shape_check, spike_check
+    from checks import household_check, births_region_level_sum_check, deaths_region_level_sum_check, household_region_level_sum_check, population_region_level_sum_check, trend_shape_check, spike_check, perform_negative_check, perform_sanity_check, perform_ml_anomaly_detection
 except Exception as e:
     logging.error(f"Import failed: {e}")
 
@@ -88,6 +91,34 @@ try:
     logging.info("Population check done")
 except Exception as e:
     logging.error(f"Population check failed: {e}")
+
+try:
+    logging.info("Running Negative Checks:")
+    negative_checks = perform_negative_check(conn)
+    if not negative_checks.empty:
+            print("Negative Checks:")
+            print(negative_checks)
+except Exception as e:
+    logging.error(f"Negative check failed: {e}")
+
+try:
+    logging.info("Running Sanity Checks:")
+    sanity_checks = perform_sanity_check(conn)
+    if not sanity_checks.empty:
+            print("Sanity Checks:")
+            print(sanity_checks)
+except Exception as e:
+    logging.error(f"Sanity check failed: {e}")
+
+try:
+    logging.info("Running Machine Learning Anomaly Detection:")
+    ml_anomaly = perform_ml_anomaly_detection(conn)
+    if not ml_anomaly.empty:
+            print("ML Anomaly Detection:")
+            print(ml_anomaly)
+except Exception as e:
+    logging.error(f"ML Anomaly Detection check failed: {e}")
+
 
 # pattern check 
 
