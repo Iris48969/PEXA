@@ -29,46 +29,28 @@ def household_check(conn):
     """
     The purpose of this function is to identify abnormal spikes/drops in population forecasts
     in a timeseries format by checking the ratio of population to household count.
-
     input: connection
-    output: list of lists containing [region code, region type, description]
+    output: list of lists containing [ASGSCode, Region Type, Description (earliest year an outlier appears)]
     """
-
     try:
+        # Read the SQL query from the file
         ratio_sql = open(os.path.abspath("SQL_Queries/household_size.sql"), 'r').read()
-        # # Getting queries
-        # population_query = open(os.path.abspath("SQL_Queries/Population_number.sql"), 'r').read()
-        # household_query = open(os.path.abspath("SQL_Queries/Household_number.sql"), 'r').read()
-        # logging.info("Query file opened")
-
-        # # Execute queries
-        # cursor = conn.cursor()
-        # cursor.execute(ratio_sql)
-        # merged_df = cursor.fetchall()
-        # merged_df = pd.DataFrame([tuple(row) for row in merged_df], columns=['ASGSCode', 'Year', 'Pop_Number', 'ratio', 'region type'])
-        # logging.info("population data returned")
-
-        # cursor.execute(household_query)
-        # household_data = cursor.fetchall()
-        # household_df = pd.DataFrame([tuple(row) for row in household_data], columns=['ASGSCode', 'Year', 'Household_Number'])
-        # logging.info("household data returned")
-
-        # merged_df = pd.merge(pop_df, household_df, on=['ASGSCode', 'Year'], how='inner')
-        # logging.info("Merge of datafram done")
-        merged_df = execute_sql_query(conn=conn, sql_query= ratio_sql)
-        logging.info("data returned")
-        # Calculate the ratio of Population to HouseholdCount
-        # merged_df['Ratio'] = merged_df['Pop_Number'] / merged_df['Household_Number']
-        # Apply the filtering conditions
-        outliers_df = merged_df[(merged_df['ratio'] >= 5) | (merged_df['ratio'] <= 1)]
+        # Execute the SQL query and get the merged dataframe
+        merged_df = execute_sql_query(conn=conn, sql_query=ratio_sql)
+        logging.info("Data returned")
+        outliers_df = merged_df[(merged_df['ratio'] >= 6) | (merged_df['ratio'] <= 1)]
         logging.info("Outlier dataframe found")
-
-        # Get unique ASGSCode values that need to be checked
-        unique_outlier_asgs_codes = outliers_df['ASGSCode'].unique()
-        print(len(unique_outlier_asgs_codes))
-        return outliers_df, unique_outlier_asgs_codes
+        earliest_outliers_df = outliers_df.groupby('ASGSCode').apply(
+            lambda x: x.loc[x['Year'].idxmin()]
+        ).reset_index(drop=True)
+        logging.info("earliest_year")
+        output = earliest_outliers_df[['ASGSCode', 'region_type']].copy()
+        output['Description'] = "Found abnormal ERP/household ratio, Earliest abnormal year is: " + earliest_outliers_df['Year'].astype(str)
+        output = output.rename(columns={'region_type': 'Region Type', 'ASGSCode': 'Code'})
+        return output
     except Exception as e:
         logging.error(f"Error occurred: {e}")
+        return None
 
 def births_region_level_sum_check(conn):
     """

@@ -3,6 +3,7 @@ import platform
 import pandas as pd
 import re
 import warnings
+import time
 
 warnings.simplefilter(action='ignore', category=UserWarning)
 
@@ -15,6 +16,8 @@ logging.basicConfig(
     datefmt='%Y-%m-%d %H:%M:%S'
 )
 logging.info("Log set up done, start running the file")
+
+start_time = time.time()
 
 # Import the household_check function
 try:
@@ -49,19 +52,18 @@ except Exception as e:
     logging.error(f"Connection to database failed: {e}")
     conn = None
 
-# # household ratio check 
-# if conn:
-#     try:
-#         logging.info("Trying to execute household check")
-#         outliers_df, unique_outlier_asgs_codes = household_check(conn)
-#         logging.info("Household check completed successfully")
-#         # Optionally, you can log or save the results:
-#         logging.info(f"Found {len(unique_outlier_asgs_codes)} unique outlier ASGS codes.")
-#     except Exception as e:
-#         logging.error(f"Household check failed: {e}")
-# else:
-#     logging.error("Skipped checks because the connection was not established.")
-
+# household ratio check 
+if conn:
+    try:
+        logging.info("Trying to execute household check")
+        outliers_df = household_check(conn)
+        logging.info("Household check completed successfully")
+        # Optionally, you can log or save the results:
+        # logging.info(f"Found {len(unique_outlier_asgs_codes)} unique outlier ASGS codes.")
+    except Exception as e:
+        logging.error(f"Household check failed: {e}")
+else:
+    logging.error("Skipped checks because the connection was not established.")
 
     
 # region level consistency check
@@ -140,8 +142,15 @@ except Exception as e:
 
 # print(shape_output)
 
+checks_list = [outliers_df, births_check_output, deaths_check_output, household_check_output, population_check_output, negative_checks,ml_anomaly, spike_output,shape_output]
 
-# merged_df = pd.concat([outliers_df, births_check_output, deaths_check_output, household_check_output, population_check_output, negative_checks, sanity_checks,ml_anomaly, spike_output,shape_output ], ignore_index=True)
-# print(merged_df)
-# merged_df.to_csv('final_output.csv', index=False)
+merged_df = pd.concat(checks_list, ignore_index=True)
+merged_df = merged_df.sort_values(by=['Region Type', 'Code'], ascending=[False, True])
+print(merged_df)
+merged_df.to_csv('final_output.csv', index=False)
 
+end_time = time.time()
+running_time = end_time - start_time
+
+print(f'The number of unique abnormal region are: {len(merged_df["Code"].unique())}') # something wrong with sanity check, without it only has 565 region been tagged
+print(f"Running time: {running_time:.6f} seconds")
