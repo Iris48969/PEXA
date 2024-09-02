@@ -1,50 +1,50 @@
-2024-09-02 14:38:07 - INFO - Log set up done, start running the file
-2024-09-02 14:38:08 - INFO - Connection to database was successful
-2024-09-02 14:38:10 - INFO - Got inputted parameters
-2024-09-02 14:38:10 - INFO - Trying to execute household check
-2024-09-02 14:38:12 - INFO - sql execute done
-2024-09-02 14:38:12 - INFO - Data returned
-2024-09-02 14:38:12 - INFO - Outlier dataframe found
-2024-09-02 14:38:12 - INFO - earliest_year
-2024-09-02 14:38:12 - INFO - Household check completed successfully
-2024-09-02 14:38:12 - INFO - Try to execute births check
-2024-09-02 14:38:12 - INFO - Births region level sum check query opened
-2024-09-02 14:38:12 - INFO - sql execute done
-2024-09-02 14:38:12 - INFO - Births region level sum check query executed
-2024-09-02 14:38:12 - INFO - Births check done
-2024-09-02 14:38:12 - INFO - Try to execute deaths check
-2024-09-02 14:38:12 - INFO - Deaths region level sum check query opened
-2024-09-02 14:38:13 - INFO - sql execute done
-2024-09-02 14:38:13 - INFO - Deaths region level sum check query executed
-2024-09-02 14:38:13 - INFO - Deaths check done
-2024-09-02 14:38:13 - INFO - Try to execute household check
-2024-09-02 14:38:13 - INFO - Household region level sum check query opened
-2024-09-02 14:38:13 - INFO - sql execute done
-2024-09-02 14:38:13 - INFO - Household region level sum check query executed
-2024-09-02 14:38:13 - INFO - Household check done
-2024-09-02 14:38:13 - INFO - Try to execute population check
-2024-09-02 14:38:13 - INFO - Population region level sum check query opened
-2024-09-02 14:38:13 - INFO - sql execute done
-2024-09-02 14:38:13 - INFO - Population region level sum check query executed
-2024-09-02 14:38:13 - INFO - Population check done
-2024-09-02 14:38:13 - INFO - Running Negative Checks:
-2024-09-02 14:38:13 - INFO - Performing negative checks...
-2024-09-02 14:38:16 - INFO - sql execute done
-2024-09-02 14:38:17 - INFO - Running Sanity Checks:
-2024-09-02 14:38:17 - INFO - Performing sanity checks...
-2024-09-02 14:38:19 - INFO - sql execute done
-2024-09-02 14:38:19 - INFO - Running Machine Learning Anomaly Detection:
-2024-09-02 14:38:19 - INFO - Performing machine learning anomaly detection...
-2024-09-02 14:38:22 - INFO - sql execute done
-2024-09-02 14:38:22 - INFO - Try to execute spike check
-2024-09-02 14:38:22 - INFO - Query file opened
-2024-09-02 14:38:23 - INFO - sql execute done
-2024-09-02 14:38:23 - INFO - sql execute done
-2024-09-02 14:38:23 - INFO - Query data returned
-2024-09-02 14:38:24 - INFO - spike check done
-2024-09-02 14:38:24 - INFO - Try to execute shape check
-2024-09-02 14:38:24 - INFO - Query file opened
-2024-09-02 14:38:24 - INFO - sql execute done
-2024-09-02 14:38:24 - INFO - sql execute done
-2024-09-02 14:38:24 - INFO - Query data returned
-2024-09-02 14:38:24 - INFO - shape check done
+2024-09-02 14:48:28 - INFO - Log set up done, start running the file
+2024-09-02 14:48:29 - INFO - Connection to database was successful
+2024-09-02 14:48:34 - INFO - Got inputted parameters
+2024-09-02 14:48:34 - INFO - Trying to execute household check
+2024-09-02 14:48:37 - INFO - sql execute done
+2024-09-02 14:48:37 - INFO - Data returned
+2024-09-02 14:48:37 - INFO - Outlier dataframe found
+2024-09-02 14:48:37 - INFO - earliest_year
+2024-09-02 14:48:37 - INFO - Household check completed successfully
+2024-09-02 14:48:37 - INFO - Try to execute births check
+2024-09-02 14:48:37 - INFO - Births region level sum check query opened
+2024-09-02 14:48:37 - INFO - sql execute done
+2024-09-02 14:48:37 - INFO - Births region level sum check query executed
+2024-09-02 14:48:37 - INFO - Births check done
+2024-09-02 14:48:37 - INFO - Try to execute deaths check
+2024-09-02 14:48:37 - INFO - Deaths region level sum check query opened
+2024-09-02 14:48:37 - INFO - sql execute done
+2024-09-02 14:48:37 - INFO - Deaths region level sum check query executed
+2024-09-02 14:48:37 - INFO - Deaths check done
+2024-09-02 14:48:37 - INFO - Try to execute household check
+2024-09-02 14:48:37 - INFO - Household region level sum check query opened
+2024-09-02 14:48:37 - INFO - sql execute done
+2024-09-02 14:48:37 - INFO - Household region level sum check query executed
+2024-09-02 14:48:37 - INFO - Household check done
+2024-09-02 14:48:37 - INFO - Try to execute population check
+2024-09-02 14:48:37 - INFO - Population region level sum check query opened
+2024-09-02 14:48:38 - INFO - sql execute done
+2024-09-02 14:48:38 - INFO - Population region level sum check query executed
+2024-09-02 14:48:38 - INFO - Population check done
+2024-09-02 14:48:38 - INFO - Running Negative Checks:
+2024-09-02 14:48:38 - INFO - Performing negative checks...
+2024-09-02 14:48:41 - INFO - sql execute done
+2024-09-02 14:48:41 - INFO - Running Sanity Checks:
+2024-09-02 14:48:41 - INFO - Performing sanity checks...
+2024-09-02 14:48:44 - INFO - sql execute done
+2024-09-02 14:48:44 - INFO - Running Machine Learning Anomaly Detection:
+2024-09-02 14:48:44 - INFO - Performing machine learning anomaly detection...
+2024-09-02 14:48:47 - INFO - sql execute done
+2024-09-02 14:48:48 - INFO - Try to execute spike check
+2024-09-02 14:48:48 - INFO - Query file opened
+2024-09-02 14:48:48 - INFO - sql execute done
+2024-09-02 14:48:48 - INFO - sql execute done
+2024-09-02 14:48:48 - INFO - Query data returned
+2024-09-02 14:48:49 - INFO - spike check done
+2024-09-02 14:48:49 - INFO - Try to execute shape check
+2024-09-02 14:48:49 - INFO - Query file opened
+2024-09-02 14:48:49 - INFO - sql execute done
+2024-09-02 14:48:49 - INFO - sql execute done
+2024-09-02 14:48:49 - INFO - Query data returned
+2024-09-02 14:48:49 - INFO - shape check done

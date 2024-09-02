@@ -1,12 +1,10 @@
 Code,Region Type,Description
 401031011,SA2  ,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 401031013,SA2  ,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-402041171,SA2  ,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407011145,SA2  ,Suddent spike or drop detected
 407021173,SA2  ,Suddent spike or drop detected
 407021174,SA2  ,Suddent spike or drop detected
-401011001,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-401011002,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+401011002,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 401011002,SA2,Suddent spike or drop detected
 401021003,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 401021004,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
@@ -21,7 +19,6 @@ Code,Region Type,Description
 401041014,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 401041015,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 401041016,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-401051017,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 401051018,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 401051019,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 401051019,SA2,Suddent spike or drop detected
@@ -57,7 +54,6 @@ Code,Region Type,Description
 402041039,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2032"
 402041039,SA2,Mismatch between sum of Births at SA2 level vs. sum of FAs within this SA2
 402041040,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-402041040,SA2,Suddent spike or drop detected
 402041041,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 402041041,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 402041043,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
@@ -87,7 +83,6 @@ Code,Region Type,Description
 402051055,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 403011056,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403011056,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
-403011057,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403011057,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 403021058,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403021058,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
@@ -108,12 +103,10 @@ Code,Region Type,Description
 403031066,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403031067,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403031067,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
-403031067,SA2,Suddent spike or drop detected
 403031068,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403031068,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 403031069,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403031069,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
-403031069,SA2,Suddent spike or drop detected
 403031070,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403031070,SA2,Suddent spike or drop detected
 403041071,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
@@ -133,10 +126,8 @@ Code,Region Type,Description
 403041078,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403041079,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403041079,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
-403041079,SA2,Suddent spike or drop detected
 403041080,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403041080,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
-403041080,SA2,Suddent spike or drop detected
 403041082,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 403041082,SA2,Suddent spike or drop detected
 403041082,SA2,small bell curve detect
@@ -159,7 +150,6 @@ Code,Region Type,Description
 404011093,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 404011094,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 404011095,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-404011095,SA2,Suddent spike or drop detected
 404011096,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 404011097,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 404021099,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
@@ -179,20 +169,15 @@ Code,Region Type,Description
 405011114,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 405011115,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 405021116,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-405021117,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-405021118,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-405021119,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-405031120,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+405021117,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 405031122,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 405031123,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 405041124,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 406011129,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-406011130,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 406011133,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 406011135,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 406011135,SA2,Suddent spike or drop detected
-406011135,SA2,Bell curve detect
-406011136,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+406011135,SA2,straight change of sign detect
 406021138,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 406021142,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 406021143,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
@@ -202,7 +187,6 @@ Code,Region Type,Description
 407011147,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407011147,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 407011147,SA2,Suddent spike or drop detected
-407011148,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 407011148,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 407021150,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407021150,SA2,Suddent spike or drop detected
@@ -215,15 +199,11 @@ Code,Region Type,Description
 407021156,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407021157,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407021157,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
-407021158,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407021158,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 407021173,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 407021174,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 407031159,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407031159,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
-407031159,SA2,Suddent spike or drop detected
-407031160,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-407031161,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407031161,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 407031162,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407031162,SA2,Suddent spike or drop detected
@@ -232,274 +212,92 @@ Code,Region Type,Description
 407031164,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
 407031165,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407031165,SA2,Mismatch between sum of Population at SA2 level vs. sum of FAs within this SA2
-407031166,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407031167,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 407031167,SA2,Suddent spike or drop detected
 407031168,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-407031169,SA2,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41001110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2027"
 41001220,FA,Machine Learning Anomaly Detected
-41001260,FA,wave detect
 41001370,FA,Machine Learning Anomaly Detected
 41001380,FA,Machine Learning Anomaly Detected
 41001410,FA,Machine Learning Anomaly Detected
 41001530,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2037"
 41002010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41002010,FA,Suddent spike or drop detected
-41002020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41002030,FA,Suddent spike or drop detected
 41002130,FA,Machine Learning Anomaly Detected
 41002140,FA,Suddent spike or drop detected
-41003010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41003020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41003030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41003050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41003060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41003070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41003100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41003110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41003140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41003180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41003220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2034"
-41004060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41004080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41004090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
-41004140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41004160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41004230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41004320,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41004440,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41004440,FA,Bell curve detect
-41005060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41005060,FA,Suddent spike or drop detected
-41005100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41006020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41006030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
-41006040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41006060,FA,Suddent spike or drop detected
-41006090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41006130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41006170,FA,Suddent spike or drop detected
-41006180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41007020,FA,Suddent spike or drop detected
-41007030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2028"
 41007030,FA,Suddent spike or drop detected
-41007060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41007070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41007130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41007140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41007230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41007360,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41007370,FA,Suddent spike or drop detected
-41007390,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41007600,FA,Suddent spike or drop detected
 41007610,FA,Suddent spike or drop detected
 41007650,FA,Suddent spike or drop detected
 41007670,FA,Machine Learning Anomaly Detected
-41007690,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41007690,FA,Suddent spike or drop detected
 41007710,FA,Machine Learning Anomaly Detected
-41008040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
-41008050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41008100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41008190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41008200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41008100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
 41009030,FA,Negative Deaths Values Found
 41009080,FA,Negative Deaths Values Found
-41009090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 41009090,FA,Negative Deaths Values Found
-41009100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
 41009100,FA,Negative Births Values Found
 41009100,FA,Negative Deaths Values Found
 41009130,FA,Negative Deaths Values Found
-41010010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
 41010020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41010030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41010020,FA,Machine Learning Anomaly Detected
 41010030,FA,Suddent spike or drop detected
-41010040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41010040,FA,Suddent spike or drop detected
-41010050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41010050,FA,Suddent spike or drop detected
-41010070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41010090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41010100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41010110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41010130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41010130,FA,Suddent spike or drop detected
-41011010,FA,Suddent spike or drop detected
-41011040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41011170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41011170,FA,Suddent spike or drop detected
-41011230,FA,Suddent spike or drop detected
-41011350,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
-41012010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41012030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41012040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41012040,FA,Suddent spike or drop detected
-41012080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41012080,FA,Suddent spike or drop detected
-41012090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41012100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41012110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41012120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41013030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41013030,FA,Machine Learning Anomaly Detected
-41013040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41013130,FA,Machine Learning Anomaly Detected
-41013160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
-41013170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2028"
-41013210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41013240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41014010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41014020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41014040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41014040,FA,Suddent spike or drop detected
-41014160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41014160,FA,Suddent spike or drop detected
-41015010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41015020,FA,Machine Learning Anomaly Detected
 41015030,FA,Machine Learning Anomaly Detected
-41015070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41015080,FA,Machine Learning Anomaly Detected
 41015300,FA,Machine Learning Anomaly Detected
-41016010,FA,Machine Learning Anomaly Detected
-41016030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41016060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41016080,FA,Machine Learning Anomaly Detected
-41016090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41016100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41016130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41016130,FA,Machine Learning Anomaly Detected
-41016150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41016280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41016320,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41017010,FA,Machine Learning Anomaly Detected
 41017050,FA,Machine Learning Anomaly Detected
 41017050,FA,Suddent spike or drop detected
 41017080,FA,Suddent spike or drop detected
 41017140,FA,Suddent spike or drop detected
-41017180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41017180,FA,Suddent spike or drop detected
-41017190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
 41017190,FA,Suddent spike or drop detected
-41017220,FA,Suddent spike or drop detected
-41018060,FA,Suddent spike or drop detected
-41018070,FA,Suddent spike or drop detected
-41018080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
 41018150,FA,Suddent spike or drop detected
 41018200,FA,Machine Learning Anomaly Detected
 41019010,FA,Suddent spike or drop detected
-41019020,FA,Suddent spike or drop detected
 41019030,FA,Suddent spike or drop detected
 41019040,FA,Suddent spike or drop detected
-41019100,FA,Suddent spike or drop detected
-41019120,FA,Suddent spike or drop detected
-41019130,FA,Suddent spike or drop detected
 41019150,FA,Suddent spike or drop detected
 41019200,FA,Suddent spike or drop detected
 41019220,FA,Suddent spike or drop detected
 41019240,FA,Suddent spike or drop detected
 41019260,FA,Suddent spike or drop detected
-41020060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41020080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
-41020140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41021010,FA,Machine Learning Anomaly Detected
-41021050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41021060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41021080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
 41021120,FA,Suddent spike or drop detected
-41021190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41021210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41021220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41021220,FA,Suddent spike or drop detected
-41021240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41022020,FA,Machine Learning Anomaly Detected
-41022110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41023010,FA,Machine Learning Anomaly Detected
-41023070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41024010,FA,Machine Learning Anomaly Detected
-41024030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
-41024140,FA,Machine Learning Anomaly Detected
-41024170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41024300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2034"
-41024320,FA,Suddent spike or drop detected
-41024350,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41024350,FA,Machine Learning Anomaly Detected
-41024470,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41025010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41025010,FA,Machine Learning Anomaly Detected
-41025090,FA,small bell curve detect
-41025100,FA,Bell curve detect
-41025120,FA,small bell curve detect
 41025130,FA,Machine Learning Anomaly Detected
-41025240,FA,Bell curve detect
-41026100,FA,Machine Learning Anomaly Detected
-41026130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41026150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2043"
-41026170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41026170,FA,Machine Learning Anomaly Detected
 41026180,FA,Machine Learning Anomaly Detected
-41026250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41026260,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
-41026300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41026300,FA,Machine Learning Anomaly Detected
 41026350,FA,Machine Learning Anomaly Detected
-41026510,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2033"
-41026510,FA,Machine Learning Anomaly Detected
 41026520,FA,Machine Learning Anomaly Detected
-41027010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41027010,FA,Suddent spike or drop detected
 41027020,FA,Suddent spike or drop detected
-41027050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41027070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41027110,FA,Machine Learning Anomaly Detected
-41028010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41028020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41028070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41028110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41028130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41028230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41028260,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41028280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41028300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41028300,FA,Suddent spike or drop detected
 41028400,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41028410,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41028430,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41029010,FA,Bell curve detect
-41029030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41029060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41029090,FA,Suddent spike or drop detected
-41029130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41029150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41029180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41029300,FA,Suddent spike or drop detected
-41029360,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41029360,FA,Suddent spike or drop detected
-41029370,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41029420,FA,Suddent spike or drop detected
-41030170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
-41030210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41030230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41031010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41031020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41031090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41031110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41031180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41031200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41031260,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41032050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41032060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41032110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41032110,FA,Machine Learning Anomaly Detected
-41032130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41032130,FA,Machine Learning Anomaly Detected
-41032160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41032180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41032180,FA,Machine Learning Anomaly Detected
-41032200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41032210,FA,Machine Learning Anomaly Detected
-41032290,FA,Bell curve detect
 41032350,FA,Machine Learning Anomaly Detected
 41033010,FA,Negative Births Values Found
 41033010,FA,Negative Deaths Values Found
@@ -507,534 +305,204 @@ Code,Region Type,Description
 41033040,FA,Negative Deaths Values Found
 41033040,FA,Machine Learning Anomaly Detected
 41033050,FA,Negative Deaths Values Found
-41033080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41033080,FA,Negative Births Values Found
 41033080,FA,Negative Deaths Values Found
 41033080,FA,Machine Learning Anomaly Detected
-41034010,FA,small bell curve detect
-41034040,FA,Bell curve detect
-41034070,FA,small bell curve detect
-41034290,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41035020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2032"
-41035030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41035030,FA,Machine Learning Anomaly Detected
-41035040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41035040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41035050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41035060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41035060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2029"
 41035070,FA,Machine Learning Anomaly Detected
-41035110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41035110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41035110,FA,Machine Learning Anomaly Detected
 41035160,FA,Machine Learning Anomaly Detected
 41035200,FA,Suddent spike or drop detected
-41036040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41036060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41036080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41036100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41036120,FA,Suddent spike or drop detected
-41036150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41036170,FA,Suddent spike or drop detected
-41036190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41036250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41036250,FA,Machine Learning Anomaly Detected
 41036340,FA,Machine Learning Anomaly Detected
-41036370,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2027"
-41036460,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41038090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41038140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41038160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41036460,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
 41038160,FA,Machine Learning Anomaly Detected
-41038200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41038210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41038210,FA,Suddent spike or drop detected
-41038310,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41038330,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41039010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2032"
 41039010,FA,Machine Learning Anomaly Detected
-41040010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41040040,FA,Suddent spike or drop detected
 41040050,FA,Machine Learning Anomaly Detected
 41040080,FA,Suddent spike or drop detected
-41040150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41040190,FA,Suddent spike or drop detected
 41040240,FA,Suddent spike or drop detected
 41040260,FA,Suddent spike or drop detected
-41040330,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41040350,FA,Suddent spike or drop detected
-41041020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41041070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41041090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41041120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41041130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41041140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41041140,FA,Suddent spike or drop detected
 41041220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41041250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41041270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41043010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41043020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41043030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41043040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41043070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41043110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41043120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41043180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41043200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41043200,FA,Suddent spike or drop detected
 41043300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41043370,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41044010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41044010,FA,Machine Learning Anomaly Detected
-41044020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41044030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41044050,FA,Bell curve detect
-41044150,FA,Bell curve detect
-41044160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41044180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41044180,FA,straight change of sign detect
 41044220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41044250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41046050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41046110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41046110,FA,Machine Learning Anomaly Detected
-41046200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41046220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41046250,FA,Machine Learning Anomaly Detected
-41046260,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41046300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41047030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41047040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41046300,FA,Machine Learning Anomaly Detected
 41047060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41047070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41047130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41047130,FA,Suddent spike or drop detected
 41047160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
-41047280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41047160,FA,Machine Learning Anomaly Detected
 41047370,FA,Machine Learning Anomaly Detected
-41048010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41048020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41048120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41048120,FA,Bell curve detect
-41048240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41048320,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41048350,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41048430,FA,Bell curve detect
-41049100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41049140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 41049200,FA,Suddent spike or drop detected
-41049200,FA,Bell curve detect
-41050080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41050130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41050160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41051010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41051140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41051150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41051190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41051250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41051270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41052080,FA,Suddent spike or drop detected
 41052120,FA,Suddent spike or drop detected
-41052240,FA,small bell curve detect
 41052260,FA,Suddent spike or drop detected
-41052270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41053020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41053050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41053060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41053090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41053110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41053130,FA,Bell curve detect
-41053150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41053180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41053220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41053260,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41053380,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41053430,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41054020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41054050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41054080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41054110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41054170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41054190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41054220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41054250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41054300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41055060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41055070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41055090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41055200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41055220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41055230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41056010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41056050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41056180,FA,Suddent spike or drop detected
-41056210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41056280,FA,Suddent spike or drop detected
 41057050,FA,Suddent spike or drop detected
-41057150,FA,Suddent spike or drop detected
 41057270,FA,Suddent spike or drop detected
-41057280,FA,Suddent spike or drop detected
 41057300,FA,Suddent spike or drop detected
 41058020,FA,Suddent spike or drop detected
 41058040,FA,Suddent spike or drop detected
 41058060,FA,Suddent spike or drop detected
-41058070,FA,Suddent spike or drop detected
 41058090,FA,Suddent spike or drop detected
 41058110,FA,Suddent spike or drop detected
-41058150,FA,Suddent spike or drop detected
-41058160,FA,Suddent spike or drop detected
 41058220,FA,Suddent spike or drop detected
-41059010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41059040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41059090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41059150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41059170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41059240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41059300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41060020,FA,Machine Learning Anomaly Detected
-41060020,FA,Suddent spike or drop detected
-41060040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41060080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41060080,FA,Suddent spike or drop detected
-41060110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41060110,FA,Machine Learning Anomaly Detected
-41060120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41060120,FA,Machine Learning Anomaly Detected
 41060170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
+41060170,FA,Machine Learning Anomaly Detected
 41061020,FA,Machine Learning Anomaly Detected
-41061030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41061110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41061110,FA,Suddent spike or drop detected
 41061150,FA,Suddent spike or drop detected
 41061360,FA,Suddent spike or drop detected
 41062010,FA,Suddent spike or drop detected
-41062020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
 41062020,FA,Suddent spike or drop detected
 41062070,FA,Suddent spike or drop detected
-41062100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41062110,FA,Suddent spike or drop detected
 41062190,FA,Suddent spike or drop detected
-41062220,FA,Suddent spike or drop detected
 41062270,FA,Machine Learning Anomaly Detected
 41062320,FA,Suddent spike or drop detected
-41063030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41063060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41063060,FA,Suddent spike or drop detected
 41063070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41063070,FA,Machine Learning Anomaly Detected
-41063090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41063090,FA,Suddent spike or drop detected
-41063100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41063140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
 41063150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41064020,FA,Machine Learning Anomaly Detected
 41064050,FA,Suddent spike or drop detected
 41064150,FA,straight change of sign detect
 41064160,FA,Suddent spike or drop detected
-41065010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41065010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 41065010,FA,Suddent spike or drop detected
-41065020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 41065020,FA,Suddent spike or drop detected
-41065030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41065080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41065090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41066050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41066050,FA,Suddent spike or drop detected
-41066130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41066150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41066150,FA,Suddent spike or drop detected
-41067020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41067030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41067030,FA,Bell curve detect
-41067050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41067060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41067060,FA,Suddent spike or drop detected
-41067100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41067130,FA,Suddent spike or drop detected
-41067200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41067200,FA,Suddent spike or drop detected
 41067240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41068020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41068040,FA,Suddent spike or drop detected
-41068060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41068090,FA,Suddent spike or drop detected
-41068190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41068200,FA,Suddent spike or drop detected
-41068250,FA,Machine Learning Anomaly Detected
-41068280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41068280,FA,Suddent spike or drop detected
-41069010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 41069010,FA,Suddent spike or drop detected
-41069020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41069020,FA,Suddent spike or drop detected
-41069030,FA,Suddent spike or drop detected
-41069050,FA,Suddent spike or drop detected
-41069060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41069070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41069070,FA,Suddent spike or drop detected
-41069110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41069120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41069150,FA,Suddent spike or drop detected
-41069170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41069180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41069190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41069190,FA,Suddent spike or drop detected
-41069290,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41069290,FA,Suddent spike or drop detected
+41069170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2043"
 41069310,FA,Machine Learning Anomaly Detected
 41070020,FA,Suddent spike or drop detected
 41070040,FA,Suddent spike or drop detected
-41070050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41070090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41070100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41070100,FA,Suddent spike or drop detected
 41070130,FA,Suddent spike or drop detected
-41071020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41071050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41071070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41071110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41071110,FA,Suddent spike or drop detected
-41071150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2033"
-41071160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41071180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41071210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41071280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41071210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2032"
+41071280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
 41072140,FA,Machine Learning Anomaly Detected
-41072230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41072300,FA,Machine Learning Anomaly Detected
-41073120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41075010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41075020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41072230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41075040,FA,Suddent spike or drop detected
-41075050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2036"
-41075060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41076010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41076030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41076050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41076070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41076100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41077030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41077030,FA,Suddent spike or drop detected
-41077070,FA,Suddent spike or drop detected
-41077090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41077090,FA,Suddent spike or drop detected
-41077110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41077110,FA,Suddent spike or drop detected
-41077140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
 41077140,FA,Suddent spike or drop detected
 41077160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41077190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41077190,FA,Suddent spike or drop detected
-41077200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41077200,FA,Suddent spike or drop detected
-41078010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41078090,FA,Bell curve detect
-41078160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
-41078170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41078170,FA,Machine Learning Anomaly Detected
 41079010,FA,Suddent spike or drop detected
-41079050,FA,Suddent spike or drop detected
-41079070,FA,Suddent spike or drop detected
-41079100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41079120,FA,Suddent spike or drop detected
-41079170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41080010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41080010,FA,Suddent spike or drop detected
 41080020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41080020,FA,Bell curve detect
 41080100,FA,Suddent spike or drop detected
-41080110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41080110,FA,Suddent spike or drop detected
-41080130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41080130,FA,Suddent spike or drop detected
-41080170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41080170,FA,Suddent spike or drop detected
-41080180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41080210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41080240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41080240,FA,Suddent spike or drop detected
-41080280,FA,Suddent spike or drop detected
-41082010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41081010,FA,Machine Learning Anomaly Detected
 41082010,FA,Suddent spike or drop detected
 41082010,FA,small bell curve detect
-41083060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 41083060,FA,Suddent spike or drop detected
 41083070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41083110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
-41083130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41083130,FA,Suddent spike or drop detected
-41084010,FA,Machine Learning Anomaly Detected
-41084090,FA,Suddent spike or drop detected
-41084170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41084190,FA,Suddent spike or drop detected
-41084200,FA,Suddent spike or drop detected
 41085130,FA,Suddent spike or drop detected
 41085210,FA,Suddent spike or drop detected
 41086010,FA,Suddent spike or drop detected
-41086040,FA,Suddent spike or drop detected
-41086080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41086140,FA,Suddent spike or drop detected
 41086160,FA,Suddent spike or drop detected
 41088020,FA,Suddent spike or drop detected
 41088080,FA,Suddent spike or drop detected
 41088100,FA,Suddent spike or drop detected
-41089020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41089030,FA,Suddent spike or drop detected
 41089060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41089070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41089110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41089120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41089120,FA,Suddent spike or drop detected
-41089130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41089160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41089160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41089160,FA,Suddent spike or drop detected
-41089180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41089180,FA,Suddent spike or drop detected
-41090060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41091010,FA,Machine Learning Anomaly Detected
-41091040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41091040,FA,Machine Learning Anomaly Detected
 41091060,FA,Suddent spike or drop detected
-41091090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41091110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41091200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41091230,FA,Machine Learning Anomaly Detected
 41091230,FA,Suddent spike or drop detected
 41091260,FA,Machine Learning Anomaly Detected
 41091260,FA,Suddent spike or drop detected
 41091280,FA,Suddent spike or drop detected
 41091300,FA,Suddent spike or drop detected
-41092010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41092100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41092200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41093010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41093010,FA,Suddent spike or drop detected
 41093060,FA,Suddent spike or drop detected
 41093080,FA,Suddent spike or drop detected
 41093140,FA,Suddent spike or drop detected
 41093160,FA,Suddent spike or drop detected
 41093170,FA,Machine Learning Anomaly Detected
-41093200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2037"
-41093250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
-41093270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41093270,FA,Suddent spike or drop detected
-41093290,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41093290,FA,Suddent spike or drop detected
 41093310,FA,Suddent spike or drop detected
-41093360,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41095050,FA,Suddent spike or drop detected
-41095110,FA,Suddent spike or drop detected
-41095130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 41095150,FA,Suddent spike or drop detected
-41095190,FA,Suddent spike or drop detected
 41095230,FA,Machine Learning Anomaly Detected
-41095230,FA,Suddent spike or drop detected
-41095270,FA,Suddent spike or drop detected
-41095330,FA,Suddent spike or drop detected
 41095370,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41096050,FA,Machine Learning Anomaly Detected
-41096090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2030"
 41096090,FA,Machine Learning Anomaly Detected
-41096190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41097020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41097020,FA,Machine Learning Anomaly Detected
-41097030,FA,Machine Learning Anomaly Detected
-41097030,FA,Suddent spike or drop detected
-41097040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41097080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41097090,FA,Suddent spike or drop detected
-41097150,FA,Suddent spike or drop detected
-41097180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41097180,FA,Machine Learning Anomaly Detected
-41097180,FA,Suddent spike or drop detected
-41097200,FA,Suddent spike or drop detected
-41097220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41097220,FA,Suddent spike or drop detected
-41097250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41097380,FA,Machine Learning Anomaly Detected
-41099020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41098010,FA,Machine Learning Anomaly Detected
+41099020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2030"
 41099270,FA,Suddent spike or drop detected
 41099300,FA,Suddent spike or drop detected
-41100070,FA,Suddent spike or drop detected
-41100090,FA,Suddent spike or drop detected
 41100180,FA,Suddent spike or drop detected
-41100200,FA,Suddent spike or drop detected
-41100240,FA,Suddent spike or drop detected
 41100250,FA,Machine Learning Anomaly Detected
-41100270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2037"
 41100270,FA,Machine Learning Anomaly Detected
 41101010,FA,Suddent spike or drop detected
-41101020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2027"
 41101020,FA,Suddent spike or drop detected
-41101050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41101050,FA,Machine Learning Anomaly Detected
 41101050,FA,Suddent spike or drop detected
 41101100,FA,Suddent spike or drop detected
-41101120,FA,Suddent spike or drop detected
 41101140,FA,Suddent spike or drop detected
 41101170,FA,Suddent spike or drop detected
 41101180,FA,Suddent spike or drop detected
 41101210,FA,Suddent spike or drop detected
-41101230,FA,Suddent spike or drop detected
-41102010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41101220,FA,Machine Learning Anomaly Detected
 41102010,FA,Machine Learning Anomaly Detected
 41102010,FA,Suddent spike or drop detected
-41102040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
 41102040,FA,Suddent spike or drop detected
 41102050,FA,Suddent spike or drop detected
-41102070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2036"
 41102070,FA,Suddent spike or drop detected
-41102140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41102140,FA,Suddent spike or drop detected
-41102150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41102150,FA,Suddent spike or drop detected
-41102160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41102160,FA,Machine Learning Anomaly Detected
 41102180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41102180,FA,Suddent spike or drop detected
-41102270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41102280,FA,Suddent spike or drop detected
 41102290,FA,Suddent spike or drop detected
-41102330,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41102370,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41102370,FA,Suddent spike or drop detected
-41102400,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41102400,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2039"
 41102400,FA,Suddent spike or drop detected
 41103010,FA,Machine Learning Anomaly Detected
-41106020,FA,Suddent spike or drop detected
-41106070,FA,Suddent spike or drop detected
-41106100,FA,Suddent spike or drop detected
-41106190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41107010,FA,Suddent spike or drop detected
-41107060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41104010,FA,Machine Learning Anomaly Detected
 41107260,FA,Machine Learning Anomaly Detected
 41107380,FA,Suddent spike or drop detected
-41107440,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41108200,FA,Suddent spike or drop detected
-41108260,FA,Suddent spike or drop detected
-41108270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2039"
-41108280,FA,Suddent spike or drop detected
-41109030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41109050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2035"
-41109050,FA,small bell curve detect
-41109090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41110010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
-41110060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41110070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
-41110130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41110170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41111040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41109050,FA,Machine Learning Anomaly Detected
+41109050,FA,Bell curve detect
 41111040,FA,Machine Learning Anomaly Detected
-41111070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41111070,FA,Suddent spike or drop detected
-41111240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41112010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41112020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
 41112100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41112120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41113030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
-41113040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41114020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41114100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
-41114100,FA,Machine Learning Anomaly Detected
 41114140,FA,Machine Learning Anomaly Detected
 41118010,FA,Negative Births Values Found
 41118010,FA,Negative Deaths Values Found
@@ -1049,12 +517,10 @@ Code,Region Type,Description
 41118080,FA,Negative Deaths Values Found
 41118110,FA,Negative Births Values Found
 41118110,FA,Negative Deaths Values Found
-41119130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41119220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41120010,FA,Negative Deaths Values Found
 41120020,FA,Negative Deaths Values Found
 41120030,FA,Negative Deaths Values Found
-41120040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 41120040,FA,Negative Deaths Values Found
 41120050,FA,Negative Births Values Found
 41120050,FA,Negative Deaths Values Found
@@ -1072,27 +538,25 @@ Code,Region Type,Description
 41121080,FA,Negative Births Values Found
 41121120,FA,Negative Births Values Found
 41121130,FA,Negative Births Values Found
-41122030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41122030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2027"
 41126010,FA,Machine Learning Anomaly Detected
 41127190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41127230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41128090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41128100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41129070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41129070,FA,Machine Learning Anomaly Detected
 41130010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41130040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41133310,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41133310,FA,Machine Learning Anomaly Detected
 41133350,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41134110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41134110,FA,Machine Learning Anomaly Detected
 41135030,FA,Suddent spike or drop detected
-41135030,FA,small bell curve detect
+41135030,FA,straight change of sign detect
 41135040,FA,Suddent spike or drop detected
 41135040,FA,Bell curve detect
-41136020,FA,Suddent spike or drop detected
-41136150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41136440,FA,Suddent spike or drop detected
-41136470,FA,Suddent spike or drop detected
+41137010,FA,Machine Learning Anomaly Detected
 41138010,FA,Negative Births Values Found
 41138010,FA,Negative Deaths Values Found
 41138040,FA,Negative Deaths Values Found
@@ -1109,12 +573,11 @@ Code,Region Type,Description
 41141010,FA,Negative Deaths Values Found
 41141020,FA,Negative Births Values Found
 41141020,FA,Negative Deaths Values Found
-41141020,FA,Machine Learning Anomaly Detected
 41141030,FA,Negative Births Values Found
 41141030,FA,Negative Deaths Values Found
+41141030,FA,Machine Learning Anomaly Detected
 41141040,FA,Negative Births Values Found
 41141040,FA,Negative Deaths Values Found
-41141040,FA,Machine Learning Anomaly Detected
 41141050,FA,Negative Births Values Found
 41141050,FA,Negative Deaths Values Found
 41141070,FA,Negative Births Values Found
@@ -1123,11 +586,10 @@ Code,Region Type,Description
 41141090,FA,Negative Deaths Values Found
 41141110,FA,Negative Births Values Found
 41141110,FA,Negative Deaths Values Found
-41142090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41143080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41143090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41143090,FA,Machine Learning Anomaly Detected
 41144070,FA,Suddent spike or drop detected
-41144180,FA,Suddent spike or drop detected
 41144350,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
 41145020,FA,Suddent spike or drop detected
 41145090,FA,Suddent spike or drop detected
@@ -1137,87 +599,52 @@ Code,Region Type,Description
 41146080,FA,Suddent spike or drop detected
 41146110,FA,Suddent spike or drop detected
 41146130,FA,Suddent spike or drop detected
-41147030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41147030,FA,Suddent spike or drop detected
-41147070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
-41147080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41147090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2038"
 41147110,FA,Suddent spike or drop detected
-41147130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41147140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41147170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
 41147170,FA,Suddent spike or drop detected
 41148160,FA,Machine Learning Anomaly Detected
-41148250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41149050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41149100,FA,Suddent spike or drop detected
-41149130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41150030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41150060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41150080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2040"
-41150100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41150110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41150130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41150130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
 41150170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41150180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41150180,FA,Suddent spike or drop detected
 41151090,FA,Suddent spike or drop detected
 41151130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41152070,FA,Bell curve detect
-41154010,FA,Suddent spike or drop detected
-41154030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41154060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41154120,FA,Suddent spike or drop detected
 41156010,FA,Negative Births Values Found
 41156010,FA,Negative Deaths Values Found
+41156010,FA,Machine Learning Anomaly Detected
 41156020,FA,Negative Births Values Found
 41156020,FA,Negative Deaths Values Found
+41156020,FA,Machine Learning Anomaly Detected
 41156030,FA,Negative Births Values Found
 41156030,FA,Negative Deaths Values Found
 41156030,FA,Machine Learning Anomaly Detected
 41156040,FA,Negative Births Values Found
 41156040,FA,Negative Deaths Values Found
+41156040,FA,Machine Learning Anomaly Detected
 41156070,FA,Negative Births Values Found
 41156070,FA,Negative Deaths Values Found
 41156070,FA,Machine Learning Anomaly Detected
 41156080,FA,Negative Births Values Found
 41156080,FA,Negative Deaths Values Found
-41157010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2041"
-41157070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
-41158030,FA,Bell curve detect
-41158070,FA,Bell curve detect
-41159010,FA,Bell curve detect
 41159030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41159040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
-41159120,FA,Bell curve detect
-41159180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41159030,FA,Machine Learning Anomaly Detected
 41159200,FA,Suddent spike or drop detected
-41162010,FA,Suddent spike or drop detected
-41162030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41162050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41162050,FA,Suddent spike or drop detected
-41162080,FA,Suddent spike or drop detected
-41162140,FA,Suddent spike or drop detected
-41164030,FA,Suddent spike or drop detected
-41164170,FA,Suddent spike or drop detected
 41164180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41164230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41165110,FA,Suddent spike or drop detected
 41165150,FA,Suddent spike or drop detected
-41165170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41165220,FA,Suddent spike or drop detected
 41165230,FA,Suddent spike or drop detected
 41165310,FA,Machine Learning Anomaly Detected
 41165370,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41165440,FA,Suddent spike or drop detected
 41165450,FA,Suddent spike or drop detected
 41166030,FA,Suddent spike or drop detected
-41166080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
-41166080,FA,Bell curve detect
 41166100,FA,Bell curve detect
 41167050,FA,Suddent spike or drop detected
 41169100,FA,Suddent spike or drop detected
-41170020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41170020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2046"
 41170020,FA,Negative Births Values Found
 41170020,FA,Negative Deaths Values Found
 41170030,FA,Negative Births Values Found
@@ -1230,7 +657,6 @@ Code,Region Type,Description
 41170090,FA,Negative Deaths Values Found
 41170100,FA,Negative Births Values Found
 41170100,FA,Negative Deaths Values Found
-41170110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41170110,FA,Negative Births Values Found
 41170110,FA,Negative Deaths Values Found
 41170120,FA,Negative Births Values Found
@@ -1248,52 +674,22 @@ Code,Region Type,Description
 41170200,FA,Negative Deaths Values Found
 41170210,FA,Negative Deaths Values Found
 41171010,FA,Suddent spike or drop detected
-41171010,FA,straight change of sign detect
-41171040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41171050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2029"
-41171060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41171070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41171080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41171130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41171130,FA,small bell curve detect
 41171140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41171140,FA,Machine Learning Anomaly Detected
 41171140,FA,Suddent spike or drop detected
-41171140,FA,straight change of sign detect
-41171170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41171180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41172010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41172020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41172050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41172070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41172090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41173030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41173040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41173050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41173070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41171220,FA,Machine Learning Anomaly Detected
 41173100,FA,Suddent spike or drop detected
-41173110,FA,Suddent spike or drop detected
-41173120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41173140,FA,Suddent spike or drop detected
-41173220,FA,Suddent spike or drop detected
-41173300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
-41173330,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41174020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
 41174020,FA,Suddent spike or drop detected
 41174030,FA,Suddent spike or drop detected
 41174060,FA,Suddent spike or drop detected
-41174080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
-41174080,FA,Suddent spike or drop detected
-41174090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41174090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2044"
 41174100,FA,Suddent spike or drop detected
 41174120,FA,Suddent spike or drop detected
 41174140,FA,Suddent spike or drop detected
-41174150,FA,Suddent spike or drop detected
 41174180,FA,Suddent spike or drop detected
 41174220,FA,Suddent spike or drop detected
-41174230,FA,Suddent spike or drop detected
-41174290,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
 41175050,FA,Suddent spike or drop detected
-41175170,FA,Bell curve detect
 41175220,FA,Suddent spike or drop detected
 41175260,FA,Bell curve detect
 41175290,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
@@ -1301,11 +697,9 @@ Code,Region Type,Description
 41176130,FA,Suddent spike or drop detected
 41176190,FA,Suddent spike or drop detected
 41177020,FA,Suddent spike or drop detected
-41177030,FA,Suddent spike or drop detected
 41177060,FA,Suddent spike or drop detected
 41177210,FA,Suddent spike or drop detected
 41178010,FA,Suddent spike or drop detected
 41178030,FA,Suddent spike or drop detected
 41178040,FA,Suddent spike or drop detected
 41178070,FA,Suddent spike or drop detected
-41178150,FA,Suddent spike or drop detected

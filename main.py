@@ -125,7 +125,7 @@ except Exception as e:
 
 try:
     logging.info("Running Machine Learning Anomaly Detection:")
-    ml_anomaly = perform_ml_anomaly_detection(conn)
+    ml_anomaly = perform_ml_anomaly_detection(conn, contamination_ = contamination)
     if not ml_anomaly.empty:
         pass
             # print("ML Anomaly Detection:")
@@ -138,10 +138,10 @@ except Exception as e:
 
 try:
     logging.info("Try to execute spike check")
-    spike_output = spike_check(conn) # so far filter out 327 region
+    spike_output = spike_check(conn, sensitivity) # so far filter out 327 region
     logging.info("spike check done")
     logging.info("Try to execute shape check")
-    shape_output = trend_shape_check(conn) # so far filter out 360 region
+    shape_output = trend_shape_check(conn, sensitivity) # so far filter out 360 region
     logging.info("shape check done")
 except Exception as e:
     logging.error(e)

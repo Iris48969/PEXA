@@ -120,7 +120,7 @@ def population_region_level_sum_check(conn):
     except Exception as e:
         logging.error(e)
 
-def spike_check(conn):
+def spike_check(conn, sensitivity):
     """
     The purpose of this function is to identify abnormal spike/drop of population forecast
     in a timeseries format.
@@ -155,7 +155,7 @@ def spike_check(conn):
             lower_bound = Q1 - 5 * IQR
             upper_bound = Q3 + 5 * IQR
             for data in data_list:
-                if abs(data) > 0.005:
+                if abs(data) > sensitivity:
                     if data > upper_bound or data < lower_bound: return True
             return False
         # creating a percentage change df for ERP
@@ -173,7 +173,7 @@ def spike_check(conn):
     except Exception as e:
         logging.error(e)
 
-def trend_shape_check(conn):
+def trend_shape_check(conn, sensitivity):
     """
     The purpose of this function is to identify abnormal shape of population forecast
     in a timeseries format.
@@ -215,8 +215,8 @@ def trend_shape_check(conn):
             """
             output_string = ""
             for data in data_list:
-                if data > 0.005: output_string += "+"
-                elif data < -0.005: output_string += "-"
+                if data > sensitivity: output_string += "+"
+                elif data < -1*sensitivity: output_string += "-"
                 else: output_string += "0"
             return output_string
 
@@ -360,7 +360,7 @@ def perform_sanity_check(conn):
 
 
 # Machine Learning Anomaly Detection Function
-def perform_ml_anomaly_detection(conn):
+def perform_ml_anomaly_detection(conn, contamination_):
     try:
         logging.info("Performing machine learning anomaly detection...")
         query = open(os.path.abspath('SQL_Queries/Negative_Sanity_ML_Check.sql'), 'r').read()
@@ -371,7 +371,7 @@ def perform_ml_anomaly_detection(conn):
             region_df = df[df['RegionType'] == region_type]
             wide_df = region_df.pivot_table(index='ASGSCode', columns='Year', values='Total').dropna()
 
-            model = IsolationForest(contamination=0.05)
+            model = IsolationForest(contamination=contamination_)
             anomalies = model.fit_predict(wide_df)
             anomalies_df = wide_df[anomalies == -1]
 

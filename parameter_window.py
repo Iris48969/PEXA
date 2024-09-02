@@ -24,6 +24,12 @@ def open_parameter_window():
         save_parameters(ratio_upper, ratio_lower, sensitivity, contamination)
 
     def save_parameters(ratio_upper, ratio_lower, sensitivity, contamination):
+        with open('parameters.txt', 'w') as f:
+                f.write(f"ratio_upper: {ratio_upper}\n")
+                f.write(f"ratio_lower: {ratio_lower}\n")
+                f.write(f"sesitivity: {sensitivity}\n")
+                f.write(f"contamination: {contamination}\n")
+
         # Save parameters to the list
         parameters.extend([ratio_upper, ratio_lower, sensitivity, contamination])
         
