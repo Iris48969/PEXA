@@ -49,18 +49,19 @@ except Exception as e:
     logging.error(f"Connection to database failed: {e}")
     conn = None
 
-# household ratio check 
-if conn:
-    try:
-        logging.info("Trying to execute household check")
-        outliers_df, unique_outlier_asgs_codes = household_check(conn)
-        logging.info("Household check completed successfully")
-        # Optionally, you can log or save the results:
-        logging.info(f"Found {len(unique_outlier_asgs_codes)} unique outlier ASGS codes.")
-    except Exception as e:
-        logging.error(f"Household check failed: {e}")
-else:
-    logging.error("Skipped checks because the connection was not established.")
+# # household ratio check 
+# if conn:
+#     try:
+#         logging.info("Trying to execute household check")
+#         outliers_df, unique_outlier_asgs_codes = household_check(conn)
+#         logging.info("Household check completed successfully")
+#         # Optionally, you can log or save the results:
+#         logging.info(f"Found {len(unique_outlier_asgs_codes)} unique outlier ASGS codes.")
+#     except Exception as e:
+#         logging.error(f"Household check failed: {e}")
+# else:
+#     logging.error("Skipped checks because the connection was not established.")
+
 
     
 # region level consistency check
@@ -96,8 +97,9 @@ try:
     logging.info("Running Negative Checks:")
     negative_checks = perform_negative_check(conn)
     if not negative_checks.empty:
-            print("Negative Checks:")
-            print(negative_checks)
+        pass
+            # print("Negative Checks:")
+            # print(negative_checks)
 except Exception as e:
     logging.error(f"Negative check failed: {e}")
 
@@ -105,8 +107,9 @@ try:
     logging.info("Running Sanity Checks:")
     sanity_checks = perform_sanity_check(conn)
     if not sanity_checks.empty:
-            print("Sanity Checks:")
-            print(sanity_checks)
+        pass
+            # print("Sanity Checks:")
+            # print(sanity_checks)
 except Exception as e:
     logging.error(f"Sanity check failed: {e}")
 
@@ -114,8 +117,9 @@ try:
     logging.info("Running Machine Learning Anomaly Detection:")
     ml_anomaly = perform_ml_anomaly_detection(conn)
     if not ml_anomaly.empty:
-            print("ML Anomaly Detection:")
-            print(ml_anomaly)
+        pass
+            # print("ML Anomaly Detection:")
+            # print(ml_anomaly)
 except Exception as e:
     logging.error(f"ML Anomaly Detection check failed: {e}")
 
@@ -132,6 +136,12 @@ try:
 except Exception as e:
     logging.error(e)
 
-print(spike_output)
+# print(spike_output)
 
-print(shape_output)
+# print(shape_output)
+
+
+# merged_df = pd.concat([outliers_df, births_check_output, deaths_check_output, household_check_output, population_check_output, negative_checks, sanity_checks,ml_anomaly, spike_output,shape_output ], ignore_index=True)
+# print(merged_df)
+# merged_df.to_csv('final_output.csv', index=False)
+

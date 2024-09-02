@@ -293,7 +293,7 @@ def perform_negative_check(conn):
             query = file.read()
         
         # Fetch data from the database
-        df = pd.read_sql(query, conn)
+        df = execute_sql_query(sql_query=query, conn=conn)
 
         result_list = []
 
@@ -336,7 +336,7 @@ def perform_sanity_check(conn):
             query = file.read()
 
         # Fetch data from the database
-        df = pd.read_sql(query, conn)
+        df = execute_sql_query(sql_query=query, conn=conn)
 
         result_list = []
 
@@ -382,8 +382,7 @@ def perform_ml_anomaly_detection(conn):
     try:
         logging.info("Performing machine learning anomaly detection...")
         query = open(os.path.abspath('SQL_Queries/Negative_Sanity_ML_Check.sql'), 'r').read()
-        df = execute_sql_query(conn, query)
-
+        df = execute_sql_query(sql_query=query, conn=conn)
         result_list = []
 
         for region_type in ['FA', 'SA2']:
