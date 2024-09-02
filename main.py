@@ -55,7 +55,7 @@ except Exception as e:
 
 # get input parameters
 try:
-    ratio_upper, ratio_lower, sensitivity, contamination = open_parameter_window()
+    ratio_upper, ratio_lower, multiplier, sensitivity, contamination = open_parameter_window()
     logging.info("Got inputted parameters")
 except Exception as e:
     logging.error(e)
@@ -138,7 +138,7 @@ except Exception as e:
 
 try:
     logging.info("Try to execute spike check")
-    spike_output = spike_check(conn, sensitivity) # so far filter out 327 region
+    spike_output = spike_check(conn, sensitivity, multiplier) # so far filter out 327 region
     logging.info("spike check done")
     logging.info("Try to execute shape check")
     shape_output = trend_shape_check(conn, sensitivity) # so far filter out 360 region

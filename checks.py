@@ -120,7 +120,7 @@ def population_region_level_sum_check(conn):
     except Exception as e:
         logging.error(e)
 
-def spike_check(conn, sensitivity):
+def spike_check(conn, sensitivity, multiplier):
     """
     The purpose of this function is to identify abnormal spike/drop of population forecast
     in a timeseries format.
@@ -152,8 +152,8 @@ def spike_check(conn, sensitivity):
             Q1 = np.percentile(data_list, 25)
             Q3 = np.percentile(data_list, 75)
             IQR = Q3 - Q1
-            lower_bound = Q1 - 5 * IQR
-            upper_bound = Q3 + 5 * IQR
+            lower_bound = Q1 - multiplier * IQR
+            upper_bound = Q3 + multiplier * IQR
             for data in data_list:
                 if abs(data) > sensitivity:
                     if data > upper_bound or data < lower_bound: return True
