@@ -434,6 +434,13 @@ def perform_ml_anomaly_detection(conn):
         
         # Convert result_list to DataFrame
         result_df = pd.DataFrame(result_list, columns=['Code', 'Region Type', 'Description'])
+        # Drop duplicate rows based on the 'Code' column, keeping the first occurrence
+        result_df = result_df.drop_duplicates(subset='Code')
+
+        # Reset index if needed
+        result_df = result_df.reset_index(drop=True)
+        
+        
         return result_df
       
     except Exception as e:
