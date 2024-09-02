@@ -1,6 +1,8 @@
 """
 This file contains checks in the form of one function each that calls one SQL script
 """
+from matplotlib import pyplot as plt
+import seaborn as sns
 import pandas as pd
 import os
 import logging
@@ -8,6 +10,11 @@ import re
 import numpy as np
 import platform
 from sklearn.ensemble import IsolationForest
+import warnings
+
+# Ignore SettingWithCopyWarning
+warnings.simplefilter(action='ignore', category=pd.errors.SettingWithCopyWarning)
+
 
 def execute_sql_query(conn, sql_query):
     try:
@@ -359,27 +366,76 @@ def perform_sanity_check(conn):
 
 
 
-# Machine Learning Anomaly Detection Function
+# Machine Learning Anomaly Detection Function, 2021 Census
 def perform_ml_anomaly_detection(conn):
     try:
         logging.info("Performing machine learning anomaly detection...")
-        query = open(os.path.abspath('SQL_Queries/Negative_Sanity_ML_Check.sql'), 'r').read()
+        query = open(os.path.abspath('SQL_Queries/ERP_ML.sql'), 'r').read()
         df = execute_sql_query(sql_query=query, conn=conn)
         result_list = []
 
+        def outlier_plot(data, outlier_method_name, x_var, y_var,region_type):
+            # print(f'Outlier Method: {outlier_method_name}')
+           
+            # print(f'Number of anomalous values: {len(data[data["anomaly"] == -1])}')
+            # print(f'Number of non-anomalous values: {len(data[data["anomaly"] == 1])}')
+            # print(f'Total Number of values: {len(data)}')
+
+            # Create FacetGrid
+            g = sns.FacetGrid(data, col='anomaly', height=4, hue='anomaly', hue_order=[1, -1], palette={1: 'green', -1: 'red'})
+            g.map(sns.scatterplot, x_var, y_var, s = 20, legend='full')
+            g.fig.suptitle(f'{outlier_method_name} - {region_type}', y=1.10, fontweight='bold')
+            
+            # Set limits for x and y axes 
+            g.set(xlim=(data[x_var].min(), data[x_var].max()), ylim=(0, data[y_var].max() + 1000))
+
+            # Customize subplot titles
+            axes = g.axes.flatten()
+            axes[0].set_title(f'Outliers in {region_type}\n{len(data[data["anomaly"] == -1])} points')
+            axes[1].set_title(f'Inliers in {region_type}\n{len(data[data["anomaly"] == 1])} points')
+
+            for ax in axes:
+                ax.set_xticks(data[x_var].unique())
+                ax.set_xticklabels(data[x_var].unique(), rotation=45, ha='right')
+           # Add legend 
+            for ax in g.axes.flat:
+                handles, labels = ax.get_legend_handles_labels()
+                ax.legend(handles, [f'{label} ({region_type})' for label in labels], title='Anomaly Status')
+
+            plt.tight_layout()
+            plt.show()
+
+            return g
+
         for region_type in ['FA', 'SA2']:
             region_df = df[df['RegionType'] == region_type]
-            wide_df = region_df.pivot_table(index='ASGSCode', columns='Year', values='Total').dropna()
+            
+            # Ensure ASGSCode is present
+            if 'ASGSCode' not in region_df.columns:
+                logging.error("Column 'ASGSCode' is missing from the DataFrame")
+                return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])
 
-            model = IsolationForest(contamination=0.05)
-            anomalies = model.fit_predict(wide_df)
-            anomalies_df = wide_df[anomalies == -1]
-
-            if not anomalies_df.empty:
-                for code in anomalies_df.index.unique():
-                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Machine Learning Anomaly Detected'})
-
-        return pd.DataFrame(result_list, columns=['Code', 'Region Type', 'Description'])
+            # Prepare input features
+            anomaly_inputs = ['ERPYear', 'Total']
+            
+            # Initialize and fit the Isolation Forest model
+            model_IF = IsolationForest(contamination=0.003, random_state=42)
+            region_df['anomaly_scores'] = model_IF.fit_predict(region_df[anomaly_inputs])
+            region_df['anomaly'] = model_IF.predict(region_df[anomaly_inputs])
+            # Manually set negative values as outliers
+            region_df.loc[region_df['Total'] < 0, 'anomaly'] = -1
+            
+            # Plot results
+            #outlier_plot(region_df, "Isolation Forest", "ERPYear", "Total", region_type)
+            # Append results to the result list
+            for index, row in region_df.iterrows():
+                if row['anomaly'] == -1:
+                    result_list.append({'Code': row['ASGSCode'], 'Region Type': region_type, 'Description': 'Machine Learning Anomaly Detected'})
+        
+        # Convert result_list to DataFrame
+        result_df = pd.DataFrame(result_list, columns=['Code', 'Region Type', 'Description'])
+        return result_df
+      
     except Exception as e:
         logging.error(f"Error performing machine learning anomaly detection: {e}")
         return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])
