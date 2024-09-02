@@ -426,7 +426,7 @@ def perform_ml_anomaly_detection(conn):
             region_df.loc[region_df['Total'] < 0, 'anomaly'] = -1
             
             # Plot results
-            outlier_plot(region_df, "Isolation Forest", "ERPYear", "Total", region_type)
+            #outlier_plot(region_df, "Isolation Forest", "ERPYear", "Total", region_type)
             # Append results to the result list
             for index, row in region_df.iterrows():
                 if row['anomaly'] == -1:
@@ -440,3 +440,4 @@ def perform_ml_anomaly_detection(conn):
         logging.error(f"Error performing machine learning anomaly detection: {e}")
         return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])
     
+
