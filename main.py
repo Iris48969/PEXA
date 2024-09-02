@@ -56,7 +56,7 @@ except Exception as e:
 if conn:
     try:
         logging.info("Trying to execute household check")
-        outliers_df = household_check(conn)
+        ratio_df = household_check(conn)
         logging.info("Household check completed successfully")
         # Optionally, you can log or save the results:
         # logging.info(f"Found {len(unique_outlier_asgs_codes)} unique outlier ASGS codes.")
@@ -139,18 +139,34 @@ except Exception as e:
     logging.error(e)
 
 # print(spike_output)
-
 # print(shape_output)
 
-checks_list = [outliers_df, births_check_output, deaths_check_output, household_check_output, population_check_output, negative_checks,ml_anomaly, spike_output,shape_output]
-
-merged_df = pd.concat(checks_list, ignore_index=True)
+# merge result together and output a csv file
+output_list = [sanity_checks, ratio_df, births_check_output, deaths_check_output, household_check_output, population_check_output, negative_checks,ml_anomaly, spike_output,shape_output]
+merged_df = pd.concat(output_list, ignore_index=True)
 merged_df = merged_df.sort_values(by=['Region Type', 'Code'], ascending=[False, True])
 print(merged_df)
 merged_df.to_csv('final_output.csv', index=False)
 
+# summary stat 
 end_time = time.time()
 running_time = end_time - start_time
 
 print(f'The number of unique abnormal region are: {len(merged_df["Code"].unique())}') # something wrong with sanity check, without it only has 565 region been tagged
 print(f"Running time: {running_time:.6f} seconds")
+
+print(f'For sanity check, {len(sanity_checks.iloc[:, 0].unique())} of unique region been tagged')
+print(f'For ratio check, {len(ratio_df.iloc[:, 0].unique())} of unique region been tagged')
+print(f'For births check, {len(births_check_output.iloc[:, 0].unique())} of unique region been tagged')
+# print(f'For deaths check, {len(deaths_check_output.iloc[:, 0].unique())} of unique region been tagged')
+# print(f'For household check, {len(household_check_output.iloc[:, 0].unique())} of unique region been tagged')
+print(f'For population check, {len(population_check_output.iloc[:, 0].unique())} of unique region been tagged')
+print(f'For negative checks, {len(negative_checks.iloc[:, 0].unique())} of unique region been tagged')
+print(f'For ML anomaly check, {len(ml_anomaly.iloc[:, 0].unique())} of unique region been tagged')
+print(f'For spike check, {len(spike_output.iloc[:, 0].unique())} of unique region been tagged')
+print(f'For shape check, {len(shape_output.iloc[:, 0].unique())} of unique region been tagged')
+
+# two main parameters (sensitivity)
+# ratio check: 1-5 in default are normal
+# spike / shape check: treating change below 0.005 as "no change"
+# Ml: contamination = 0.05 (sensitivity)

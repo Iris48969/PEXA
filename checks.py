@@ -325,21 +325,21 @@ def perform_sanity_check(conn):
         for region_type in ['FA', 'SA2']:
             region_df = df[df['RegionType'] == region_type]
             
-            # Check for zero values
-            zero_births = region_df[(region_df['DataType'] == 'Births') & (region_df['Total'] == 0)]
-            if not zero_births.empty:
-                for code in zero_births['ASGSCode'].unique():
-                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Zero Births Values Found'})
+            # # Check for zero values
+            # zero_births = region_df[(region_df['DataType'] == 'Births') & (region_df['Total'] == 0)]
+            # if not zero_births.empty:
+            #     for code in zero_births['ASGSCode'].unique():
+            #         result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Zero Births Values Found'})
 
-            zero_deaths = region_df[(region_df['DataType'] == 'Deaths') & (region_df['Total'] == 0)]
-            if not zero_deaths.empty:
-                for code in zero_deaths['ASGSCode'].unique():
-                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Zero Deaths Values Found'})
+            # zero_deaths = region_df[(region_df['DataType'] == 'Deaths') & (region_df['Total'] == 0)]
+            # if not zero_deaths.empty:
+            #     for code in zero_deaths['ASGSCode'].unique():
+            #         result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Zero Deaths Values Found'})
 
-            zero_population = region_df[(region_df['DataType'] == 'ERP') & (region_df['Total'] == 0)]
-            if not zero_population.empty:
-                for code in zero_population['ASGSCode'].unique():
-                    result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Zero Population Values Found'})
+            # zero_population = region_df[(region_df['DataType'] == 'ERP') & (region_df['Total'] == 0)]
+            # if not zero_population.empty:
+            #     for code in zero_population['ASGSCode'].unique():
+            #         result_list.append({'Code': code, 'Region Type': region_type, 'Description': 'Zero Population Values Found'})
 
             # Check for missing values
             missing_values = region_df.isnull().sum()
