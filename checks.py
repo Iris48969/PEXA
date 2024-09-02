@@ -25,7 +25,7 @@ def execute_sql_query(conn, sql_query):
     except Exception as e:
         logging.error(e)
 
-def household_check(conn):
+def household_check(conn, ratio_upper, ratio_lower):
     """
     The purpose of this function is to identify abnormal spikes/drops in population forecasts
     in a timeseries format by checking the ratio of population to household count.
@@ -38,7 +38,7 @@ def household_check(conn):
         # Execute the SQL query and get the merged dataframe
         merged_df = execute_sql_query(conn=conn, sql_query=ratio_sql)
         logging.info("Data returned")
-        outliers_df = merged_df[(merged_df['ratio'] >= 6) | (merged_df['ratio'] <= 1)]
+        outliers_df = merged_df[(merged_df['ratio'] >= ratio_upper) | (merged_df['ratio'] <= ratio_lower)]
         logging.info("Outlier dataframe found")
         earliest_outliers_df = outliers_df.groupby('ASGSCode').apply(
             lambda x: x.loc[x['Year'].idxmin()]

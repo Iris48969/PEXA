@@ -1,0 +1,4 @@
+ratio_upper: 5
+ratio_lower: 1
+sesitivity: 0.005
+contamination: 0.05
