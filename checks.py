@@ -1,7 +1,7 @@
 """
 This file contains checks in the form of one function each that calls one SQL script
 """
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 import seaborn as sns
 import pandas as pd
 import os
@@ -374,38 +374,38 @@ def perform_ml_anomaly_detection(conn):
         df = execute_sql_query(sql_query=query, conn=conn)
         result_list = []
 
-        def outlier_plot(data, outlier_method_name, x_var, y_var,region_type):
-            # print(f'Outlier Method: {outlier_method_name}')
+        # def outlier_plot(data, outlier_method_name, x_var, y_var,region_type):
+        #     # print(f'Outlier Method: {outlier_method_name}')
            
-            # print(f'Number of anomalous values: {len(data[data["anomaly"] == -1])}')
-            # print(f'Number of non-anomalous values: {len(data[data["anomaly"] == 1])}')
-            # print(f'Total Number of values: {len(data)}')
+        #     # print(f'Number of anomalous values: {len(data[data["anomaly"] == -1])}')
+        #     # print(f'Number of non-anomalous values: {len(data[data["anomaly"] == 1])}')
+        #     # print(f'Total Number of values: {len(data)}')
 
-            # Create FacetGrid
-            g = sns.FacetGrid(data, col='anomaly', height=4, hue='anomaly', hue_order=[1, -1], palette={1: 'green', -1: 'red'})
-            g.map(sns.scatterplot, x_var, y_var, s = 20, legend='full')
-            g.fig.suptitle(f'{outlier_method_name} - {region_type}', y=1.10, fontweight='bold')
+        #     # Create FacetGrid
+        #     g = sns.FacetGrid(data, col='anomaly', height=4, hue='anomaly', hue_order=[1, -1], palette={1: 'green', -1: 'red'})
+        #     g.map(sns.scatterplot, x_var, y_var, s = 20, legend='full')
+        #     g.fig.suptitle(f'{outlier_method_name} - {region_type}', y=1.10, fontweight='bold')
             
-            # Set limits for x and y axes 
-            g.set(xlim=(data[x_var].min(), data[x_var].max()), ylim=(0, data[y_var].max() + 1000))
+        #     # Set limits for x and y axes 
+        #     g.set(xlim=(data[x_var].min(), data[x_var].max()), ylim=(0, data[y_var].max() + 1000))
 
-            # Customize subplot titles
-            axes = g.axes.flatten()
-            axes[0].set_title(f'Outliers in {region_type}\n{len(data[data["anomaly"] == -1])} points')
-            axes[1].set_title(f'Inliers in {region_type}\n{len(data[data["anomaly"] == 1])} points')
+        #     # Customize subplot titles
+        #     axes = g.axes.flatten()
+        #     axes[0].set_title(f'Outliers in {region_type}\n{len(data[data["anomaly"] == -1])} points')
+        #     axes[1].set_title(f'Inliers in {region_type}\n{len(data[data["anomaly"] == 1])} points')
 
-            for ax in axes:
-                ax.set_xticks(data[x_var].unique())
-                ax.set_xticklabels(data[x_var].unique(), rotation=45, ha='right')
-           # Add legend 
-            for ax in g.axes.flat:
-                handles, labels = ax.get_legend_handles_labels()
-                ax.legend(handles, [f'{label} ({region_type})' for label in labels], title='Anomaly Status')
+        #     for ax in axes:
+        #         ax.set_xticks(data[x_var].unique())
+        #         ax.set_xticklabels(data[x_var].unique(), rotation=45, ha='right')
+        #    # Add legend 
+        #     for ax in g.axes.flat:
+        #         handles, labels = ax.get_legend_handles_labels()
+        #         ax.legend(handles, [f'{label} ({region_type})' for label in labels], title='Anomaly Status')
 
-            plt.tight_layout()
-            plt.show()
+        #     plt.tight_layout()
+        #     plt.show()
 
-            return g
+        #     return g
 
         for region_type in ['FA', 'SA2']:
             region_df = df[df['RegionType'] == region_type]
