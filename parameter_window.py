@@ -11,7 +11,7 @@ def open_parameter_window():
         ratio_lower = 1
         multiplier = 5
         sensitivity = 0.005
-        contamination = 0.05
+        contamination = 0.003
         
         save_parameters(ratio_upper, ratio_lower, multiplier, sensitivity, contamination)
 
@@ -21,7 +21,7 @@ def open_parameter_window():
         ratio_lower = float(entry_param2.get()) if entry_param2.get() else 1
         multiplier = float(entry_param3.get()) if entry_param3.get() else 5
         sensitivity = float(entry_param4.get()) if entry_param4.get() else 0.005
-        contamination = float(entry_param5.get()) if entry_param5.get() else 0.05
+        contamination = float(entry_param5.get()) if entry_param5.get() else 0.003
         
         save_parameters(ratio_upper, ratio_lower, multiplier, sensitivity, contamination)
 
@@ -71,7 +71,7 @@ def open_parameter_window():
     ttk.Label(window, text="Contamination:").grid(row=4, column=0, padx=10, pady=10)
     entry_param5 = ttk.Entry(window)
     entry_param5.grid(row=4, column=1, padx=10, pady=10)
-    entry_param5.insert(0, "0.05")  # Set default value
+    entry_param5.insert(0, "0.003")  # Set default value
 
     # Add a button to save default parameters
     default_button = ttk.Button(window, text="Use Default Values", command=save_default_parameters)

@@ -138,17 +138,17 @@ except Exception as e:
 # print(shape_output)
 
 # merge result together and output a csv file
-output_list = [sanity_checks, births_check_output, deaths_check_output, household_check_output, negative_checks,ml_anomaly, spike_output,shape_output]
+output_list = [ratio_df, sanity_checks, births_check_output, deaths_check_output, population_check_output, household_check_output, negative_checks,ml_anomaly, spike_output,shape_output]
 merged_df = pd.concat(output_list, ignore_index=True)
 merged_df = merged_df.sort_values(by=['Region Type', 'Code'], ascending=[False, True])
-print(merged_df)
+# print(merged_df)
 merged_df.to_csv('final_output.csv', index=False)
 
 # summary stat 
 end_time = time.time()
 running_time = end_time - start_time
 
-# print(f'The number of unique abnormal region are: {len(merged_df["Code"].unique())}') # something wrong with sanity check, without it only has 565 region been tagged
+print(f'The number of unique abnormal region are: {len(merged_df["Code"].unique())}') # something wrong with sanity check, without it only has 565 region been tagged
 print(f"Running time: {running_time:.6f} seconds")
 
 print(f'For sanity check, {len(sanity_checks.iloc[:, 0].unique())} of unique region been tagged')
