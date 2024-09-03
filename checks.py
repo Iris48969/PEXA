@@ -426,29 +426,30 @@ def perform_ml_anomaly_detection(conn, contamination_, sa4_code):
 
         for region_type in ['FA', 'SA2']:
             region_df = df[df['RegionType'] == region_type]
-            
-            # Ensure ASGSCode is present
-            if 'ASGSCode' not in region_df.columns:
-                logging.error("Column 'ASGSCode' is missing from the DataFrame")
-                return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])
+            if not region_df.empty:
+                
+                # Ensure ASGSCode is present
+                if 'ASGSCode' not in region_df.columns:
+                    logging.error("Column 'ASGSCode' is missing from the DataFrame")
+                    return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])
 
-            # Prepare input features
-            anomaly_inputs = ['ERPYear', 'Total']
+                # Prepare input features
+                anomaly_inputs = ['ERPYear', 'ERP']
+                
+                # Initialize and fit the Isolation Forest model
+                model_IF = IsolationForest(contamination=contamination_, random_state=42)
+                region_df['anomaly_scores'] = model_IF.fit_predict(region_df[anomaly_inputs])
+                region_df['anomaly'] = model_IF.predict(region_df[anomaly_inputs])
+                # Manually set negative values as outliers
+                # region_df.loc[region_df['ERP'] < 0, 'anomaly'] = -1
+                
+                # Plot results
+                #outlier_plot(region_df, "Isolation Forest", "ERPYear", "Total", region_type)
+                # Append results to the result list
+                for index, row in region_df.iterrows():
+                    if row['anomaly'] == -1:
+                        result_list.append({'Code': row['ASGSCode'], 'Region Type': region_type, 'Description': 'Machine Learning Anomaly Detected'})
             
-            # Initialize and fit the Isolation Forest model
-            model_IF = IsolationForest(contamination=contamination_, random_state=42)
-            region_df['anomaly_scores'] = model_IF.fit_predict(region_df[anomaly_inputs])
-            region_df['anomaly'] = model_IF.predict(region_df[anomaly_inputs])
-            # Manually set negative values as outliers
-            region_df.loc[region_df['Total'] < 0, 'anomaly'] = -1
-            
-            # Plot results
-            #outlier_plot(region_df, "Isolation Forest", "ERPYear", "Total", region_type)
-            # Append results to the result list
-            for index, row in region_df.iterrows():
-                if row['anomaly'] == -1:
-                    result_list.append({'Code': row['ASGSCode'], 'Region Type': region_type, 'Description': 'Machine Learning Anomaly Detected'})
-        
         # Convert result_list to DataFrame
         result_df = pd.DataFrame(result_list, columns=['Code', 'Region Type', 'Description'])
         # Drop duplicate rows based on the 'Code' column, keeping the first occurrence
