@@ -32,7 +32,7 @@ def execute_sql_query(conn, sql_query):
     except Exception as e:
         logging.error(e)
 
-def household_check(conn):
+def household_check(conn, ratio_upper, ratio_lower):
     """
     The purpose of this function is to identify abnormal spikes/drops in population forecasts
     in a timeseries format by checking the ratio of population to household count.
@@ -45,7 +45,7 @@ def household_check(conn):
         # Execute the SQL query and get the merged dataframe
         merged_df = execute_sql_query(conn=conn, sql_query=ratio_sql)
         logging.info("Data returned")
-        outliers_df = merged_df[(merged_df['ratio'] >= 6) | (merged_df['ratio'] <= 1)]
+        outliers_df = merged_df[(merged_df['ratio'] >= ratio_upper) | (merged_df['ratio'] <= ratio_lower)]
         logging.info("Outlier dataframe found")
         earliest_outliers_df = outliers_df.groupby('ASGSCode').apply(
             lambda x: x.loc[x['Year'].idxmin()]
@@ -127,7 +127,7 @@ def population_region_level_sum_check(conn):
     except Exception as e:
         logging.error(e)
 
-def spike_check(conn):
+def spike_check(conn, sensitivity, multiplier):
     """
     The purpose of this function is to identify abnormal spike/drop of population forecast
     in a timeseries format.
@@ -159,10 +159,10 @@ def spike_check(conn):
             Q1 = np.percentile(data_list, 25)
             Q3 = np.percentile(data_list, 75)
             IQR = Q3 - Q1
-            lower_bound = Q1 - 5 * IQR
-            upper_bound = Q3 + 5 * IQR
+            lower_bound = Q1 - multiplier * IQR
+            upper_bound = Q3 + multiplier * IQR
             for data in data_list:
-                if abs(data) > 0.005:
+                if abs(data) > sensitivity:
                     if data > upper_bound or data < lower_bound: return True
             return False
         # creating a percentage change df for ERP
@@ -180,7 +180,7 @@ def spike_check(conn):
     except Exception as e:
         logging.error(e)
 
-def trend_shape_check(conn):
+def trend_shape_check(conn, sensitivity):
     """
     The purpose of this function is to identify abnormal shape of population forecast
     in a timeseries format.
@@ -222,8 +222,8 @@ def trend_shape_check(conn):
             """
             output_string = ""
             for data in data_list:
-                if data > 0.005: output_string += "+"
-                elif data < -0.005: output_string += "-"
+                if data > sensitivity: output_string += "+"
+                elif data < -1*sensitivity: output_string += "-"
                 else: output_string += "0"
             return output_string
 
@@ -366,8 +366,8 @@ def perform_sanity_check(conn):
 
 
 
-# Machine Learning Anomaly Detection Function, 2021 Census
-def perform_ml_anomaly_detection(conn):
+# Machine Learning Anomaly Detection Function
+def perform_ml_anomaly_detection(conn, contamination_):
     try:
         logging.info("Performing machine learning anomaly detection...")
         query = open(os.path.abspath('SQL_Queries/ERP_ML.sql'), 'r').read()
@@ -419,7 +419,7 @@ def perform_ml_anomaly_detection(conn):
             anomaly_inputs = ['ERPYear', 'Total']
             
             # Initialize and fit the Isolation Forest model
-            model_IF = IsolationForest(contamination=0.003, random_state=42)
+            model_IF = IsolationForest(contamination=contamination_, random_state=42)
             region_df['anomaly_scores'] = model_IF.fit_predict(region_df[anomaly_inputs])
             region_df['anomaly'] = model_IF.predict(region_df[anomaly_inputs])
             # Manually set negative values as outliers

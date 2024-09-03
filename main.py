@@ -22,6 +22,7 @@ start_time = time.time()
 # Import the household_check function
 try:
     from checks import household_check, births_region_level_sum_check, deaths_region_level_sum_check, household_region_level_sum_check, population_region_level_sum_check, trend_shape_check, spike_check, perform_negative_check, perform_sanity_check, perform_ml_anomaly_detection
+    from parameter_window import open_parameter_window
 except Exception as e:
     logging.error(f"Import failed: {e}")
 
@@ -52,11 +53,18 @@ except Exception as e:
     logging.error(f"Connection to database failed: {e}")
     conn = None
 
+# get input parameters
+try:
+    ratio_upper, ratio_lower, multiplier, sensitivity, contamination = open_parameter_window()
+    logging.info("Got inputted parameters")
+except Exception as e:
+    logging.error(e)
+
 # household ratio check 
 if conn:
     try:
         logging.info("Trying to execute household check")
-        ratio_df = household_check(conn)
+        ratio_df = household_check(conn, ratio_upper, ratio_lower)
         logging.info("Household check completed successfully")
         # Optionally, you can log or save the results:
         # logging.info(f"Found {len(unique_outlier_asgs_codes)} unique outlier ASGS codes.")
@@ -109,7 +117,7 @@ except Exception as e:
 
 try:
     logging.info("Running Machine Learning Anomaly Detection:")
-    ml_anomaly = perform_ml_anomaly_detection(conn)
+    ml_anomaly = perform_ml_anomaly_detection(conn, contamination_ = contamination)
 except Exception as e:
     logging.error(f"ML Anomaly Detection check failed: {e}")
 
@@ -118,10 +126,10 @@ except Exception as e:
 
 try:
     logging.info("Try to execute spike check")
-    spike_output = spike_check(conn) # so far filter out 327 region
+    spike_output = spike_check(conn, sensitivity, multiplier) # so far filter out 327 region
     logging.info("spike check done")
     logging.info("Try to execute shape check")
-    shape_output = trend_shape_check(conn) # so far filter out 360 region
+    shape_output = trend_shape_check(conn, sensitivity) # so far filter out 360 region
     logging.info("shape check done")
 except Exception as e:
     logging.error(e)
