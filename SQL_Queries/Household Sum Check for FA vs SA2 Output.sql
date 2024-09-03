@@ -1,8 +1,8 @@
 -- Generates the list of SA2s
 WITH SA2List AS (
     SELECT DISTINCT ASGSCode
-    FROM forecasts.dbo.AreasAsgs
-    WHERE RegionType = 'SA2' AND ASGSCode LIKE '4%'
+    FROM dbo.AreasAsgs
+    WHERE RegionType = 'SA2' AND left(ASGSCode,3) = {}
 )
 
 -- Sum households for each SA2 and the corresponding FAs
@@ -12,7 +12,7 @@ SELECT
     'Mismatch between sum of Households at SA2 level vs. sum of FAs within this SA2' AS Description
 
 FROM 
-    forecasts.dbo.Households AS Households
+    dbo.Households AS Households
 INNER JOIN 
     SA2List ON Households.ASGSCode = SA2List.ASGSCode
 WHERE
@@ -22,10 +22,10 @@ GROUP BY
 HAVING 
     ABS(SUM(Households.Number) - (
         SELECT SUM(H2.Number)
-        FROM forecasts.dbo.Households AS H2
+        FROM dbo.Households AS H2
         WHERE H2.ASGSCode IN (
             SELECT AreasAsgs.ASGSCode
-            FROM forecasts.dbo.AreasAsgs
+            FROM dbo.AreasAsgs
             WHERE AreasAsgs.Parent = SA2List.ASGSCode
         )
         AND H2.HhKey = 19

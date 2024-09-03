@@ -1,3 +1,4 @@
 SELECT distinct ASGSCode, RegionType
-    FROM [forecasts].[dbo].[AreasAsgs]
+    FROM [dbo].[AreasAsgs]
+    where left(ASGSCode,3) = {}
     order by ASGSCode

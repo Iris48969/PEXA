@@ -1,7 +1,7 @@
    WITH CombinedData AS (
         -- Births Data
         SELECT 
-            a.ASGSCode, 
+            a.ASGSCode AS ASGSCode, 
             CASE 
                 WHEN a.SexKey = 1 THEN 'Male' 
                 WHEN a.SexKey = 2 THEN 'Female' 
@@ -29,7 +29,7 @@
         
         -- Deaths Data
         SELECT 
-            a.ASGSCode, 
+            a.ASGSCode AS ASGSCode, 
             CASE 
                 WHEN a.SexKey = 1 THEN 'Male' 
                 WHEN a.SexKey = 2 THEN 'Female' 
@@ -68,12 +68,12 @@
             SUM(a.Number) AS Total,
             'ERP' AS DataType
         FROM 
-            [forecasts].[dbo].[ERP] AS a
+            [dbo].[ERP] AS a
         LEFT JOIN 
-            [forecasts].[dbo].[AreasAsgs] AS b
+            [dbo].[AreasAsgs] AS b
             ON a.ASGS_2016 = b.ASGSCode
         LEFT JOIN 
-            [forecasts].[dbo].[AreasAsgs] AS p
+            [dbo].[AreasAsgs] AS p
             ON b.Parent = p.ASGSCode -- Self-join to get parent region name
         WHERE 
             b.RegionType IN ('SA2', 'FA')
@@ -84,4 +84,5 @@
 
     SELECT * 
     FROM CombinedData
+    where left(ASGSCode,3) = {}
     ORDER BY DataType, Year, Total;

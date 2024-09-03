@@ -32,7 +32,6 @@ def execute_sql_query(conn, sql_query, params):
             query = sql_query.format(*['?']*len(params))
         else:
             raise ValueError("Unsupported operating system")
-        print(query)
         # Execute the query based on the current system
         if current_system == "Darwin":
             # Execute queries using pymssql on macOS
@@ -77,7 +76,7 @@ def household_check(conn, ratio_upper, ratio_lower, sa4_code):
         logging.error(f"Error occurred: {e}")
         return None
 
-def births_region_level_sum_check(conn):
+def births_region_level_sum_check(conn, sa4_code):
     """
     The purpose of this function is to call an SQL script which sums the births of all FAs in a particular SA2 and checks
     if this value matches the total births of the SA2
@@ -88,13 +87,13 @@ def births_region_level_sum_check(conn):
     try:
         sql = open(os.path.abspath("SQL_Queries/Births Sum Check for FA vs SA2 Output.sql"), 'r').read()
         logging.info("Births region level sum check query opened")
-        df = execute_sql_query(sql_query=sql, conn=conn)
+        df = execute_sql_query(sql_query=sql, conn=conn, params=sa4_code)
         logging.info("Births region level sum check query executed")
         return df
     except Exception as e:
         logging.error(e)
 
-def deaths_region_level_sum_check(conn):
+def deaths_region_level_sum_check(conn, sa4_code):
     """
     The purpose of this function is to call an SQL script which sums the deaths of all FAs in a particular SA2 and checks
     if this value matches the total births of the SA2
@@ -105,13 +104,13 @@ def deaths_region_level_sum_check(conn):
     try:
         sql = open(os.path.abspath("SQL_Queries/Deaths Sum Check for FA vs SA2 Output.sql"), 'r').read()
         logging.info("Deaths region level sum check query opened")
-        df = execute_sql_query(sql_query=sql, conn=conn)
+        df = execute_sql_query(sql_query=sql, conn=conn, params=sa4_code)
         logging.info("Deaths region level sum check query executed")
         return df
     except Exception as e:
         logging.error(e)
 
-def household_region_level_sum_check(conn):
+def household_region_level_sum_check(conn, sa4_code):
     """
     The purpose of this function is to call an SQL script which sums the households of all FAs in a particular SA2 and checks
     if this value matches the total births of the SA2
@@ -122,13 +121,13 @@ def household_region_level_sum_check(conn):
     try:
         sql = open(os.path.abspath("SQL_Queries/Household Sum Check for FA vs SA2 Output.sql"), 'r').read()
         logging.info("Household region level sum check query opened")
-        df = execute_sql_query(sql_query=sql, conn=conn)
+        df = execute_sql_query(sql_query=sql, conn=conn, params=sa4_code)
         logging.info("Household region level sum check query executed")
         return df
     except Exception as e:
         logging.error(e)
 
-def population_region_level_sum_check(conn):
+def population_region_level_sum_check(conn, sa4_code):
     """
     The purpose of this function is to call an SQL script which sums the population of all FAs in a particular SA2 and checks
     if this value matches the total births of the SA2
@@ -139,13 +138,13 @@ def population_region_level_sum_check(conn):
     try:
         sql = open(os.path.abspath("SQL_Queries/Population Sum Check for FA vs SA2 Output.sql"), 'r').read()
         logging.info("Population region level sum check query opened")
-        df = execute_sql_query(sql_query=sql, conn=conn)
+        df = execute_sql_query(sql_query=sql, conn=conn, params=sa4_code)
         logging.info("Population region level sum check query executed")
         return df
     except Exception as e:
         logging.error(e)
 
-def spike_check(conn, sensitivity, multiplier):
+def spike_check(conn, sensitivity, multiplier, sa4_code):
     """
     The purpose of this function is to identify abnormal spike/drop of population forecast
     in a timeseries format.
@@ -158,9 +157,9 @@ def spike_check(conn, sensitivity, multiplier):
         ERP_query= open(os.path.abspath("SQL_Queries/ERP_table(FA&SA2).sql"),'r').read()
         area_type_query = open(os.path.abspath("SQL_Queries/Area_type.sql"),'r').read()
         logging.info("Query file opened")
-        df = execute_sql_query(conn=conn, sql_query=ERP_query)
+        df = execute_sql_query(conn=conn, sql_query=ERP_query, params=sa4_code)
         wide_df = df.pivot_table(index='ERPYear', columns='ASGS_2016', values='ERP')
-        area_type = execute_sql_query(conn=conn, sql_query=area_type_query)
+        area_type = execute_sql_query(conn=conn, sql_query=area_type_query, params=sa4_code)
         area_dict = area_type.set_index('ASGSCode').to_dict()['RegionType']
         logging.info("Query data returned")
 
@@ -198,7 +197,7 @@ def spike_check(conn, sensitivity, multiplier):
     except Exception as e:
         logging.error(e)
 
-def trend_shape_check(conn, sensitivity):
+def trend_shape_check(conn, sensitivity, sa4_code):
     """
     The purpose of this function is to identify abnormal shape of population forecast
     in a timeseries format.
@@ -217,12 +216,12 @@ def trend_shape_check(conn, sensitivity):
         # cursor.execute(ERP_query)
         # data = cursor.fetchall()
         # df = pd.DataFrame(data)
-        df = execute_sql_query(conn=conn, sql_query=ERP_query)
+        df = execute_sql_query(conn=conn, sql_query=ERP_query, params=sa4_code)
         wide_df = df.pivot_table(index='ERPYear', columns='ASGS_2016', values='ERP')
         # cursor.execute(area_type_query)
         # area_type = cursor.fetchall()
         # area_type = pd.DataFrame(area_type)
-        area_type = execute_sql_query(conn=conn, sql_query=area_type_query)
+        area_type = execute_sql_query(conn=conn, sql_query=area_type_query, params=sa4_code)
         area_dict = area_type.set_index('ASGSCode').to_dict()['RegionType']
         logging.info("Query data returned")
 
@@ -287,7 +286,7 @@ def trend_shape_check(conn, sensitivity):
 
 
 # Negative Check Function
-def perform_negative_check(conn):
+def perform_negative_check(conn, sa4_code):
     '''
     This function checks for negative values in the Births, Deaths, and ERP tables.
     Returns a DataFrame with columns: Code, Region Type, Description.
@@ -300,7 +299,7 @@ def perform_negative_check(conn):
             query = file.read()
         
         # Fetch data from the database
-        df = execute_sql_query(sql_query=query, conn=conn)
+        df = execute_sql_query(sql_query=query, conn=conn, params=sa4_code)
 
         result_list = []
 
@@ -330,7 +329,7 @@ def perform_negative_check(conn):
         return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])  # Return DataFrame with correct columns on error
 
 
-def perform_sanity_check(conn):
+def perform_sanity_check(conn, sa4_code):
     '''
     This function performs checks for zero values, missing values, and duplicate values in Births, Deaths, ERP.
     Returns a DataFrame with columns: Code, Region Type, Description.
@@ -343,7 +342,7 @@ def perform_sanity_check(conn):
             query = file.read()
 
         # Fetch data from the database
-        df = execute_sql_query(sql_query=query, conn=conn)
+        df = execute_sql_query(sql_query=query, conn=conn, params=sa4_code)
 
         result_list = []
 
@@ -385,11 +384,11 @@ def perform_sanity_check(conn):
 
 
 # Machine Learning Anomaly Detection Function
-def perform_ml_anomaly_detection(conn, contamination_):
+def perform_ml_anomaly_detection(conn, contamination_, sa4_code):
     try:
         logging.info("Performing machine learning anomaly detection...")
         query = open(os.path.abspath('SQL_Queries/ERP_ML.sql'), 'r').read()
-        df = execute_sql_query(sql_query=query, conn=conn)
+        df = execute_sql_query(sql_query=query, conn=conn, params=sa4_code)
         result_list = []
 
         # def outlier_plot(data, outlier_method_name, x_var, y_var,region_type):
