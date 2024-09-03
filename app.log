@@ -1,57 +1,57 @@
-2024-09-03 16:07:36 - INFO - Log set up done, start running the file
-2024-09-03 16:07:36 - DEBUG - matplotlib data path: /Users/shauncai/opt/anaconda3/envs/id_env/lib/python3.10/site-packages/matplotlib/mpl-data
-2024-09-03 16:07:36 - DEBUG - CONFIGDIR=/Users/shauncai/.matplotlib
-2024-09-03 16:07:36 - DEBUG - interactive is False
-2024-09-03 16:07:36 - DEBUG - platform is darwin
-2024-09-03 16:07:36 - DEBUG - CACHEDIR=/Users/shauncai/.matplotlib
-2024-09-03 16:07:36 - DEBUG - Using fontManager instance from /Users/shauncai/.matplotlib/fontlist-v330.json
-2024-09-03 16:07:37 - INFO - Connection to database was successful
-2024-09-03 16:07:44 - INFO - Got inputted parameters
-2024-09-03 16:07:44 - INFO - Trying to execute household check
-2024-09-03 16:07:57 - INFO - SQL execution done
-2024-09-03 16:07:57 - INFO - Data returned
-2024-09-03 16:07:57 - INFO - Outlier dataframe found
-2024-09-03 16:07:57 - INFO - earliest_year
-2024-09-03 16:07:57 - INFO - Household check completed successfully
-2024-09-03 16:07:57 - INFO - Try to execute births check
-2024-09-03 16:07:57 - INFO - Births region level sum check query opened
-2024-09-03 16:07:57 - INFO - SQL execution done
-2024-09-03 16:07:57 - INFO - Births region level sum check query executed
-2024-09-03 16:07:57 - INFO - Births check done
-2024-09-03 16:07:57 - INFO - Try to execute deaths check
-2024-09-03 16:07:57 - INFO - Deaths region level sum check query opened
-2024-09-03 16:07:57 - INFO - SQL execution done
-2024-09-03 16:07:57 - INFO - Deaths region level sum check query executed
-2024-09-03 16:07:57 - INFO - Deaths check done
-2024-09-03 16:07:57 - INFO - Try to execute household check
-2024-09-03 16:07:57 - INFO - Household region level sum check query opened
-2024-09-03 16:07:57 - INFO - SQL execution done
-2024-09-03 16:07:57 - INFO - Household region level sum check query executed
-2024-09-03 16:07:57 - INFO - Household check done
-2024-09-03 16:07:57 - INFO - Try to execute population check
-2024-09-03 16:07:57 - INFO - Population region level sum check query opened
-2024-09-03 16:07:57 - INFO - SQL execution done
-2024-09-03 16:07:57 - INFO - Population region level sum check query executed
-2024-09-03 16:07:57 - INFO - Population check done
-2024-09-03 16:07:57 - INFO - Running Negative Checks:
-2024-09-03 16:07:57 - INFO - Performing negative checks...
-2024-09-03 16:07:59 - INFO - SQL execution done
-2024-09-03 16:07:59 - INFO - Running Sanity Checks:
-2024-09-03 16:07:59 - INFO - Performing sanity checks...
-2024-09-03 16:08:01 - INFO - SQL execution done
-2024-09-03 16:08:01 - INFO - Running Machine Learning Anomaly Detection:
-2024-09-03 16:08:01 - INFO - Performing machine learning anomaly detection...
-2024-09-03 16:08:06 - INFO - SQL execution done
-2024-09-03 16:08:08 - ERROR - Error performing machine learning anomaly detection: Found array with 0 sample(s) (shape=(0, 2)) while a minimum of 1 is required by IsolationForest.
-2024-09-03 16:08:08 - INFO - Try to execute spike check
-2024-09-03 16:08:08 - INFO - Query file opened
-2024-09-03 16:08:10 - INFO - SQL execution done
-2024-09-03 16:08:10 - INFO - SQL execution done
-2024-09-03 16:08:10 - INFO - Query data returned
-2024-09-03 16:08:10 - INFO - spike check done
-2024-09-03 16:08:10 - INFO - Try to execute shape check
-2024-09-03 16:08:10 - INFO - Query file opened
-2024-09-03 16:08:12 - INFO - SQL execution done
-2024-09-03 16:08:12 - INFO - SQL execution done
-2024-09-03 16:08:12 - INFO - Query data returned
-2024-09-03 16:08:12 - INFO - shape check done
+2024-09-03 16:20:22 - INFO - Log set up done, start running the file
+2024-09-03 16:20:22 - DEBUG - matplotlib data path: /Users/shauncai/opt/anaconda3/envs/id_env/lib/python3.10/site-packages/matplotlib/mpl-data
+2024-09-03 16:20:22 - DEBUG - CONFIGDIR=/Users/shauncai/.matplotlib
+2024-09-03 16:20:22 - DEBUG - interactive is False
+2024-09-03 16:20:22 - DEBUG - platform is darwin
+2024-09-03 16:20:22 - DEBUG - CACHEDIR=/Users/shauncai/.matplotlib
+2024-09-03 16:20:22 - DEBUG - Using fontManager instance from /Users/shauncai/.matplotlib/fontlist-v330.json
+2024-09-03 16:20:24 - INFO - Connection to database was successful
+2024-09-03 16:20:29 - INFO - Got inputted parameters
+2024-09-03 16:20:29 - INFO - Trying to execute household check
+2024-09-03 16:20:42 - INFO - SQL execution done
+2024-09-03 16:20:42 - INFO - Data returned
+2024-09-03 16:20:42 - INFO - Outlier dataframe found
+2024-09-03 16:20:43 - INFO - earliest_year
+2024-09-03 16:20:43 - INFO - Household check completed successfully
+2024-09-03 16:20:43 - INFO - Try to execute births check
+2024-09-03 16:20:43 - INFO - Births region level sum check query opened
+2024-09-03 16:20:43 - INFO - SQL execution done
+2024-09-03 16:20:43 - INFO - Births region level sum check query executed
+2024-09-03 16:20:43 - INFO - Births check done
+2024-09-03 16:20:43 - INFO - Try to execute deaths check
+2024-09-03 16:20:43 - INFO - Deaths region level sum check query opened
+2024-09-03 16:20:43 - INFO - SQL execution done
+2024-09-03 16:20:43 - INFO - Deaths region level sum check query executed
+2024-09-03 16:20:43 - INFO - Deaths check done
+2024-09-03 16:20:43 - INFO - Try to execute household check
+2024-09-03 16:20:43 - INFO - Household region level sum check query opened
+2024-09-03 16:20:43 - INFO - SQL execution done
+2024-09-03 16:20:43 - INFO - Household region level sum check query executed
+2024-09-03 16:20:43 - INFO - Household check done
+2024-09-03 16:20:43 - INFO - Try to execute population check
+2024-09-03 16:20:43 - INFO - Population region level sum check query opened
+2024-09-03 16:20:43 - INFO - SQL execution done
+2024-09-03 16:20:43 - INFO - Population region level sum check query executed
+2024-09-03 16:20:43 - INFO - Population check done
+2024-09-03 16:20:43 - INFO - Running Negative Checks:
+2024-09-03 16:20:43 - INFO - Performing negative checks...
+2024-09-03 16:20:45 - INFO - SQL execution done
+2024-09-03 16:20:45 - INFO - Running Sanity Checks:
+2024-09-03 16:20:45 - INFO - Performing sanity checks...
+2024-09-03 16:20:47 - INFO - SQL execution done
+2024-09-03 16:20:47 - INFO - Running Machine Learning Anomaly Detection:
+2024-09-03 16:20:47 - INFO - Performing machine learning anomaly detection...
+2024-09-03 16:20:50 - INFO - SQL execution done
+2024-09-03 16:20:52 - ERROR - Error performing machine learning anomaly detection: Found array with 0 sample(s) (shape=(0, 3)) while a minimum of 1 is required by StandardScaler.
+2024-09-03 16:20:52 - INFO - Try to execute spike check
+2024-09-03 16:20:52 - INFO - Query file opened
+2024-09-03 16:20:54 - INFO - SQL execution done
+2024-09-03 16:20:54 - INFO - SQL execution done
+2024-09-03 16:20:54 - INFO - Query data returned
+2024-09-03 16:20:54 - INFO - spike check done
+2024-09-03 16:20:54 - INFO - Try to execute shape check
+2024-09-03 16:20:54 - INFO - Query file opened
+2024-09-03 16:20:55 - INFO - SQL execution done
+2024-09-03 16:20:55 - INFO - SQL execution done
+2024-09-03 16:20:55 - INFO - Query data returned
+2024-09-03 16:20:55 - INFO - shape check done
