@@ -16,23 +16,41 @@ import warnings
 warnings.simplefilter(action='ignore', category=pd.errors.SettingWithCopyWarning)
 
 
-def execute_sql_query(conn, sql_query):
+def execute_sql_query(conn, sql_query, params):
     try:
+        # Ensure params is a tuple, even if it's a single parameter
+        if isinstance(params, int) or isinstance(params, str) or isinstance(params, float):
+            params = (params,)
+        
+        # Detect the current operating system
         current_system = platform.system()
+
+        # Replace the universal placeholder {} with the correct one for the system
+        if current_system == "Darwin":  # macOS, assuming pymssql
+            query = sql_query.format(*['%s']*len(params))
+        elif current_system == "Windows":  # Windows, assuming pyodbc
+            query = sql_query.format(*['?']*len(params))
+        else:
+            raise ValueError("Unsupported operating system")
+        print(query)
+        # Execute the query based on the current system
         if current_system == "Darwin":
-            # execute queries
+            # Execute queries using pymssql on macOS
             cursor = conn.cursor()
-            cursor.execute(sql_query)
+            cursor.execute(query, params)
             data = cursor.fetchall()
             df = pd.DataFrame(data)
         elif current_system == "Windows":
-            df = pd.read_sql_query(con=conn, sql= sql_query)
-        logging.info("sql execute done")
+            # Execute queries using pyodbc on Windows
+            df = pd.read_sql_query(con=conn, sql=query, params=params)
+
+        logging.info("SQL execution done")
         return df
     except Exception as e:
         logging.error(e)
+        return None
 
-def household_check(conn, ratio_upper, ratio_lower):
+def household_check(conn, ratio_upper, ratio_lower, sa4_code):
     """
     The purpose of this function is to identify abnormal spikes/drops in population forecasts
     in a timeseries format by checking the ratio of population to household count.
@@ -43,7 +61,7 @@ def household_check(conn, ratio_upper, ratio_lower):
         # Read the SQL query from the file
         ratio_sql = open(os.path.abspath("SQL_Queries/household_size.sql"), 'r').read()
         # Execute the SQL query and get the merged dataframe
-        merged_df = execute_sql_query(conn=conn, sql_query=ratio_sql)
+        merged_df = execute_sql_query(conn=conn, sql_query=ratio_sql, params=sa4_code)
         logging.info("Data returned")
         outliers_df = merged_df[(merged_df['ratio'] >= ratio_upper) | (merged_df['ratio'] <= ratio_lower)]
         logging.info("Outlier dataframe found")

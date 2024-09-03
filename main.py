@@ -4,6 +4,8 @@ import pandas as pd
 import re
 import warnings
 import time
+import sqlite3
+
 
 warnings.simplefilter(action='ignore', category=UserWarning)
 
@@ -55,7 +57,7 @@ except Exception as e:
 
 # get input parameters
 try:
-    ratio_upper, ratio_lower, multiplier, sensitivity, contamination = open_parameter_window()
+    ratio_upper, ratio_lower, multiplier, sensitivity, contamination, sa4_code = open_parameter_window()
     logging.info("Got inputted parameters")
 except Exception as e:
     logging.error(e)
@@ -64,7 +66,8 @@ except Exception as e:
 if conn:
     try:
         logging.info("Trying to execute household check")
-        ratio_df = household_check(conn, ratio_upper, ratio_lower)
+        ratio_df = household_check(conn, ratio_upper, ratio_lower, sa4_code)
+        print(ratio_df)
         logging.info("Household check completed successfully")
         # Optionally, you can log or save the results:
         # logging.info(f"Found {len(unique_outlier_asgs_codes)} unique outlier ASGS codes.")

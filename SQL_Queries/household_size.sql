@@ -10,4 +10,4 @@ SELECT h.ASGSCode, h.ERPYear as Year, p.ERP as Population, p.ERP/h.Number as rat
     FROM 
         [forecasts].[dbo].[Households] h left join structured_pop p
         on h.ASGSCode = p.ASGS_2016 and h.ERPYear = p.ERPYear
-        where h.Number != 0
+        where left(ASGSCode,3) = {} AND h.Number != 0
