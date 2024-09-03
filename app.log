@@ -1,27 +1,48 @@
-2024-09-03 09:44:28 - INFO - Log set up done, start running the file
-2024-09-03 09:44:28 - DEBUG - matplotlib data path: /Users/shauncai/opt/anaconda3/envs/id_env/lib/python3.10/site-packages/matplotlib/mpl-data
-2024-09-03 09:44:28 - DEBUG - CONFIGDIR=/Users/shauncai/.matplotlib
-2024-09-03 09:44:28 - DEBUG - interactive is False
-2024-09-03 09:44:28 - DEBUG - platform is darwin
-2024-09-03 09:44:29 - DEBUG - CACHEDIR=/Users/shauncai/.matplotlib
-2024-09-03 09:44:29 - DEBUG - Using fontManager instance from /Users/shauncai/.matplotlib/fontlist-v330.json
-2024-09-03 09:44:29 - ERROR - Import failed: No module named 'seaborn'
-2024-09-03 09:44:29 - INFO - Connection to database was successful
-2024-09-03 09:44:29 - INFO - Trying to execute household check
-2024-09-03 09:44:29 - INFO - Household check completed successfully
-2024-09-03 09:44:29 - INFO - Try to execute births check
-2024-09-03 09:44:29 - ERROR - Births check failed: name 'births_region_level_sum_check' is not defined
-2024-09-03 09:44:29 - INFO - Try to execute deaths check
-2024-09-03 09:44:29 - ERROR - Deaths check failed: name 'deaths_region_level_sum_check' is not defined
-2024-09-03 09:44:29 - INFO - Try to execute household check
-2024-09-03 09:44:29 - ERROR - Household check failed: name 'household_region_level_sum_check' is not defined
-2024-09-03 09:44:29 - INFO - Try to execute population check
-2024-09-03 09:44:29 - INFO - Population check done
-2024-09-03 09:44:29 - INFO - Running Negative Checks:
-2024-09-03 09:44:29 - ERROR - Negative check failed: name 'perform_negative_check' is not defined
-2024-09-03 09:44:29 - INFO - Running Sanity Checks:
-2024-09-03 09:44:29 - ERROR - Sanity check failed: name 'perform_sanity_check' is not defined
-2024-09-03 09:44:29 - INFO - Running Machine Learning Anomaly Detection:
-2024-09-03 09:44:29 - ERROR - ML Anomaly Detection check failed: name 'perform_ml_anomaly_detection' is not defined
-2024-09-03 09:44:29 - INFO - Try to execute spike check
-2024-09-03 09:44:29 - ERROR - name 'spike_check' is not defined
+2024-09-03 09:46:48 - INFO - Log set up done, start running the file
+2024-09-03 09:46:48 - DEBUG - matplotlib data path: /Users/shauncai/opt/anaconda3/envs/id_env/lib/python3.10/site-packages/matplotlib/mpl-data
+2024-09-03 09:46:48 - DEBUG - CONFIGDIR=/Users/shauncai/.matplotlib
+2024-09-03 09:46:48 - DEBUG - interactive is False
+2024-09-03 09:46:48 - DEBUG - platform is darwin
+2024-09-03 09:46:48 - DEBUG - CACHEDIR=/Users/shauncai/.matplotlib
+2024-09-03 09:46:48 - DEBUG - Using fontManager instance from /Users/shauncai/.matplotlib/fontlist-v330.json
+2024-09-03 09:46:52 - INFO - Connection to database was successful
+2024-09-03 09:46:52 - INFO - Trying to execute household check
+2024-09-03 09:46:52 - INFO - Household check completed successfully
+2024-09-03 09:46:52 - INFO - Try to execute births check
+2024-09-03 09:46:52 - INFO - Births region level sum check query opened
+2024-09-03 09:46:52 - INFO - sql execute done
+2024-09-03 09:46:52 - INFO - Births region level sum check query executed
+2024-09-03 09:46:52 - INFO - Births check done
+2024-09-03 09:46:52 - INFO - Try to execute deaths check
+2024-09-03 09:46:52 - INFO - Deaths region level sum check query opened
+2024-09-03 09:46:52 - INFO - sql execute done
+2024-09-03 09:46:52 - INFO - Deaths region level sum check query executed
+2024-09-03 09:46:52 - INFO - Deaths check done
+2024-09-03 09:46:52 - INFO - Try to execute household check
+2024-09-03 09:46:52 - INFO - Household region level sum check query opened
+2024-09-03 09:46:53 - INFO - sql execute done
+2024-09-03 09:46:53 - INFO - Household region level sum check query executed
+2024-09-03 09:46:53 - INFO - Household check done
+2024-09-03 09:46:53 - INFO - Try to execute population check
+2024-09-03 09:46:53 - INFO - Population check done
+2024-09-03 09:46:53 - INFO - Running Negative Checks:
+2024-09-03 09:46:53 - INFO - Performing negative checks...
+2024-09-03 09:46:56 - INFO - sql execute done
+2024-09-03 09:46:56 - INFO - Running Sanity Checks:
+2024-09-03 09:46:56 - INFO - Performing sanity checks...
+2024-09-03 09:46:59 - INFO - sql execute done
+2024-09-03 09:47:00 - INFO - Running Machine Learning Anomaly Detection:
+2024-09-03 09:47:00 - INFO - Performing machine learning anomaly detection...
+2024-09-03 09:47:00 - INFO - sql execute done
+2024-09-03 09:47:04 - INFO - Try to execute spike check
+2024-09-03 09:47:04 - INFO - Query file opened
+2024-09-03 09:47:04 - INFO - sql execute done
+2024-09-03 09:47:04 - INFO - sql execute done
+2024-09-03 09:47:04 - INFO - Query data returned
+2024-09-03 09:47:05 - INFO - spike check done
+2024-09-03 09:47:05 - INFO - Try to execute shape check
+2024-09-03 09:47:05 - INFO - Query file opened
+2024-09-03 09:47:05 - INFO - sql execute done
+2024-09-03 09:47:05 - INFO - sql execute done
+2024-09-03 09:47:05 - INFO - Query data returned
+2024-09-03 09:47:06 - INFO - shape check done

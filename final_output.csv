@@ -4,21 +4,10 @@ Code,Region Type,Description
 407021174,SA2  ,Suddent spike or drop detected
 401011002,SA2,Suddent spike or drop detected
 401021007,SA2,Machine Learning Anomaly Detected
-401021007,SA2,Machine Learning Anomaly Detected
 401021010,SA2,Suddent spike or drop detected
 401051019,SA2,Suddent spike or drop detected
 402011026,SA2,Machine Learning Anomaly Detected
-402011026,SA2,Machine Learning Anomaly Detected
 402011027,SA2,Suddent spike or drop detected
-402021032,SA2,Machine Learning Anomaly Detected
-402021032,SA2,Machine Learning Anomaly Detected
-402021032,SA2,Machine Learning Anomaly Detected
-402021032,SA2,Machine Learning Anomaly Detected
-402021032,SA2,Machine Learning Anomaly Detected
-402021032,SA2,Machine Learning Anomaly Detected
-402021032,SA2,Machine Learning Anomaly Detected
-402021032,SA2,Machine Learning Anomaly Detected
-402021032,SA2,Machine Learning Anomaly Detected
 402021032,SA2,Machine Learning Anomaly Detected
 402041039,SA2,Mismatch between sum of Births at SA2 level vs. sum of FAs within this SA2
 402041040,SA2,Suddent spike or drop detected
@@ -60,11 +49,7 @@ Code,Region Type,Description
 41007610,FA,Suddent spike or drop detected
 41007650,FA,Suddent spike or drop detected
 41007670,FA,Machine Learning Anomaly Detected
-41007670,FA,Machine Learning Anomaly Detected
-41007670,FA,Machine Learning Anomaly Detected
-41007670,FA,Machine Learning Anomaly Detected
 41007690,FA,Suddent spike or drop detected
-41007710,FA,Machine Learning Anomaly Detected
 41009030,FA,Negative Deaths Values Found
 41009080,FA,Negative Deaths Values Found
 41009090,FA,Negative Deaths Values Found
@@ -107,53 +92,18 @@ Code,Region Type,Description
 41021220,FA,Suddent spike or drop detected
 41024320,FA,Suddent spike or drop detected
 41025010,FA,Machine Learning Anomaly Detected
-41025010,FA,Machine Learning Anomaly Detected
-41025010,FA,Machine Learning Anomaly Detected
-41025010,FA,Machine Learning Anomaly Detected
-41025010,FA,Machine Learning Anomaly Detected
-41025010,FA,Machine Learning Anomaly Detected
-41025010,FA,Machine Learning Anomaly Detected
-41025010,FA,Machine Learning Anomaly Detected
-41025010,FA,Machine Learning Anomaly Detected
 41025090,FA,small bell curve detect
 41025100,FA,Bell curve detect
 41025120,FA,small bell curve detect
 41025130,FA,Machine Learning Anomaly Detected
-41025130,FA,Machine Learning Anomaly Detected
-41025130,FA,Machine Learning Anomaly Detected
-41025130,FA,Machine Learning Anomaly Detected
-41025130,FA,Machine Learning Anomaly Detected
-41025130,FA,Machine Learning Anomaly Detected
-41025130,FA,Machine Learning Anomaly Detected
-41025130,FA,Machine Learning Anomaly Detected
-41025130,FA,Machine Learning Anomaly Detected
-41025130,FA,Machine Learning Anomaly Detected
 41025240,FA,Bell curve detect
 41026170,FA,Machine Learning Anomaly Detected
-41026170,FA,Machine Learning Anomaly Detected
-41026170,FA,Machine Learning Anomaly Detected
-41026170,FA,Machine Learning Anomaly Detected
-41026170,FA,Machine Learning Anomaly Detected
-41026170,FA,Machine Learning Anomaly Detected
-41026170,FA,Machine Learning Anomaly Detected
 41026300,FA,Machine Learning Anomaly Detected
-41026300,FA,Machine Learning Anomaly Detected
-41026300,FA,Machine Learning Anomaly Detected
-41026520,FA,Machine Learning Anomaly Detected
-41026520,FA,Machine Learning Anomaly Detected
-41026520,FA,Machine Learning Anomaly Detected
-41026520,FA,Machine Learning Anomaly Detected
-41026520,FA,Machine Learning Anomaly Detected
-41026520,FA,Machine Learning Anomaly Detected
-41026520,FA,Machine Learning Anomaly Detected
-41026520,FA,Machine Learning Anomaly Detected
 41026520,FA,Machine Learning Anomaly Detected
 41027010,FA,Suddent spike or drop detected
 41027020,FA,Suddent spike or drop detected
 41027110,FA,Machine Learning Anomaly Detected
-41027110,FA,Machine Learning Anomaly Detected
 41028300,FA,Suddent spike or drop detected
-41028540,FA,Machine Learning Anomaly Detected
 41028540,FA,Machine Learning Anomaly Detected
 41029010,FA,Bell curve detect
 41029090,FA,Suddent spike or drop detected
@@ -161,67 +111,10 @@ Code,Region Type,Description
 41029360,FA,Suddent spike or drop detected
 41029420,FA,Suddent spike or drop detected
 41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032110,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
-41032130,FA,Machine Learning Anomaly Detected
 41032130,FA,Machine Learning Anomaly Detected
 41032180,FA,Machine Learning Anomaly Detected
-41032180,FA,Machine Learning Anomaly Detected
-41032180,FA,Machine Learning Anomaly Detected
-41032180,FA,Machine Learning Anomaly Detected
-41032180,FA,Machine Learning Anomaly Detected
-41032210,FA,Machine Learning Anomaly Detected
-41032210,FA,Machine Learning Anomaly Detected
-41032210,FA,Machine Learning Anomaly Detected
-41032210,FA,Machine Learning Anomaly Detected
 41032210,FA,Machine Learning Anomaly Detected
 41032290,FA,Bell curve detect
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
-41032350,FA,Machine Learning Anomaly Detected
 41032350,FA,Machine Learning Anomaly Detected
 41033010,FA,Negative Births Values Found
 41033010,FA,Negative Deaths Values Found
@@ -234,37 +127,11 @@ Code,Region Type,Description
 41034040,FA,Bell curve detect
 41034070,FA,small bell curve detect
 41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035030,FA,Machine Learning Anomaly Detected
-41035160,FA,Machine Learning Anomaly Detected
-41035160,FA,Machine Learning Anomaly Detected
-41035160,FA,Machine Learning Anomaly Detected
-41035160,FA,Machine Learning Anomaly Detected
-41035160,FA,Machine Learning Anomaly Detected
-41035160,FA,Machine Learning Anomaly Detected
-41035160,FA,Machine Learning Anomaly Detected
-41035160,FA,Machine Learning Anomaly Detected
 41035160,FA,Machine Learning Anomaly Detected
 41035200,FA,Suddent spike or drop detected
 41036120,FA,Suddent spike or drop detected
 41036170,FA,Suddent spike or drop detected
 41038210,FA,Suddent spike or drop detected
-41039010,FA,Machine Learning Anomaly Detected
-41039010,FA,Machine Learning Anomaly Detected
 41039010,FA,Machine Learning Anomaly Detected
 41040040,FA,Suddent spike or drop detected
 41040080,FA,Suddent spike or drop detected
@@ -355,7 +222,6 @@ Code,Region Type,Description
 41077200,FA,Suddent spike or drop detected
 41078090,FA,Bell curve detect
 41078170,FA,Machine Learning Anomaly Detected
-41078170,FA,Machine Learning Anomaly Detected
 41079010,FA,Suddent spike or drop detected
 41079050,FA,Suddent spike or drop detected
 41079070,FA,Suddent spike or drop detected
@@ -398,8 +264,6 @@ Code,Region Type,Description
 41093080,FA,Suddent spike or drop detected
 41093140,FA,Suddent spike or drop detected
 41093160,FA,Suddent spike or drop detected
-41093170,FA,Machine Learning Anomaly Detected
-41093170,FA,Machine Learning Anomaly Detected
 41093170,FA,Machine Learning Anomaly Detected
 41093270,FA,Suddent spike or drop detected
 41093290,FA,Suddent spike or drop detected
@@ -619,7 +483,6 @@ Code,Region Type,Description
 41174180,FA,Suddent spike or drop detected
 41174220,FA,Suddent spike or drop detected
 41174230,FA,Suddent spike or drop detected
-41175030,FA,Machine Learning Anomaly Detected
 41175030,FA,Machine Learning Anomaly Detected
 41175050,FA,Suddent spike or drop detected
 41175170,FA,Bell curve detect

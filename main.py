@@ -156,11 +156,11 @@ running_time = end_time - start_time
 print(f"Running time: {running_time:.6f} seconds")
 
 print(f'For sanity check, {len(sanity_checks.iloc[:, 0].unique())} of unique region been tagged')
-# print(f'For ratio check, {len(ratio_df.iloc[:, 0].unique())} of unique region been tagged')
+print(f'For ratio check, {len(ratio_df.iloc[:, 0].unique())} of unique region been tagged')
 print(f'For births check, {len(births_check_output.iloc[:, 0].unique())} of unique region been tagged')
 print(f'For deaths check, {len(deaths_check_output.iloc[:, 0].unique())} of unique region been tagged')
 print(f'For household check, {len(household_check_output.iloc[:, 0].unique())} of unique region been tagged')
-# print(f'For population check, {len(population_check_output.iloc[:, 0].unique())} of unique region been tagged')
+print(f'For population check, {len(population_check_output.iloc[:, 0].unique())} of unique region been tagged')
 print(f'For negative checks, {len(negative_checks.iloc[:, 0].unique())} of unique region been tagged')
 print(f'For ML anomaly check, {len(ml_anomaly.iloc[:, 0].unique())} of unique region been tagged')
 print(f'For spike check, {len(spike_output.iloc[:, 0].unique())} of unique region been tagged')
