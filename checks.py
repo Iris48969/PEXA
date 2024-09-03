@@ -16,7 +16,7 @@ import warnings
 warnings.simplefilter(action='ignore', category=pd.errors.SettingWithCopyWarning)
 
 
-def execute_sql_query(conn, sql_query):
+def execute_sql_query(conn, sql_query, params=()):
     try:
         current_system = platform.system()
         if current_system == "Darwin":
@@ -26,13 +26,13 @@ def execute_sql_query(conn, sql_query):
             data = cursor.fetchall()
             df = pd.DataFrame(data)
         elif current_system == "Windows":
-            df = pd.read_sql_query(con=conn, sql= sql_query)
+            df = pd.read_sql_query(con=conn, sql= sql_query, params=params)
         logging.info("sql execute done")
         return df
     except Exception as e:
         logging.error(e)
 
-def household_check(conn, ratio_upper, ratio_lower):
+def household_check(conn, ratio_upper, ratio_lower, sa4_code:int):
     """
     The purpose of this function is to identify abnormal spikes/drops in population forecasts
     in a timeseries format by checking the ratio of population to household count.
@@ -59,7 +59,7 @@ def household_check(conn, ratio_upper, ratio_lower):
         logging.error(f"Error occurred: {e}")
         return None
 
-def births_region_level_sum_check(conn):
+def births_region_level_sum_check(conn, sa4_code:int):
     """
     The purpose of this function is to call an SQL script which sums the births of all FAs in a particular SA2 and checks
     if this value matches the total births of the SA2
@@ -70,7 +70,7 @@ def births_region_level_sum_check(conn):
     try:
         sql = open(os.path.abspath("SQL_Queries/Births Sum Check for FA vs SA2 Output.sql"), 'r').read()
         logging.info("Births region level sum check query opened")
-        df = execute_sql_query(sql_query=sql, conn=conn)
+        df = execute_sql_query(sql_query=sql, conn=conn, params=(sa4_code,))
         logging.info("Births region level sum check query executed")
         return df
     except Exception as e:
