@@ -2,7 +2,7 @@
 This file contains checks in the form of one function each that calls one SQL script
 """
 # from matplotlib import pyplot as plt
-import seaborn as sns
+# import seaborn as sns
 import pandas as pd
 import os
 import logging
@@ -10,11 +10,11 @@ import re
 import numpy as np
 import platform
 from sklearn.ensemble import IsolationForest
+from sklearn.preprocessing import StandardScaler
 import warnings
 
 # Ignore SettingWithCopyWarning
 warnings.simplefilter(action='ignore', category=pd.errors.SettingWithCopyWarning)
-
 
 def execute_sql_query(conn, sql_query, params):
     try:
@@ -387,17 +387,10 @@ def perform_sanity_check(conn, sa4_code):
 def perform_ml_anomaly_detection(conn, contamination_, sa4_code):
     try:
         logging.info("Performing machine learning anomaly detection...")
-        query = open(os.path.abspath('SQL_Queries/ERP_ML.sql'), 'r').read()
+        query = open(os.path.abspath('SQL_Queries/Complex_ML_query.sql'), 'r').read()
         df = execute_sql_query(sql_query=query, conn=conn, params=sa4_code)
         result_list = []
-
         # def outlier_plot(data, outlier_method_name, x_var, y_var,region_type):
-        #     # print(f'Outlier Method: {outlier_method_name}')
-           
-        #     # print(f'Number of anomalous values: {len(data[data["anomaly"] == -1])}')
-        #     # print(f'Number of non-anomalous values: {len(data[data["anomaly"] == 1])}')
-        #     # print(f'Total Number of values: {len(data)}')
-
         #     # Create FacetGrid
         #     g = sns.FacetGrid(data, col='anomaly', height=4, hue='anomaly', hue_order=[1, -1], palette={1: 'green', -1: 'red'})
         #     g.map(sns.scatterplot, x_var, y_var, s = 20, legend='full')
@@ -424,32 +417,39 @@ def perform_ml_anomaly_detection(conn, contamination_, sa4_code):
 
         #     return g
 
-        for region_type in ['FA', 'SA2']:
-            region_df = df[df['RegionType'] == region_type]
-            if not region_df.empty:
-                
-                # Ensure ASGSCode is present
-                if 'ASGSCode' not in region_df.columns:
-                    logging.error("Column 'ASGSCode' is missing from the DataFrame")
-                    return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])
+        # Fill missing PopulationDensity, Births, Deaths with the mean value for the same ERPYear
+        df['PopulationDensity'] = df.groupby('ERPYear')['PopulationDensity'].transform(lambda x: x.fillna(x.mean()))
+        df['Births'] = df.groupby('ERPYear')['Births'].transform(lambda x: x.fillna(x.mean()))
+        df['Deaths'] = df.groupby('ERPYear')['Deaths'].transform(lambda x: x.fillna(x.mean()))
 
-                # Prepare input features
-                anomaly_inputs = ['ERPYear', 'ERP']
-                
-                # Initialize and fit the Isolation Forest model
-                model_IF = IsolationForest(contamination=contamination_, random_state=42)
-                region_df['anomaly_scores'] = model_IF.fit_predict(region_df[anomaly_inputs])
-                region_df['anomaly'] = model_IF.predict(region_df[anomaly_inputs])
-                # Manually set negative values as outliers
-                # region_df.loc[region_df['ERP'] < 0, 'anomaly'] = -1
-                
-                # Plot results
-                #outlier_plot(region_df, "Isolation Forest", "ERPYear", "Total", region_type)
-                # Append results to the result list
-                for index, row in region_df.iterrows():
-                    if row['anomaly'] == -1:
-                        result_list.append({'Code': row['ASGSCode'], 'Region Type': region_type, 'Description': 'Machine Learning Anomaly Detected'})
-            
+        # Calculate BirthDeathRatio where Deaths is not zero to avoid division errors/ fill NaN values with Median
+        df['BirthDeathRatio'] = df.apply(lambda row: row['Births'] / row['Deaths'] if row['Deaths'] != 0 else None, axis=1)        
+        df['GrowthRate'] = df['GrowthRate'].fillna(df['GrowthRate'].median())
+        df['BirthDeathRatio'] = df['BirthDeathRatio'].fillna(df['BirthDeathRatio'].median())
+
+        # Select Features for Isolation Forest
+        features = ['TotalPopulation', 'Dwellings', 'PopulationDensity', 'GrowthRate', 'Births', 'Deaths', 'BirthDeathRatio']
+        X = df[features]
+        
+        # Normalize/Standardize Features
+        scaler = StandardScaler()
+        X_scaled = scaler.fit_transform(X)
+
+        # Initialize and fit the Isolation Forest model
+        model_IF = IsolationForest(contamination=contamination_, random_state=42)
+        df['anomaly_scores'] = model_IF.fit_predict(X_scaled)
+        df['anomaly'] = model_IF.predict(X_scaled)
+        print(df.head())
+       
+        # Plotting anomalies
+        #outlier_plot(df, "Isolation Forest", "ERPYear", "TotalPopulation", df['RegionType'].iloc[0])
+
+        # Append results to the result list
+        result_list = []
+        for index, row in df.iterrows():
+            if row['anomaly'] == -1:
+                result_list.append({'Code': row['ASGSCode'], 'Region Type': row['RegionType'], 'Description': 'Machine Learning Anomaly Detected'})
+        
         # Convert result_list to DataFrame
         result_df = pd.DataFrame(result_list, columns=['Code', 'Region Type', 'Description'])
         # Drop duplicate rows based on the 'Code' column, keeping the first occurrence
@@ -457,11 +457,10 @@ def perform_ml_anomaly_detection(conn, contamination_, sa4_code):
 
         # Reset index if needed
         result_df = result_df.reset_index(drop=True)
-        
-        
+
         return result_df
       
     except Exception as e:
         logging.error(f"Error performing machine learning anomaly detection: {e}")
         return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])
-    
+        
