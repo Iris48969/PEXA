@@ -1,8 +1,34 @@
 import tkinter as tk
 from tkinter import ttk
 
+class ToolTip:
+    def __init__(self, widget, text):
+        self.widget = widget
+        self.text = text
+        self.tooltip_window = None
+        self.widget.bind("<Enter>", self.show_tooltip)
+        self.widget.bind("<Leave>", self.hide_tooltip)
+
+    def show_tooltip(self, event):
+        if self.tooltip_window or not self.text:
+            return
+        x, y, _, _ = self.widget.bbox("insert")
+        x += self.widget.winfo_rootx() + 20
+        y += self.widget.winfo_rooty() + 20
+        self.tooltip_window = tw = tk.Toplevel(self.widget)
+        tw.wm_overrideredirect(True)
+        tw.wm_geometry(f"+{x}+{y}")
+        label = tk.Label(tw, text=self.text, justify='left',
+                         background="lightyellow", relief='solid', borderwidth=1,
+                         font=("Arial", 10, "normal"))
+        label.pack(ipadx=5, ipady=5)
+
+    def hide_tooltip(self, event):
+        if self.tooltip_window:
+            self.tooltip_window.destroy()
+            self.tooltip_window = None
+
 def open_parameter_window():
-    # This list will hold the parameters to return
     parameters = []
 
     def save_default_parameters():
@@ -51,42 +77,34 @@ def open_parameter_window():
     window = tk.Tk()
     window.title("Modify Parameters")
 
-    # Create sections (labels and entry fields) for parameters
-    ttk.Label(window, text="Ratio Upper:").grid(row=0, column=0, padx=10, pady=10)
-    entry_param1 = ttk.Entry(window)
-    entry_param1.grid(row=0, column=1, padx=10, pady=10)
-    entry_param1.insert(0, "5")  # Set default value
+    # General style settings
+    style = ttk.Style()
+    style.configure("TLabel", font=("Arial", 11))
+    style.configure("TEntry", font=("Arial", 11))
 
-    ttk.Label(window, text="Ratio Lower:").grid(row=1, column=0, padx=10, pady=10)
-    entry_param2 = ttk.Entry(window)
-    entry_param2.grid(row=1, column=1, padx=10, pady=10)
-    entry_param2.insert(0, "1")  # Set default value
+    # Function to create labels, entry fields, and tooltips
+    def create_param_row(text, row, default_value, tooltip_text):
+        label = ttk.Label(window, text=text)
+        label.grid(row=row, column=0, padx=(10, 2), pady=10, sticky='w')
+        entry = ttk.Entry(window)
+        entry.grid(row=row, column=1, padx=(2, 10), pady=10)
+        entry.insert(0, default_value)
+        help_icon = tk.Label(window, text="？", foreground="blue", cursor="hand2", font=("Arial", 12, "bold"))
+        help_icon.grid(row=row, column=2, padx=(0, 10), pady=10, sticky='e')
+        ToolTip(help_icon, tooltip_text)
+        return entry
 
-    ttk.Label(window, text="IQR Multiplier for spike detection:").grid(row=2, column=0, padx=10, pady=10)
-    entry_param3 = ttk.Entry(window)
-    entry_param3.grid(row=2, column=1, padx=10, pady=10)
-    entry_param3.insert(0, "5")  # Set default value
+    # Creating rows with parameters
+    entry_param1 = create_param_row("Ratio Upper:", 0, "5", "Household Size Check: This sets the upper bound for the household size ratio.")
+    entry_param2 = create_param_row("Ratio Lower:", 1, "1", "Household Size Check: This sets the lower bound for the household size ratio.")
+    entry_param3 = create_param_row("IQR Multiplier for spike detection:", 2, "5", "Outlier Detection: This multiplier is used to detect spikes in the data.")
+    entry_param4 = create_param_row("Sensitivity (% change):", 3, "0.005", "Population Check: This sets the sensitivity threshold for detecting significant population changes.")
+    entry_param5 = create_param_row("Contamination:", 4, "0.003", "Anomaly Detection: Controls the contamination level used in the Isolation Forest algorithm.")
+    entry_param6 = create_param_row("SA4 Code:", 5, "213", "Geographical Area: This code represents the specific region being analyzed.")
 
-    ttk.Label(window, text="Sensitivity (% change Below this value == no change)").grid(row=3, column=0, padx=10, pady=10)
-    entry_param4 = ttk.Entry(window)
-    entry_param4.grid(row=3, column=1, padx=10, pady=10)
-    entry_param4.insert(0, "0.005")  # Set default value
-
-    ttk.Label(window, text="Contamination:").grid(row=4, column=0, padx=10, pady=10)
-    entry_param5 = ttk.Entry(window)
-    entry_param5.grid(row=4, column=1, padx=10, pady=10)
-    entry_param5.insert(0, "0.003")  # Set default value
-
-    ttk.Label(window, text="SA4 Code:").grid(row=5, column=0, padx=10, pady=10)
-    entry_param6 = ttk.Entry(window)
-    entry_param6.grid(row=5, column=1, padx=10, pady=10)
-    entry_param6.insert(0, "213")  # Set default value
-
-    # Add a button to save default parameters
+    # Buttons to save parameters
     default_button = ttk.Button(window, text="Use Default Values", command=save_default_parameters)
     default_button.grid(row=6, column=0, pady=10, padx=10)
-
-    # Add a button to save entered parameters
     save_button = ttk.Button(window, text="Use Entered Values", command=save_entered_parameters)
     save_button.grid(row=6, column=1, pady=10, padx=10)
 

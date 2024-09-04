@@ -1,56 +1,56 @@
-2024-09-03 16:34:44 - INFO - Log set up done, start running the file
-2024-09-03 16:34:45 - DEBUG - matplotlib data path: /Users/shauncai/opt/anaconda3/envs/id_env/lib/python3.10/site-packages/matplotlib/mpl-data
-2024-09-03 16:34:45 - DEBUG - CONFIGDIR=/Users/shauncai/.matplotlib
-2024-09-03 16:34:45 - DEBUG - interactive is False
-2024-09-03 16:34:45 - DEBUG - platform is darwin
-2024-09-03 16:34:45 - DEBUG - CACHEDIR=/Users/shauncai/.matplotlib
-2024-09-03 16:34:45 - DEBUG - Using fontManager instance from /Users/shauncai/.matplotlib/fontlist-v330.json
-2024-09-03 16:34:46 - INFO - Connection to database was successful
-2024-09-03 16:34:49 - INFO - Got inputted parameters
-2024-09-03 16:34:49 - INFO - Trying to execute household check
-2024-09-03 16:35:02 - INFO - SQL execution done
-2024-09-03 16:35:02 - INFO - Data returned
-2024-09-03 16:35:02 - INFO - Outlier dataframe found
-2024-09-03 16:35:02 - INFO - earliest_year
-2024-09-03 16:35:02 - INFO - Household check completed successfully
-2024-09-03 16:35:02 - INFO - Try to execute births check
-2024-09-03 16:35:02 - INFO - Births region level sum check query opened
-2024-09-03 16:35:02 - INFO - SQL execution done
-2024-09-03 16:35:02 - INFO - Births region level sum check query executed
-2024-09-03 16:35:02 - INFO - Births check done
-2024-09-03 16:35:02 - INFO - Try to execute deaths check
-2024-09-03 16:35:02 - INFO - Deaths region level sum check query opened
-2024-09-03 16:35:02 - INFO - SQL execution done
-2024-09-03 16:35:02 - INFO - Deaths region level sum check query executed
-2024-09-03 16:35:02 - INFO - Deaths check done
-2024-09-03 16:35:02 - INFO - Try to execute household check
-2024-09-03 16:35:02 - INFO - Household region level sum check query opened
-2024-09-03 16:35:02 - INFO - SQL execution done
-2024-09-03 16:35:02 - INFO - Household region level sum check query executed
-2024-09-03 16:35:02 - INFO - Household check done
-2024-09-03 16:35:02 - INFO - Try to execute population check
-2024-09-03 16:35:02 - INFO - Population region level sum check query opened
-2024-09-03 16:35:02 - INFO - SQL execution done
-2024-09-03 16:35:02 - INFO - Population region level sum check query executed
-2024-09-03 16:35:02 - INFO - Population check done
-2024-09-03 16:35:02 - INFO - Running Negative Checks:
-2024-09-03 16:35:02 - INFO - Performing negative checks...
-2024-09-03 16:35:05 - INFO - SQL execution done
-2024-09-03 16:35:05 - INFO - Running Sanity Checks:
-2024-09-03 16:35:05 - INFO - Performing sanity checks...
-2024-09-03 16:35:07 - INFO - SQL execution done
-2024-09-03 16:35:07 - INFO - Running Machine Learning Anomaly Detection:
-2024-09-03 16:35:07 - INFO - Performing machine learning anomaly detection...
-2024-09-03 16:35:09 - INFO - SQL execution done
-2024-09-03 16:35:11 - INFO - Try to execute spike check
-2024-09-03 16:35:11 - INFO - Query file opened
-2024-09-03 16:35:12 - INFO - SQL execution done
-2024-09-03 16:35:12 - INFO - SQL execution done
-2024-09-03 16:35:12 - INFO - Query data returned
-2024-09-03 16:35:13 - INFO - spike check done
-2024-09-03 16:35:13 - INFO - Try to execute shape check
-2024-09-03 16:35:13 - INFO - Query file opened
-2024-09-03 16:35:14 - INFO - SQL execution done
-2024-09-03 16:35:14 - INFO - SQL execution done
-2024-09-03 16:35:14 - INFO - Query data returned
-2024-09-03 16:35:14 - INFO - shape check done
+2024-09-04 12:44:48 - INFO - Log set up done, start running the file
+2024-09-04 12:44:48 - DEBUG - matplotlib data path: /Users/shauncai/opt/anaconda3/envs/id_env/lib/python3.10/site-packages/matplotlib/mpl-data
+2024-09-04 12:44:48 - DEBUG - CONFIGDIR=/Users/shauncai/.matplotlib
+2024-09-04 12:44:48 - DEBUG - interactive is False
+2024-09-04 12:44:48 - DEBUG - platform is darwin
+2024-09-04 12:44:48 - DEBUG - CACHEDIR=/Users/shauncai/.matplotlib
+2024-09-04 12:44:48 - DEBUG - Using fontManager instance from /Users/shauncai/.matplotlib/fontlist-v330.json
+2024-09-04 12:44:50 - INFO - Connection to database was successful
+2024-09-04 12:45:27 - INFO - Got inputted parameters
+2024-09-04 12:45:27 - INFO - Trying to execute household check
+2024-09-04 12:45:40 - INFO - SQL execution done
+2024-09-04 12:45:40 - INFO - Data returned
+2024-09-04 12:45:40 - INFO - Outlier dataframe found
+2024-09-04 12:45:40 - INFO - earliest_year
+2024-09-04 12:45:40 - INFO - Household check completed successfully
+2024-09-04 12:45:40 - INFO - Try to execute births check
+2024-09-04 12:45:40 - INFO - Births region level sum check query opened
+2024-09-04 12:45:40 - INFO - SQL execution done
+2024-09-04 12:45:40 - INFO - Births region level sum check query executed
+2024-09-04 12:45:40 - INFO - Births check done
+2024-09-04 12:45:40 - INFO - Try to execute deaths check
+2024-09-04 12:45:40 - INFO - Deaths region level sum check query opened
+2024-09-04 12:45:40 - INFO - SQL execution done
+2024-09-04 12:45:40 - INFO - Deaths region level sum check query executed
+2024-09-04 12:45:40 - INFO - Deaths check done
+2024-09-04 12:45:40 - INFO - Try to execute household check
+2024-09-04 12:45:40 - INFO - Household region level sum check query opened
+2024-09-04 12:45:40 - INFO - SQL execution done
+2024-09-04 12:45:40 - INFO - Household region level sum check query executed
+2024-09-04 12:45:40 - INFO - Household check done
+2024-09-04 12:45:40 - INFO - Try to execute population check
+2024-09-04 12:45:40 - INFO - Population region level sum check query opened
+2024-09-04 12:45:40 - INFO - SQL execution done
+2024-09-04 12:45:40 - INFO - Population region level sum check query executed
+2024-09-04 12:45:40 - INFO - Population check done
+2024-09-04 12:45:40 - INFO - Running Negative Checks:
+2024-09-04 12:45:40 - INFO - Performing negative checks...
+2024-09-04 12:45:43 - INFO - SQL execution done
+2024-09-04 12:45:43 - INFO - Running Sanity Checks:
+2024-09-04 12:45:43 - INFO - Performing sanity checks...
+2024-09-04 12:45:45 - INFO - SQL execution done
+2024-09-04 12:45:45 - INFO - Running Machine Learning Anomaly Detection:
+2024-09-04 12:45:45 - INFO - Performing machine learning anomaly detection...
+2024-09-04 12:45:47 - INFO - SQL execution done
+2024-09-04 12:45:49 - INFO - Try to execute spike check
+2024-09-04 12:45:49 - INFO - Query file opened
+2024-09-04 12:45:51 - INFO - SQL execution done
+2024-09-04 12:45:51 - INFO - SQL execution done
+2024-09-04 12:45:51 - INFO - Query data returned
+2024-09-04 12:45:51 - INFO - spike check done
+2024-09-04 12:45:51 - INFO - Try to execute shape check
+2024-09-04 12:45:51 - INFO - Query file opened
+2024-09-04 12:45:52 - INFO - SQL execution done
+2024-09-04 12:45:52 - INFO - SQL execution done
+2024-09-04 12:45:52 - INFO - Query data returned
+2024-09-04 12:45:52 - INFO - shape check done
