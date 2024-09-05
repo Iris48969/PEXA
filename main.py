@@ -5,6 +5,9 @@ import re
 import warnings
 import time
 import sqlite3
+from datetime import datetime
+import os
+
 
 
 warnings.simplefilter(action='ignore', category=UserWarning)
@@ -23,7 +26,7 @@ start_time = time.time()
 
 # Import the household_check function
 try:
-    from checks import household_check, births_region_level_sum_check, deaths_region_level_sum_check, household_region_level_sum_check, population_region_level_sum_check, trend_shape_check, spike_check, perform_negative_check, perform_sanity_check, perform_ml_anomaly_detection
+    from checks import add_name_column, household_check, births_region_level_sum_check, deaths_region_level_sum_check, household_region_level_sum_check, population_region_level_sum_check, trend_shape_check, spike_check, perform_negative_check, perform_sanity_check, perform_ml_anomaly_detection
     from parameter_window import open_parameter_window
 except Exception as e:
     logging.error(f"Import failed: {e}")
@@ -128,7 +131,7 @@ except Exception as e:
 
 try:
     logging.info("Try to execute spike check")
-    spike_output = spike_check(conn, sensitivity, multiplier, sa4_code) # so far filter out 327 region
+    spike_output, total_number_of_region = spike_check(conn, sensitivity, multiplier, sa4_code) # so far filter out 327 region
     logging.info("spike check done")
     logging.info("Try to execute shape check")
     shape_output = trend_shape_check(conn, sensitivity, sa4_code) # so far filter out 360 region
@@ -138,29 +141,93 @@ except Exception as e:
 
 # print(spike_output)
 # print(shape_output)
+current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
+folder_name = f"output_{current_time}"
+os.makedirs(folder_name, exist_ok=True)
+output_summary_path = os.path.join(folder_name, 'output_summary.txt')
+output_csv_path = os.path.join(folder_name, 'final_output.csv')
+
+
 
 # merge result together and output a csv file
 output_list = [ratio_df, sanity_checks, births_check_output, deaths_check_output, population_check_output, household_check_output, negative_checks,ml_anomaly, spike_output,shape_output]
 merged_df = pd.concat(output_list, ignore_index=True)
 merged_df = merged_df.sort_values(by=['Region Type', 'Code'], ascending=[False, True])
+merged_df = add_name_column(merged_df, conn, sa4_code)
 # print(merged_df)
-merged_df.to_csv('final_output.csv', index=False)
+merged_df.to_csv(output_csv_path, index=False)
 
 # summary stat 
 end_time = time.time()
 running_time = end_time - start_time
+percentage = (len(merged_df["Code"].unique()) / total_number_of_region) * 100
+formatted_percentage = "{:.2f}%".format(percentage)
 
-print(f'The number of unique abnormal region are: {len(merged_df["Code"].unique())}') # something wrong with sanity check, without it only has 565 region been tagged
-print(f"Running time: {running_time:.6f} seconds")
+# Function to safely get the number of unique values in the first column of a DataFrame
+def get_unique_count(df):
+    if df is not None and not df.empty:
+        return len(df.iloc[:, 0].unique())
+    return 0
 
-print(f'For sanity check, {len(sanity_checks.iloc[:, 0].unique())} of unique region been tagged')
-print(f'For ratio check, {len(ratio_df.iloc[:, 0].unique())} of unique region been tagged')
-# print(f'For births check, {len(births_check_output.iloc[:, 0].unique())} of unique region been tagged')
-# print(f'For deaths check, {len(deaths_check_output.iloc[:, 0].unique())} of unique region been tagged')
-# print(f'For household check, {len(household_check_output.iloc[:, 0].unique())} of unique region been tagged')
-# print(f'For population check, {len(population_check_output.iloc[:, 0].unique())} of unique region been tagged')
-print(f'For negative checks, {len(negative_checks.iloc[:, 0].unique())} of unique region been tagged')
-print(f'For ML anomaly check, {len(ml_anomaly.iloc[:, 0].unique())} of unique region been tagged')
-print(f'For spike check, {len(spike_output.iloc[:, 0].unique())} of unique region been tagged')
-print(f'For shape check, {len(shape_output.iloc[:, 0].unique())} of unique region been tagged')
+with open(output_summary_path, 'w') as file:
+    # Parameters section
+    file.write(f"{'#' * 45}\n")
+    file.write(f"{' ' * 15}PARAMETERS\n")
+    file.write(f"{'#' * 45}\n\n")
+    file.write(f"Ratio Upper:      {ratio_upper}\n")
+    file.write(f"Ratio Lower:      {ratio_lower}\n")
+    file.write(f"Multiplier:       {multiplier}\n")
+    file.write(f"Sensitivity:      {sensitivity}\n")
+    file.write(f"Contamination:    {contamination}\n")
+    file.write(f"SA4 Code:         {sa4_code}\n\n")
+    
+    # Summary statistics section
+    file.write(f"{'#' * 45}\n")
+    file.write(f"{' ' * 12}SUMMARY STATISTICS\n")
+    file.write(f"{'#' * 45}\n\n")
+    file.write(f"Unique Abnormal Regions:    {len(merged_df['Code'].unique())}\n")
+    file.write(f"Proportion of Abnormal Regions:    {formatted_percentage}\n")
+    file.write(f"Total Running Time:         {running_time:.6f} seconds\n\n")
+    
+    # Sanity checks section
+    file.write(f"{'#' * 45}\n")
+    file.write(f"{' ' * 14}SANITY CHECKS\n")
+    file.write(f"{'#' * 45}\n\n")
+    sanity_checks_len = get_unique_count(sanity_checks)
+    file.write(f"Sanity Check Tagged Regions:    {sanity_checks_len}\n")
+    negative_checks_len = get_unique_count(negative_checks)
+    file.write(f"Negative Checks Tagged Regions: {negative_checks_len}\n\n")
+    
+    # Population / Household check section
+    file.write(f"{'#' * 45}\n")
+    file.write(f"{' ' * 10}POPULATION / HOUSEHOLD CHECKS\n")
+    file.write(f"{'#' * 45}\n\n")
+    ratio_checks_len = get_unique_count(ratio_df)
+    file.write(f"Ratio Check Tagged Regions:     {ratio_checks_len}\n\n")
+    
+    # Region level consistency checks section
+    file.write(f"{'#' * 45}\n")
+    file.write(f"{' ' * 10}REGION LEVEL CONSISTENCY CHECKS\n")
+    file.write(f"{'#' * 45}\n\n")
+    births_check_len = get_unique_count(births_check_output)
+    file.write(f"Births Check Tagged Regions:     {births_check_len}\n")
+    deaths_check_len = get_unique_count(deaths_check_output)
+    file.write(f"Deaths Check Tagged Regions:     {deaths_check_len}\n")
+    household_check_len = get_unique_count(household_check_output)
+    file.write(f"Household Check Tagged Regions:  {household_check_len}\n")
+    population_check_len = get_unique_count(population_check_output)
+    file.write(f"Population Check Tagged Regions: {population_check_len}\n\n")
+    
+    # Pattern checks section
+    file.write(f"{'#' * 45}\n")
+    file.write(f"{' ' * 15}PATTERN CHECKS\n")
+    file.write(f"{'#' * 45}\n\n")
+    ml_anomaly_len = get_unique_count(ml_anomaly)
+    file.write(f"ML Anomaly Check Tagged Regions: {ml_anomaly_len}\n")
+    spike_output_len = get_unique_count(spike_output)
+    file.write(f"Spike Check Tagged Regions:      {spike_output_len}\n")
+    shape_output_len = get_unique_count(shape_output)
+    file.write(f"Shape Check Tagged Regions:      {shape_output_len}\n")
+
+
 

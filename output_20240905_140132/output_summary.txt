@@ -1,0 +1,48 @@
+#############################################
+               PARAMETERS
+#############################################
+
+Ratio Upper:      5.0
+Ratio Lower:      1.0
+Multiplier:       5.0
+Sensitivity:      0.005
+Contamination:    0.003
+SA4 Code:         410
+
+#############################################
+            SUMMARY STATISTICS
+#############################################
+
+Unique Abnormal Regions:    561
+Proportion of Abnormal Regions:    46.25%
+Total Running Time:         31.659138 seconds
+
+#############################################
+              SANITY CHECKS
+#############################################
+
+Sanity Check Tagged Regions:    0
+Negative Checks Tagged Regions: 9
+
+#############################################
+          POPULATION / HOUSEHOLD CHECKS
+#############################################
+
+Ratio Check Tagged Regions:     405
+
+#############################################
+          REGION LEVEL CONSISTENCY CHECKS
+#############################################
+
+Births Check Tagged Regions:     0
+Deaths Check Tagged Regions:     0
+Household Check Tagged Regions:  0
+Population Check Tagged Regions: 0
+
+#############################################
+               PATTERN CHECKS
+#############################################
+
+ML Anomaly Check Tagged Regions: 8
+Spike Check Tagged Regions:      194
+Shape Check Tagged Regions:      24

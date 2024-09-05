@@ -153,6 +153,7 @@ def spike_check(conn, sensitivity, multiplier, sa4_code):
     output: list of list which contains [region code, region type, description]
     """
     try:
+        total_number_of_region = 0
         # getting queries
         ERP_query= open(os.path.abspath("SQL_Queries/ERP_table(FA&SA2).sql"),'r').read()
         area_type_query = open(os.path.abspath("SQL_Queries/Area_type.sql"),'r').read()
@@ -190,10 +191,11 @@ def spike_check(conn, sensitivity, multiplier, sa4_code):
 
         # perform checks and output result
         for region in wide_df.columns:
+            total_number_of_region += 1
             if check_outliers(rate_of_change[region][1:]):
                 output_list.append([region, area_dict[region], "Suddent spike or drop detected"])
         output_df = pd.DataFrame(output_list, columns=['Code', 'Region Type', 'Description'])
-        return output_df
+        return output_df, total_number_of_region
     except Exception as e:
         logging.error(e)
 
@@ -439,7 +441,7 @@ def perform_ml_anomaly_detection(conn, contamination_, sa4_code):
         model_IF = IsolationForest(contamination=contamination_, random_state=42)
         df['anomaly_scores'] = model_IF.fit_predict(X_scaled)
         df['anomaly'] = model_IF.predict(X_scaled)
-        print(df.head())
+        # print(df.head())
        
         # Plotting anomalies
         #outlier_plot(df, "Isolation Forest", "ERPYear", "TotalPopulation", df['RegionType'].iloc[0])
@@ -464,3 +466,25 @@ def perform_ml_anomaly_detection(conn, contamination_, sa4_code):
         logging.error(f"Error performing machine learning anomaly detection: {e}")
         return pd.DataFrame(columns=['Code', 'Region Type', 'Description'])
         
+
+def add_name_column(merged_dataframe, conn, sa4_code):
+    """
+    This function add a new column name into the inputing dataframe which
+    specifying the name of the region.
+
+    Input: dataframe
+    output: datafram
+    """
+    try:
+        logging.info("Start adding column name into the final df")
+        area_type_query = open(os.path.abspath("SQL_Queries/Area_name.sql"),'r').read()
+        area_name = execute_sql_query(conn=conn, sql_query=area_type_query, params=sa4_code)
+        area_dict = area_name.set_index('ASGSCode').to_dict()['Name']
+        logging.info("Query data returned")
+        area_code = merged_dataframe['Code']
+        name_list = [area_dict[x] for x in area_code]
+        merged_dataframe.insert(1, 'Name', name_list)
+        return merged_dataframe
+    except Exception as e:
+        logging.error(e)
+

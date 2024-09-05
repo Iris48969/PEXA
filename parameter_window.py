@@ -65,12 +65,6 @@ def open_parameter_window():
         # Save parameters to the list
         parameters.extend([ratio_upper, ratio_lower, multiplier, sensitivity, contamination, sa4_code])
         
-        print(f"ratio_upper set to: {ratio_upper}")
-        print(f"ratio_lower set to: {ratio_lower}")
-        print(f"multiplier set to: {multiplier}")
-        print(f"sensitivity set to: {sensitivity}")
-        print(f"contamination set to: {contamination}")
-        print(f"sa4_code set to: {sa4_code}")
         window.destroy()  # Close the window after saving
 
     # Create the main window

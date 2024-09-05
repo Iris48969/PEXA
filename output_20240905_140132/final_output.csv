@@ -1,0 +1,645 @@
+Code,Name,Region Type,Description
+41001110,41001110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2027"
+41001260,41001260,FA,wave detect
+41001530,41001530,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2037"
+41002010,41002010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41002010,41002010,FA,Suddent spike or drop detected
+41002020,41002020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41002030,41002030,FA,Suddent spike or drop detected
+41002140,41002140,FA,Suddent spike or drop detected
+41003010,41003010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41003020,41003020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41003030,41003030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41003050,41003050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41003060,41003060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41003070,41003070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41003100,41003100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41003110,41003110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41003140,41003140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41003180,41003180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41003220,41003220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2034"
+41004060,41004060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41004080,41004080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41004090,41004090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
+41004140,41004140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41004160,41004160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41004230,41004230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41004320,41004320,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41004440,41004440,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41004440,41004440,FA,Bell curve detect
+41005060,41005060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41005060,41005060,FA,Suddent spike or drop detected
+41005100,41005100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41006020,41006020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41006030,41006030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41006040,41006040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41006060,41006060,FA,Suddent spike or drop detected
+41006090,41006090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41006130,41006130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41006170,41006170,FA,Suddent spike or drop detected
+41006180,41006180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41007020,41007020,FA,Suddent spike or drop detected
+41007030,41007030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2028"
+41007030,41007030,FA,Suddent spike or drop detected
+41007060,41007060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41007070,41007070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41007130,41007130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41007140,41007140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41007230,41007230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41007360,41007360,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41007370,41007370,FA,Suddent spike or drop detected
+41007390,41007390,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41007600,41007600,FA,Suddent spike or drop detected
+41007610,41007610,FA,Suddent spike or drop detected
+41007650,41007650,FA,Suddent spike or drop detected
+41007690,41007690,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41007690,41007690,FA,Suddent spike or drop detected
+41008040,41008040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
+41008050,41008050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41008100,41008100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41008190,41008190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41008200,41008200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41009030,41009030,FA,Negative Deaths Values Found
+41009080,41009080,FA,Negative Deaths Values Found
+41009090,41009090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41009090,41009090,FA,Negative Deaths Values Found
+41009100,41009100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
+41009100,41009100,FA,Negative Births Values Found
+41009100,41009100,FA,Negative Deaths Values Found
+41009130,41009130,FA,Negative Deaths Values Found
+41010010,41010010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41010020,41010020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41010030,41010030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41010030,41010030,FA,Suddent spike or drop detected
+41010040,41010040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41010040,41010040,FA,Suddent spike or drop detected
+41010050,41010050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41010050,41010050,FA,Suddent spike or drop detected
+41010070,41010070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41010090,41010090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41010100,41010100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41010110,41010110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41010130,41010130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41010130,41010130,FA,Suddent spike or drop detected
+41011010,41011010,FA,Suddent spike or drop detected
+41011040,41011040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41011170,41011170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41011170,41011170,FA,Suddent spike or drop detected
+41011230,41011230,FA,Suddent spike or drop detected
+41011350,41011350,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41012010,41012010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41012030,41012030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41012040,41012040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41012040,41012040,FA,Suddent spike or drop detected
+41012080,41012080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41012080,41012080,FA,Suddent spike or drop detected
+41012090,41012090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41012100,41012100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41012110,41012110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41012120,41012120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41013030,41013030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41013040,41013040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41013160,41013160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
+41013170,41013170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2028"
+41013210,41013210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41013240,41013240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41014010,41014010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41014020,41014020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41014040,41014040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41014040,41014040,FA,Suddent spike or drop detected
+41014160,41014160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41014160,41014160,FA,Suddent spike or drop detected
+41015010,41015010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41015070,41015070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41016030,41016030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41016060,41016060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41016090,41016090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41016100,41016100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41016130,41016130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41016150,41016150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41016280,41016280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41016320,41016320,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41017050,41017050,FA,Suddent spike or drop detected
+41017080,41017080,FA,Suddent spike or drop detected
+41017140,41017140,FA,Suddent spike or drop detected
+41017180,41017180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41017180,41017180,FA,Suddent spike or drop detected
+41017190,41017190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41017190,41017190,FA,Suddent spike or drop detected
+41017220,41017220,FA,Suddent spike or drop detected
+41018060,41018060,FA,Suddent spike or drop detected
+41018070,41018070,FA,Suddent spike or drop detected
+41018080,41018080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41018150,41018150,FA,Suddent spike or drop detected
+41019010,41019010,FA,Suddent spike or drop detected
+41019020,41019020,FA,Suddent spike or drop detected
+41019030,41019030,FA,Suddent spike or drop detected
+41019040,41019040,FA,Suddent spike or drop detected
+41019100,41019100,FA,Suddent spike or drop detected
+41019120,41019120,FA,Suddent spike or drop detected
+41019130,41019130,FA,Suddent spike or drop detected
+41019150,41019150,FA,Suddent spike or drop detected
+41019200,41019200,FA,Suddent spike or drop detected
+41019220,41019220,FA,Suddent spike or drop detected
+41019240,41019240,FA,Suddent spike or drop detected
+41019260,41019260,FA,Suddent spike or drop detected
+41020060,41020060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41020080,41020080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41020140,41020140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41021050,41021050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41021060,41021060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41021080,41021080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
+41021120,41021120,FA,Suddent spike or drop detected
+41021190,41021190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41021210,41021210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41021220,41021220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41021220,41021220,FA,Suddent spike or drop detected
+41021240,41021240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41022110,41022110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41023070,41023070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41024030,41024030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
+41024170,41024170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41024300,41024300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2034"
+41024320,41024320,FA,Suddent spike or drop detected
+41024350,41024350,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41024470,41024470,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41025010,41025010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41025090,41025090,FA,small bell curve detect
+41025100,41025100,FA,Bell curve detect
+41025120,41025120,FA,small bell curve detect
+41025240,41025240,FA,Bell curve detect
+41026130,41026130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41026150,41026150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2043"
+41026170,41026170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41026170,41026170,FA,Machine Learning Anomaly Detected
+41026250,41026250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41026260,41026260,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41026300,41026300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41026510,41026510,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2033"
+41027010,41027010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41027010,41027010,FA,Suddent spike or drop detected
+41027020,41027020,FA,Suddent spike or drop detected
+41027050,41027050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41027070,41027070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028010,41028010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028020,41028020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028070,41028070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028110,41028110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028130,41028130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028230,41028230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028260,41028260,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028280,41028280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028300,41028300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028300,41028300,FA,Suddent spike or drop detected
+41028400,41028400,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028410,41028410,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41028430,41028430,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41029010,41029010,FA,Bell curve detect
+41029030,41029030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41029060,41029060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41029090,41029090,FA,Suddent spike or drop detected
+41029130,41029130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41029150,41029150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41029180,41029180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41029300,41029300,FA,Suddent spike or drop detected
+41029360,41029360,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41029360,41029360,FA,Suddent spike or drop detected
+41029370,41029370,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41029420,41029420,FA,Suddent spike or drop detected
+41030170,41030170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41030210,41030210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41030230,41030230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41031010,41031010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41031020,41031020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41031090,41031090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41031110,41031110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41031180,41031180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41031200,41031200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41031260,41031260,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41032050,41032050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41032060,41032060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41032110,41032110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41032110,41032110,FA,Machine Learning Anomaly Detected
+41032130,41032130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41032130,41032130,FA,Machine Learning Anomaly Detected
+41032160,41032160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41032180,41032180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41032180,41032180,FA,Machine Learning Anomaly Detected
+41032200,41032200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41032210,41032210,FA,Machine Learning Anomaly Detected
+41032290,41032290,FA,Bell curve detect
+41032350,41032350,FA,Machine Learning Anomaly Detected
+41033010,41033010,FA,Negative Births Values Found
+41033010,41033010,FA,Negative Deaths Values Found
+41033040,41033040,FA,Negative Births Values Found
+41033040,41033040,FA,Negative Deaths Values Found
+41033050,41033050,FA,Negative Deaths Values Found
+41033080,41033080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41033080,41033080,FA,Negative Births Values Found
+41033080,41033080,FA,Negative Deaths Values Found
+41034010,41034010,FA,small bell curve detect
+41034040,41034040,FA,Bell curve detect
+41034070,41034070,FA,small bell curve detect
+41034290,41034290,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41035020,41035020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2032"
+41035030,41035030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41035030,41035030,FA,Machine Learning Anomaly Detected
+41035040,41035040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41035050,41035050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41035060,41035060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41035110,41035110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41035160,41035160,FA,Machine Learning Anomaly Detected
+41035200,41035200,FA,Suddent spike or drop detected
+41036040,41036040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41036060,41036060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41036080,41036080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41036100,41036100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41036120,41036120,FA,Suddent spike or drop detected
+41036150,41036150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41036170,41036170,FA,Suddent spike or drop detected
+41036190,41036190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41036250,41036250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41036370,41036370,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2027"
+41036460,41036460,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41038090,41038090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41038140,41038140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41038160,41038160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41038200,41038200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41038210,41038210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41038210,41038210,FA,Suddent spike or drop detected
+41038310,41038310,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41038330,41038330,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41039010,41039010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2032"
+41040010,41040010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41040040,41040040,FA,Suddent spike or drop detected
+41040080,41040080,FA,Suddent spike or drop detected
+41040150,41040150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41040190,41040190,FA,Suddent spike or drop detected
+41040240,41040240,FA,Suddent spike or drop detected
+41040260,41040260,FA,Suddent spike or drop detected
+41040330,41040330,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41040350,41040350,FA,Suddent spike or drop detected
+41041020,41041020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41041070,41041070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41041090,41041090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41041120,41041120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41041130,41041130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41041140,41041140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41041140,41041140,FA,Suddent spike or drop detected
+41041220,41041220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41041250,41041250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41041270,41041270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043010,41043010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043020,41043020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043030,41043030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043040,41043040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043070,41043070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043110,41043110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043120,41043120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043180,41043180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043200,41043200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043200,41043200,FA,Suddent spike or drop detected
+41043300,41043300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41043370,41043370,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41044010,41044010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41044020,41044020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41044030,41044030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41044050,41044050,FA,Bell curve detect
+41044150,41044150,FA,Bell curve detect
+41044160,41044160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41044180,41044180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41044180,41044180,FA,straight change of sign detect
+41044220,41044220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41044250,41044250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41046050,41046050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41046110,41046110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41046200,41046200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41046220,41046220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41046260,41046260,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41046300,41046300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41047030,41047030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41047040,41047040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41047060,41047060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41047070,41047070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41047130,41047130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41047130,41047130,FA,Suddent spike or drop detected
+41047160,41047160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41047280,41047280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41048010,41048010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41048020,41048020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41048120,41048120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41048120,41048120,FA,Bell curve detect
+41048240,41048240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41048320,41048320,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41048350,41048350,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41048430,41048430,FA,Bell curve detect
+41049100,41049100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41049140,41049140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41049200,41049200,FA,Suddent spike or drop detected
+41049200,41049200,FA,Bell curve detect
+41050080,41050080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41050130,41050130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41050160,41050160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41051010,41051010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41051140,41051140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41051150,41051150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41051190,41051190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41051250,41051250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41051270,41051270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41052080,41052080,FA,Suddent spike or drop detected
+41052120,41052120,FA,Suddent spike or drop detected
+41052240,41052240,FA,small bell curve detect
+41052260,41052260,FA,Suddent spike or drop detected
+41052270,41052270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41053020,41053020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41053050,41053050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41053060,41053060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41053090,41053090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41053110,41053110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41053130,41053130,FA,Bell curve detect
+41053150,41053150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41053180,41053180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41053220,41053220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41053260,41053260,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41053380,41053380,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41053430,41053430,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41054020,41054020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41054050,41054050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41054080,41054080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41054110,41054110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41054170,41054170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41054190,41054190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41054220,41054220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41054250,41054250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41054300,41054300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41055060,41055060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41055070,41055070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41055090,41055090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41055200,41055200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41055220,41055220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41055230,41055230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41056010,41056010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41056050,41056050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41056180,41056180,FA,Suddent spike or drop detected
+41056210,41056210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41056280,41056280,FA,Suddent spike or drop detected
+41057050,41057050,FA,Suddent spike or drop detected
+41057150,41057150,FA,Suddent spike or drop detected
+41057270,41057270,FA,Suddent spike or drop detected
+41057280,41057280,FA,Suddent spike or drop detected
+41057300,41057300,FA,Suddent spike or drop detected
+41058020,41058020,FA,Suddent spike or drop detected
+41058040,41058040,FA,Suddent spike or drop detected
+41058060,41058060,FA,Suddent spike or drop detected
+41058070,41058070,FA,Suddent spike or drop detected
+41058090,41058090,FA,Suddent spike or drop detected
+41058110,41058110,FA,Suddent spike or drop detected
+41058150,41058150,FA,Suddent spike or drop detected
+41058160,41058160,FA,Suddent spike or drop detected
+41058220,41058220,FA,Suddent spike or drop detected
+41059010,41059010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41059040,41059040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41059090,41059090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41059150,41059150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41059170,41059170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41059240,41059240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41059300,41059300,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41060020,41060020,FA,Suddent spike or drop detected
+41060040,41060040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41060080,41060080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41060080,41060080,FA,Suddent spike or drop detected
+41060110,41060110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41060120,41060120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41060170,41060170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
+41061030,41061030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41061110,41061110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41061110,41061110,FA,Suddent spike or drop detected
+41061150,41061150,FA,Suddent spike or drop detected
+41061360,41061360,FA,Suddent spike or drop detected
+41062010,41062010,FA,Suddent spike or drop detected
+41062020,41062020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
+41062020,41062020,FA,Suddent spike or drop detected
+41062070,41062070,FA,Suddent spike or drop detected
+41062100,41062100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41062110,41062110,FA,Suddent spike or drop detected
+41062190,41062190,FA,Suddent spike or drop detected
+41062220,41062220,FA,Suddent spike or drop detected
+41062320,41062320,FA,Suddent spike or drop detected
+41063030,41063030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41063060,41063060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41063060,41063060,FA,Suddent spike or drop detected
+41063070,41063070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41063090,41063090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41063090,41063090,FA,Suddent spike or drop detected
+41063100,41063100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41063140,41063140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
+41063150,41063150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41064050,41064050,FA,Suddent spike or drop detected
+41064150,41064150,FA,straight change of sign detect
+41064160,41064160,FA,Suddent spike or drop detected
+41065010,41065010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41065010,41065010,FA,Suddent spike or drop detected
+41065020,41065020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41065020,41065020,FA,Suddent spike or drop detected
+41065030,41065030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41065080,41065080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41065090,41065090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41066050,41066050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41066050,41066050,FA,Suddent spike or drop detected
+41066130,41066130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41066150,41066150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41066150,41066150,FA,Suddent spike or drop detected
+41067020,41067020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41067030,41067030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41067030,41067030,FA,Bell curve detect
+41067050,41067050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41067060,41067060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41067060,41067060,FA,Suddent spike or drop detected
+41067100,41067100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41067130,41067130,FA,Suddent spike or drop detected
+41067200,41067200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41067200,41067200,FA,Suddent spike or drop detected
+41067240,41067240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41068020,41068020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41068040,41068040,FA,Suddent spike or drop detected
+41068060,41068060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41068090,41068090,FA,Suddent spike or drop detected
+41068190,41068190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41068200,41068200,FA,Suddent spike or drop detected
+41068280,41068280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41068280,41068280,FA,Suddent spike or drop detected
+41069010,41069010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41069010,41069010,FA,Suddent spike or drop detected
+41069020,41069020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41069020,41069020,FA,Suddent spike or drop detected
+41069030,41069030,FA,Suddent spike or drop detected
+41069050,41069050,FA,Suddent spike or drop detected
+41069060,41069060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41069070,41069070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41069070,41069070,FA,Suddent spike or drop detected
+41069110,41069110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41069120,41069120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41069150,41069150,FA,Suddent spike or drop detected
+41069170,41069170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41069180,41069180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41069190,41069190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41069190,41069190,FA,Suddent spike or drop detected
+41069290,41069290,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41069290,41069290,FA,Suddent spike or drop detected
+41070020,41070020,FA,Suddent spike or drop detected
+41070040,41070040,FA,Suddent spike or drop detected
+41070050,41070050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41070090,41070090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41070100,41070100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41070100,41070100,FA,Suddent spike or drop detected
+41070130,41070130,FA,Suddent spike or drop detected
+41071020,41071020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41071050,41071050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41071070,41071070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41071110,41071110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41071110,41071110,FA,Suddent spike or drop detected
+41071150,41071150,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2033"
+41071160,41071160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41071180,41071180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41071210,41071210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41071280,41071280,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41072230,41072230,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41073120,41073120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41075010,41075010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41075020,41075020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41075040,41075040,FA,Suddent spike or drop detected
+41075050,41075050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2036"
+41075060,41075060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41076010,41076010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41076030,41076030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41076050,41076050,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41076070,41076070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41076100,41076100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41077030,41077030,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41077030,41077030,FA,Suddent spike or drop detected
+41077070,41077070,FA,Suddent spike or drop detected
+41077090,41077090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41077090,41077090,FA,Suddent spike or drop detected
+41077110,41077110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41077110,41077110,FA,Suddent spike or drop detected
+41077140,41077140,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41077140,41077140,FA,Suddent spike or drop detected
+41077160,41077160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41077190,41077190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41077190,41077190,FA,Suddent spike or drop detected
+41077200,41077200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41077200,41077200,FA,Suddent spike or drop detected
+41078010,41078010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41078090,41078090,FA,Bell curve detect
+41078160,41078160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2026"
+41078170,41078170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41079010,41079010,FA,Suddent spike or drop detected
+41079050,41079050,FA,Suddent spike or drop detected
+41079070,41079070,FA,Suddent spike or drop detected
+41079100,41079100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41079120,41079120,FA,Suddent spike or drop detected
+41079170,41079170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41080010,41080010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41080010,41080010,FA,Suddent spike or drop detected
+41080020,41080020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41080020,41080020,FA,Bell curve detect
+41080100,41080100,FA,Suddent spike or drop detected
+41080110,41080110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41080110,41080110,FA,Suddent spike or drop detected
+41080130,41080130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41080130,41080130,FA,Suddent spike or drop detected
+41080170,41080170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41080170,41080170,FA,Suddent spike or drop detected
+41080180,41080180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41080210,41080210,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41080240,41080240,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41080240,41080240,FA,Suddent spike or drop detected
+41080280,41080280,FA,Suddent spike or drop detected
+41082010,41082010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41082010,41082010,FA,Suddent spike or drop detected
+41082010,41082010,FA,small bell curve detect
+41083060,41083060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41083060,41083060,FA,Suddent spike or drop detected
+41083070,41083070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41083110,41083110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2025"
+41083130,41083130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41083130,41083130,FA,Suddent spike or drop detected
+41084090,41084090,FA,Suddent spike or drop detected
+41084170,41084170,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41084190,41084190,FA,Suddent spike or drop detected
+41084200,41084200,FA,Suddent spike or drop detected
+41085130,41085130,FA,Suddent spike or drop detected
+41085210,41085210,FA,Suddent spike or drop detected
+41086010,41086010,FA,Suddent spike or drop detected
+41086040,41086040,FA,Suddent spike or drop detected
+41086080,41086080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41086140,41086140,FA,Suddent spike or drop detected
+41086160,41086160,FA,Suddent spike or drop detected
+41088020,41088020,FA,Suddent spike or drop detected
+41088080,41088080,FA,Suddent spike or drop detected
+41088100,41088100,FA,Suddent spike or drop detected
+41089020,41089020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41089030,41089030,FA,Suddent spike or drop detected
+41089060,41089060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41089070,41089070,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41089110,41089110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41089120,41089120,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41089120,41089120,FA,Suddent spike or drop detected
+41089130,41089130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41089160,41089160,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41089160,41089160,FA,Suddent spike or drop detected
+41089180,41089180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41089180,41089180,FA,Suddent spike or drop detected
+41090060,41090060,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41091040,41091040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41091060,41091060,FA,Suddent spike or drop detected
+41091090,41091090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41091110,41091110,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41091200,41091200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41091230,41091230,FA,Suddent spike or drop detected
+41091260,41091260,FA,Suddent spike or drop detected
+41091280,41091280,FA,Suddent spike or drop detected
+41091300,41091300,FA,Suddent spike or drop detected
+41092010,41092010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41092100,41092100,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41092200,41092200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41093010,41093010,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41093010,41093010,FA,Suddent spike or drop detected
+41093060,41093060,FA,Suddent spike or drop detected
+41093080,41093080,FA,Suddent spike or drop detected
+41093140,41093140,FA,Suddent spike or drop detected
+41093160,41093160,FA,Suddent spike or drop detected
+41093200,41093200,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2037"
+41093250,41093250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2031"
+41093270,41093270,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41093270,41093270,FA,Suddent spike or drop detected
+41093290,41093290,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41093290,41093290,FA,Suddent spike or drop detected
+41093310,41093310,FA,Suddent spike or drop detected
+41093360,41093360,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41095050,41095050,FA,Suddent spike or drop detected
+41095110,41095110,FA,Suddent spike or drop detected
+41095130,41095130,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2023"
+41095150,41095150,FA,Suddent spike or drop detected
+41095190,41095190,FA,Suddent spike or drop detected
+41095230,41095230,FA,Suddent spike or drop detected
+41095270,41095270,FA,Suddent spike or drop detected
+41095330,41095330,FA,Suddent spike or drop detected
+41095370,41095370,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41096090,41096090,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2030"
+41096190,41096190,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2024"
+41097020,41097020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41097030,41097030,FA,Suddent spike or drop detected
+41097040,41097040,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41097080,41097080,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41097090,41097090,FA,Suddent spike or drop detected
+41097150,41097150,FA,Suddent spike or drop detected
+41097180,41097180,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41097180,41097180,FA,Suddent spike or drop detected
+41097200,41097200,FA,Suddent spike or drop detected
+41097220,41097220,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41097220,41097220,FA,Suddent spike or drop detected
+41097250,41097250,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41099020,41099020,FA,"Found abnormal ERP/household ratio, Earliest abnormal year is: 2022"
+41099270,41099270,FA,Suddent spike or drop detected
+41099300,41099300,FA,Suddent spike or drop detected
