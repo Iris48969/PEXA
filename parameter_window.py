@@ -89,11 +89,15 @@ def open_parameter_window():
         return entry
 
     # Creating rows with parameters
-    entry_param1 = create_param_row("Ratio Upper:", 0, "5", "Household Size Check: This sets the upper bound for the household size ratio.")
-    entry_param2 = create_param_row("Ratio Lower:", 1, "1", "Household Size Check: This sets the lower bound for the household size ratio.")
-    entry_param3 = create_param_row("IQR Multiplier for spike detection:", 2, "5", "Outlier Detection: This multiplier is used to detect spikes in the data.")
-    entry_param4 = create_param_row("Sensitivity (% change):", 3, "0.005", "Population Check: This sets the sensitivity threshold for detecting significant population changes.")
-    entry_param5 = create_param_row("Contamination:", 4, "0.003", "Anomaly Detection: Controls the contamination level used in the Isolation Forest algorithm.")
+    entry_param1 = create_param_row("Ratio Upper:", 0, "5", """Household Size Check: This sets the upper bound for the household size ratio.
+    If the ratio is above this upper bound it will be treated as outlier.""")
+    entry_param2 = create_param_row("Ratio Lower:", 1, "1", """Household Size Check: This sets the lower bound for the household size ratio.
+    If the ratio is below this lower bound it will be treated as outlier.""")
+    entry_param3 = create_param_row("""IQR Multiplier for spike detection:", 2, "5", "Outlier Detection: This multiplier is used to detect spikes in the data. 
+    For example, the upper bound is Q3 + multiplier * IQR and if the growth of population is higher than upper bound or below the lower bound this region will be flagged""")
+    entry_param4 = create_param_row("Sensitivity (% change):", 3, "0.005", """Population Check: This sets the sensitivity threshold for detecting significant population changes.
+    When the absolute of population growth is lower than this sensitivity level, it will be treated as 'No change'.""")
+    entry_param5 = create_param_row("Contamination:", 4, "0.003", """Anomaly Detection: Controls the contamination level used in the Isolation Forest algorithm.""")
     entry_param6 = create_param_row("SA4 Code:", 5, "213", "Geographical Area: This code represents the specific region being analyzed.")
 
     # Buttons to save parameters
