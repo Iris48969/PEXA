@@ -1,21 +1,2 @@
-2024-09-09 12:02:53 - INFO - Log set up done, start running the file
-2024-09-09 12:02:54 - INFO - Connection to database was successful
-2024-09-09 12:02:54 - ERROR - open_parameter_window.<locals>.create_param_row() missing 3 required positional arguments: 'row', 'default_value', and 'tooltip_text'
-2024-09-09 12:02:54 - INFO - Trying to execute household check
-2024-09-09 12:02:54 - ERROR - Household check failed: name 'ratio_upper' is not defined
-2024-09-09 12:02:54 - INFO - Try to execute births check
-2024-09-09 12:02:54 - ERROR - Births check failed: name 'sa4_code' is not defined
-2024-09-09 12:02:54 - INFO - Try to execute deaths check
-2024-09-09 12:02:54 - ERROR - Deaths check failed: name 'sa4_code' is not defined
-2024-09-09 12:02:54 - INFO - Try to execute household check
-2024-09-09 12:02:54 - ERROR - Household check failed: name 'sa4_code' is not defined
-2024-09-09 12:02:54 - INFO - Try to execute population check
-2024-09-09 12:02:54 - ERROR - Population check failed: name 'sa4_code' is not defined
-2024-09-09 12:02:54 - INFO - Running Negative Checks:
-2024-09-09 12:02:54 - ERROR - Negative check failed: name 'sa4_code' is not defined
-2024-09-09 12:02:54 - INFO - Running Sanity Checks:
-2024-09-09 12:02:54 - ERROR - Sanity check failed: name 'sa4_code' is not defined
-2024-09-09 12:02:54 - INFO - Running Machine Learning Anomaly Detection:
-2024-09-09 12:02:54 - ERROR - ML Anomaly Detection check failed: name 'contamination' is not defined
-2024-09-09 12:02:54 - INFO - Try to execute spike check
-2024-09-09 12:02:54 - ERROR - name 'sensitivity' is not defined
+2024-09-09 15:39:26 - INFO - Log set up done, start running the file
+2024-09-09 15:39:27 - INFO - Connection to database was successful

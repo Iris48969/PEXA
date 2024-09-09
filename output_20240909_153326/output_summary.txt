@@ -15,7 +15,7 @@ SA4 Code:         410
 
 Unique Abnormal Regions:    270
 Proportion of Abnormal Regions:    22.26%
-Total Running Time:         37.173066 seconds
+Total Running Time:         133.279784 seconds
 
 #############################################
               SANITY CHECKS
