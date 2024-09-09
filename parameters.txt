@@ -1,4 +1,4 @@
-ratio_upper: 5.0
+ratio_upper: 6.0
 ratio_lower: 1.0
 multiplier: 5.0
 sensitivity: 0.005
