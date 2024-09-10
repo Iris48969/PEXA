@@ -46,10 +46,17 @@ try:
     elif current_system == "Windows":
         import pyodbc
         conn = pyodbc.connect('Driver={SQL Server};'
+                            'Server=GDANSK;'
+                            'Database=SafiTopsDown_Transformed;'
+                            'Trusted_Connection=yes')
+        
+        """
+        'Driver={SQL Server};'
                               'Server=localhost;'
                               'Database=forecasts;'
                               'UID=sa;'
-                              'PWD=MBS_project_2024')
+                              'PWD=MBS_project_2024'
+        """
 
     else:
         logging.error(f"Running on an unsupported system: {current_system}")
