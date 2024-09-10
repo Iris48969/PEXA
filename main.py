@@ -45,11 +45,9 @@ try:
 
     elif current_system == "Windows":
         import pyodbc
-        conn = pyodbc.connect('Driver={SQL Server};'
-                            'Server=GDANSK;'
-                            'Database=SafiTopsDown_Transformed;'
-                            'Trusted_Connection=yes')
+        conn = pyodbc.connect(os.environ.get('CHECKS_MBS_DB'))
         
+        # NOTE: PUT THIS IN YOUR ENVIRONMENT VARIABLE "CHECKS_MBS_DB"
         """
         'Driver={SQL Server};'
                               'Server=localhost;'

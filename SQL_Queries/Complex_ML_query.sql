@@ -13,6 +13,7 @@ WITH PopulationDensity AS (
     JOIN 
         Households ON ERP.ASGS_2016 = Households.ASGSCode AND ERP.ERPYear = Households.ERPYear
     WHERE Households.HhKey = 19
+    AND left(ERP.ASGS_2016,3) = {}
     GROUP BY 
         ERP.ASGS_2016, 
         ERP.ERPYear
@@ -27,6 +28,7 @@ GrowthRate AS (
     FROM 
         ERP
     JOIN AreasAsgs ON ERP.ASGS_2016 = AreasAsgs.ASGSCode 
+    WHERE left(ERP.ASGS_2016,3) = {}
     GROUP BY 
         ASGS_2016, 
         ERPYear,
@@ -47,6 +49,7 @@ BirthDeathRatio AS (
         Births
     JOIN 
         Deaths ON Births.ASGSCode = Deaths.ASGSCode AND Births.Year = Deaths.Year
+    WHERE left(Births.ASGSCode,3) = {}
     GROUP BY 
         Births.ASGSCode,
         Births.Year
@@ -69,8 +72,6 @@ LEFT JOIN
     GrowthRate GR ON PD.ASGS_2016 = GR.ASGS_2016 AND PD.ERPYear = GR.ERPYear
 LEFT JOIN 
     BirthDeathRatio BDR ON PD.ASGS_2016 = BDR.ASGSCode AND PD.ERPYear = BDR.Year
-WHERE 
-    left(PD.ASGS_2016,3) = {}
 ORDER BY 
     PD.ASGS_2016, 
     PD.ERPYear;

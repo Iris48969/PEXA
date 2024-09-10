@@ -21,6 +21,7 @@
         WHERE 
             a.Number <= 0
             AND b.RegionType IN ('FA', 'SA2')
+            AND left(a.ASGSCode,3) = {}
         GROUP BY 
             a.ASGSCode, a.SexKey, a.Year, b.RegionType, 
             b.Parent, p.Name
@@ -49,6 +50,7 @@
         WHERE 
             a.Number <= 0
             AND b.RegionType IN ('FA', 'SA2')
+            AND left(a.ASGSCode,3) = {}
         GROUP BY 
             a.ASGSCode, a.SexKey, a.Year,
             b.RegionType, b.Parent, p.Name
@@ -77,6 +79,7 @@
             ON b.Parent = p.ASGSCode -- Self-join to get parent region name
         WHERE 
             b.RegionType IN ('SA2', 'FA')
+            AND left(a.ASGSCode,3) = {}
         GROUP BY 
             a.ASGS_2016, a.ERPYear, b.RegionType, 
             b.Parent, p.Name, a.SexKey
@@ -84,5 +87,5 @@
 
     SELECT * 
     FROM CombinedData
-    where left(ASGSCode,3) = {}
+    
     ORDER BY DataType, Year, Total;
